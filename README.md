@@ -4,4 +4,4 @@ Questa è la libreria dell'UniBS modificata da me con metodi che possono tornare
 Modifiche attuali:
 
 - BelleStringhe.java
-  - Aggiornato metodo <code>incornicia(String s)</code>
+  - Aggiornato metodo <em>incornicia(String s)</em>
