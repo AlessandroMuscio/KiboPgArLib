@@ -7,13 +7,13 @@ public class InputDati {
   private static Scanner lettore = creaScanner();
 
   private final static String CARATTERI_ALFANUMERICI = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  private final static String ERRORE_CARATTERI_ALFANUMERICI = "Attenzione: sono accettati solo caratteri alfanumerici";
-  private final static String ERRORE_STRINGA_VUOTA = "Attenzione: non hai inserito alcun carattere";
-  private final static String MESSAGGIO_AMMISSIBILI = "Attenzione: i caratteri ammissibili sono: ";
-  private final static String ERRORE_FORMATO_INTERO = "Attenzione: il dato inserito non e' nel formato corretto. Inserire un intero";
-  private final static String ERRORE_FORMATO_DOUBLE = "Attenzione: il dato inserito non e' nel formato corretto. Inserire un double";
-  private final static String ERRORE_MINIMO = "Attenzione: e' richiesto un valore maggiore o uguale a ";
-  private final static String ERRORE_MASSIMO = "Attenzione: e' richiesto un valore minore o uguale a ";
+  private final static String ERRORE_CARATTERI_ALFANUMERICI = "ATTENZIONE: sono accettati solo caratteri alfanumerici";
+  private final static String ERRORE_STRINGA_VUOTA = "ATTENZIONE: non hai inserito alcun carattere";
+  private final static String MESSAGGIO_AMMISSIBILI = "ATTENZIONE: i caratteri ammissibili sono: ";
+  private final static String ERRORE_FORMATO_INTERO = "ATTENZIONE: il dato inserito non e' nel formato corretto. Inserire un intero";
+  private final static String ERRORE_FORMATO_DOUBLE = "ATTENZIONE: il dato inserito non e' nel formato corretto. Inserire un double";
+  private final static String ERRORE_MINIMO = "ATTENZIONE: e' richiesto un valore maggiore o uguale a ";
+  private final static String ERRORE_MASSIMO = "ATTENZIONE: e' richiesto un valore minore o uguale a ";
 
   private final static String RISPOSTA_SI = "sS";
   private final static String RISPOSTA_NO = "nN";
