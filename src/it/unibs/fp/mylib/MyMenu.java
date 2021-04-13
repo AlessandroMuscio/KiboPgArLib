@@ -64,7 +64,7 @@ public class MyMenu {
     }
   }
 
-  private static void messaggioCaricamento(String messaggio) {
+  public static void messaggioCaricamento(String messaggio) {
     System.out.print(messaggio + ".");
     aspetta(1000);
     System.out.print(".");
