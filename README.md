@@ -24,7 +24,8 @@ Questa è la libreria dell'UniBS modificata da me con metodi che possono tornare
   - Aggiunto metodo <code>**leggiDoubleConMassimo(String messaggio, double massimo)**</code>
   - Aggiunto metodo <code>**leggiDoubleCompreso(String messaggio, double minimo, double massimo)**</code>
   - Rinominato metodo da <code>**yesOrNo(String messaggio)**</code> a <code>**leggiSiONo(String messaggio)**</code> e modificato
-- MyMenu.java
+- Menu.java
+  - Rinominato <strong>MyMenu.java</strong> a <strong>Menu.java</strong>
   - Aggiunto metodo <code>**pulisciConsole()**</code>
   - Aggiunto metodo <code>**aspetta(int millisecondi)**</code>
   - Aggiunto metodo <code>**messaggioCaricamento(String messaggio)**</code>
