@@ -6,7 +6,7 @@ Si suppone che la voce per uscire sia sempre associata alla scelta 0
 e sia presentata in fondo al menu
 
 */
-public class MyMenu {
+public class Menu {
   final private static String CORNICE = "---------------------------------------------------";
   final private static String VOCE_USCITA = "\n0\tEsci\n";
   final private static String RICHIESTA_INSERIMENTO = "Digita il numero dell'opzione desiderata > ";
@@ -14,7 +14,7 @@ public class MyMenu {
   private String titolo;
   private String[] voci;
 
-  public MyMenu(String titolo, String[] voci) {
+  public Menu(String titolo, String[] voci) {
     this.titolo = "\n" + titolo;
     this.voci = voci;
   }
