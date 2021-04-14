@@ -7,6 +7,8 @@ Questa è la libreria dell'UniBS modificata da me con metodi che possono tornare
 - EstrazioniCasuali.java
   - Aggiunto metodo <code>**estraiDouble(double min, double max)**</code>
   - Aggiunto metodo <code>**estraiBoolean()**</code>
+- FormuleNote.java
+  - Aggiunta da me
 - InputDati.java
   - Aggiornati messaggi di errore
   - Aggiunto attributo **CARATTERI_ALFANUMERICI**
