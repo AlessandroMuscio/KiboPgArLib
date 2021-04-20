@@ -3,7 +3,19 @@ package it.unibs.fp.mylib;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
+/**
+ * <p>
+ * La classe <strong>InputDati</strong> mi permette prendere un determinato tipo
+ * di dato che viene messo in input dall'utente
+ * </p>
+ * 
+ * @author Alessandro Muscio
+ * @version 1.0
+ */
 public class InputDati {
+  /**
+   * Rappresenta l'oggetto scanner utilizzato per prendere gli input dell'utente
+   */
   private static Scanner lettore = creaScanner();
 
   private final static String CARATTERI_ALFANUMERICI = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -14,7 +26,6 @@ public class InputDati {
   private final static String ERRORE_FORMATO_DOUBLE = "ATTENZIONE: il dato inserito non e' nel formato corretto. Inserire un double";
   private final static String ERRORE_MINIMO = "ATTENZIONE: e' richiesto un valore maggiore o uguale a ";
   private final static String ERRORE_MASSIMO = "ATTENZIONE: e' richiesto un valore minore o uguale a ";
-
   private final static String RISPOSTA_SI = "sS";
   private final static String RISPOSTA_NO = "nN";
 

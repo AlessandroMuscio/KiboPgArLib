@@ -1,7 +1,26 @@
 package it.unibs.fp.mylib;
 
+/**
+ * <p>
+ * La classe <strong>FormuleNote</strong> mi permette di eseguire alcune formule
+ * che spesso possono tornare utili
+ * </p>
+ * 
+ * @author Alessandro Muscio
+ * @version 1.0
+ */
 public class FormuleNote {
 
+  /**
+   * Trova l'<strong>MCD</strong> tra due numeri
+   * 
+   * @param a Indica il <em>primo numero</em> di cui calcolare
+   *          l'<strong>MCD</strong>
+   * @param b Indica il <em>secondo numero</em> di cui calcolare
+   *          l'<strong>MCD</strong>
+   * @return Un <code>int</code> rappresentante l'<strong>MCD</strong> tra
+   *         <em>a</em> e <em>b</em>
+   */
   public static int MCD(int a, int b) {
     while (a != 0 && b != 0) {
       if (a > b)
@@ -13,6 +32,13 @@ public class FormuleNote {
     return a == 0 ? b : a;
   }
 
+  /**
+   * Trova l'<strong>MCD</strong> tra diversi numeri
+   * 
+   * @param valori Indica i numeri di cui vogliamo trovare l'<strong>MCD</strong>
+   * @return Un <code>int</code> rappresentante l'<strong>MCD</strong> tra i
+   *         diversi numeri
+   */
   public static int MCD(int[] valori) {
     if (valori == null || valori.length == 0)
       return -1;
@@ -25,12 +51,29 @@ public class FormuleNote {
     return mcd;
   }
 
+  /**
+   * Trova l'<strong>MCM</strong> tra due numeri
+   * 
+   * @param a Indica il <em>primo numero</em> di cui calcolare
+   *          l'<strong>MCM</strong>
+   * @param b Indica il <em>secondo numero</em> di cui calcolare
+   *          l'<strong>MCM</strong>
+   * @return Un <code>int</code> rappresentante l'<strong>MCM</strong> tra
+   *         <em>a</em> e <em>b</em>
+   */
   public static int MCM(int a, int b) {
     int mcd = MCD(a, b);
 
     return (a * b) / mcd;
   }
 
+  /**
+   * Trova l'<strong>MCM</strong> tra diversi numeri
+   * 
+   * @param valori Indica i numeri di cui vogliamo trovare l'<strong>MCM</strong>
+   * @return Un <code>int</code> rappresentante l'<strong>MCM</strong> tra i
+   *         diversi numeri
+   */
   public static int MCM(int[] valori) {
     if (valori == null || valori.length == 0)
       return -1;
@@ -41,14 +84,5 @@ public class FormuleNote {
       mcm = MCM(mcm, valori[i]);
 
     return mcm;
-  }
-
-  public static int minOrMax(double a, double b) {
-    if (a < b)
-      return 1;
-    else if (a > b)
-      return -1;
-    else
-      return 0;
   }
 }
