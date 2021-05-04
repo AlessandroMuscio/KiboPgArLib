@@ -32,6 +32,34 @@ public class EstrazioniCasuali {
   }
 
   /**
+   * Questo metodo permette di effettuare estrazioni di interi pseudo-casuali con
+   * una certa distribuzione. Una volta dati un minimo e un massimo il metodo
+   * ritornerà valori compresi o uguali a questi due. Per gestire la distribuzione
+   * si utilizzata l'esponente:<br>
+   * - <=0 ritornerà valori casuali, quasi sempre non compresi tra il minimo e il
+   * massimo<br>
+   * - >0 && <1 Più il valore casuale è vicino al massimo più è probabile che
+   * venga generato. Più si mette l'esponente vicino a 0 maggiore sarà la
+   * possibilità di generare valori vicino al massimo<br>
+   * - =1 La distribuzione, tutti i valori hanno più o meno la stessa probabilità
+   * di essere generati<br>
+   * - >1 Più il valore casuale è vicino al minimo più è probabile che venga
+   * generato. Più si grande è l'esponente sarà la possibilità di generare valori
+   * vicino al minimo<br>
+   * 
+   * @param minimo    Il valore minimo che è possibile generare
+   * @param massimo   Il valore massimo che è possibile generare
+   * @param esponente L'esponete dell'equazione
+   * @return Un <code>int</code> rappresentante il valore casuale generato
+   */
+  public static int estraiInteroConDistribuzione(int minimo, int massimo, double esponente) {
+    int range = massimo + 1 - minimo;
+    double random_double = Math.pow(rand.nextDouble(), esponente);
+
+    return (int) Math.floor(minimo + range * random_double);
+  }
+
+  /**
    * Estrae un <strong>double</strong> casuale compreso tra un minimo valore dato
    * e un massimo valore dato
    * 
