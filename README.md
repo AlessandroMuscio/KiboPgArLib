@@ -30,6 +30,7 @@ Questa è la libreria dell'UniBS modificata da me con metodi che possono tornare
   - Aggiunto metodo <code>**pulisciConsole()**</code>
   - Aggiunto metodo <code>**aspetta(int millisecondi)**</code>
   - Aggiunto metodo <code>**messaggioCaricamento(String messaggio)**</code>
+  - Aggiunta possibilità di visualizzare o no la voce d'uscita
 - Rimosso NumeriCasuali.java
 - ServizioFile.java
   - Invariato

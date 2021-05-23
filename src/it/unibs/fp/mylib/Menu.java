@@ -24,15 +24,22 @@ public class Menu {
   private String[] voci;
 
   /**
-   * Costruttore che crea un oggetto di tipo menu specificando un titolo e le voci
-   * di esso
-   * 
-   * @param titolo Indica il titolo del menu
-   * @param voci   Indica le voci del menu
+   * Indica se si vuole visualizzare la voce d'uscita oppure no
    */
-  public Menu(String titolo, String[] voci) {
-    this.titolo = "\n" + titolo;
+  private boolean voce_uscita;
+
+  /**
+   * Costruttore che crea un oggetto di tipo menu specificando un titolo, le voci
+   * di esso e se si vuole visualizzare la voce d'uscita oppure no
+   * 
+   * @param titolo      Indica il titolo del menu
+   * @param voci        Indica le voci del menu
+   * @param voce_uscita Indica se si vuole visualizzare la voce d'uscita oppure no
+   */
+  public Menu(String titolo, String[] voci, boolean voce_uscita) {
+    this.titolo = titolo;
     this.voci = voci;
+    this.voce_uscita = voce_uscita;
   }
 
   /**
@@ -47,7 +54,10 @@ public class Menu {
   public int scegli() {
     stampaMenu();
 
-    return InputDati.leggiInteroCompreso(RICHIESTA_INSERIMENTO, 0, voci.length);
+    if (voce_uscita)
+      return InputDati.leggiInteroCompreso(RICHIESTA_INSERIMENTO, 0, voci.length);
+    else
+      return InputDati.leggiInteroCompreso(RICHIESTA_INSERIMENTO, 1, voci.length);
   }
 
   /**
@@ -60,10 +70,13 @@ public class Menu {
     System.out.println(CORNICE);
 
     for (int i = 0; i < voci.length; i++) {
-      System.out.println((i + 1) + "\t" + voci[i]);
+      System.out.println((i + 1) + ".\t" + voci[i]);
     }
 
-    System.out.println(VOCE_USCITA);
+    if (voce_uscita)
+      System.out.println(VOCE_USCITA);
+    else
+      System.out.println();
   }
 
   /**
