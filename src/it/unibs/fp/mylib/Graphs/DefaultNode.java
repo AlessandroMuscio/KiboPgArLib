@@ -1,7 +1,7 @@
+package it.unibs.fp.mylib.Graphs;
+
 public class DefaultNode {
   private int id;
-
-  private Map<DefaultNode, Double>
 
   public DefaultNode(int id) {
     this.id = id;
