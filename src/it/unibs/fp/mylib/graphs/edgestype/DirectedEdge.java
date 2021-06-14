@@ -1,4 +1,6 @@
-package it.unibs.fp.mylib.Graphs;
+package it.unibs.fp.mylib.graphs.edgestype;
+
+import it.unibs.fp.mylib.graphs.DefaultNode;
 
 public class DirectedEdge<N extends DefaultNode> {
   private N from_node;

@@ -1,4 +1,4 @@
-package it.unibs.fp.mylib.Graphs;
+package it.unibs.fp.mylib.graphs;
 
 public class DefaultNode {
   private int id;
