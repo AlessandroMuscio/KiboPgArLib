@@ -7,6 +7,10 @@ import java.util.Set;
 import it.unibs.fp.mylib.graphs.edgestype.DirectedEdge;
 
 public class DirectedGraph<N extends DefaultNode, V extends DirectedEdge<N>> extends Graph<N, V> {
+  public DirectedGraph(Set<N> nodes, Set<V> edges) {
+    super(nodes, edges);
+  }
+
   public Set<V> getEdgesByNode(N node, boolean from_node) {
     HashSet<V> edges_found = new HashSet<>();
 

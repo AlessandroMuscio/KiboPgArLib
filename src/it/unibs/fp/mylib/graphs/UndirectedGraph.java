@@ -7,6 +7,10 @@ import java.util.Set;
 import it.unibs.fp.mylib.graphs.edgestype.UndirectedEdge;
 
 public class UndirectedGraph<N extends DefaultNode, V extends UndirectedEdge<N>> extends Graph<N, V> {
+  public UndirectedGraph(Set<N> nodes, Set<V> edges) {
+    super(nodes, edges);
+  }
+
   public Set<V> getEdgesByNode(N node) {
     HashSet<V> edges_found = new HashSet<>();
 
