@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class UndirectedGraph<N, V> implements Graph<N, V> {
+public class UndirectedGraph<N extends DefaultNode, V extends UndirectedEdge<N>> implements Graph<N, V> {
   private Set<N> nodes;
   private Set<V> edges;
 
@@ -29,13 +29,13 @@ public class UndirectedGraph<N, V> implements Graph<N, V> {
   }
 
   @Override
-  public boolean containsEdge(V edge) {
-    return edges.contains(edge);
+  public Set<V> getAllEdges() {
+    return edges;
   }
 
   @Override
-  public Set<V> getAllEdges() {
-    return edges;
+  public boolean containsEdge(V edge) {
+    return edges.contains(edge);
   }
 
   @Override
@@ -56,6 +56,27 @@ public class UndirectedGraph<N, V> implements Graph<N, V> {
   @Override
   public boolean removeEdge(V edge) {
     return edges.remove(edge);
+  }
+
+  public Set<V> getEdgesByNode(N node) {
+    HashSet<V> edges_found = new HashSet<>();
+
+    for (V edge : edges) {
+      if (edge.getFirstNode().equals(node) || edge.getSecondNode().equals(node))
+        edges_found.add(edge);
+    }
+
+    return edges_found;
+  }
+
+  public V getEdge(N first_node, N second_node) {
+    for (V edge : edges) {
+      if ((edge.getFirstNode().equals(first_node) || edge.getFirstNode().equals(second_node))
+          && (edge.getSecondNode().equals(first_node) || edge.getSecondNode().equals(second_node)))
+        return edge;
+    }
+
+    return null;
   }
 
   @Override
@@ -86,5 +107,33 @@ public class UndirectedGraph<N, V> implements Graph<N, V> {
     }
 
     return false;
+  }
+
+  @Override
+  public String toString() {
+    String to_string = "Undirected Graph: {\n\tNodes: {\n\t\t";
+    Object[] nodes_array = nodes.toArray();
+    Object[] edges_array = edges.toArray();
+
+    for (int i = 0; i < nodes_array.length; i++) {
+      to_string += nodes_array[i].toString();
+
+      if (i != (nodes_array.length - 1))
+        to_string += "\n\t\t";
+      else
+        to_string += "\n\t},\n\t";
+    }
+
+    to_string += "Edges: {\n\t\t";
+    for (int i = 0; i < edges_array.length; i++) {
+      to_string += edges_array[i].toString();
+
+      if (i != (edges_array.length - 1))
+        to_string += "\n\t\t";
+      else
+        to_string += "\n\t}\n}";
+    }
+
+    return to_string;
   }
 }

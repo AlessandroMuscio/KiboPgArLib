@@ -7,9 +7,9 @@ public interface Graph<N, V> {
 
   public boolean containsNode(N node);
 
-  public boolean containsEdge(V edge);
-
   public Set<V> getAllEdges();
+
+  public boolean containsEdge(V edge);
 
   public boolean addNode(N node);
 

@@ -29,6 +29,6 @@ public class DefaultNode {
 
   @Override
   public String toString() {
-    return String.format("Node: [Id: %d]", id);
+    return String.format("Node: {Id: %d}", id);
   }
 }
