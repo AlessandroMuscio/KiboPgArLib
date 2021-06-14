@@ -4,32 +4,25 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import it.unibs.fp.mylib.graphs.edgestype.DirectedEdge;
+import it.unibs.fp.mylib.graphs.edgestype.UndirectedWeightedEdge;
 
-public class DirectedGraph<N extends DefaultNode, V extends DirectedEdge<N>> extends Graph<N, V> {
-  public Set<V> getEdgesByNode(N node, boolean from_node) {
+public class UndirectedWeightedGraph<N extends DefaultNode, V extends UndirectedWeightedEdge<N>> extends Graph<N, V> {
+  public Set<V> getEdgesByNode(N node) {
     HashSet<V> edges_found = new HashSet<>();
 
-    if (from_node) {
-      for (V edge : getAllEdges()) {
-        if (edge.getFromNode().equals(node))
-          edges_found.add(edge);
-      }
-    } else {
-      for (V edge : getAllEdges()) {
-        if (edge.getToNode().equals(node))
-          edges_found.add(edge);
-      }
+    for (V edge : getAllEdges()) {
+      if (edge.getFirstNode().equals(node) || edge.getSecondNode().equals(node))
+        edges_found.add(edge);
     }
 
     return edges_found;
   }
 
-  public V getEdge(N from_node, N to_node) {
-    if (from_node.equals(to_node))
+  public V getEdge(N first_node, N second_node, double weight) {
+    if (first_node.equals(second_node))
       return null;
 
-    DirectedEdge<N> edge_to_find = new DirectedEdge<>(from_node, to_node);
+    UndirectedWeightedEdge<N> edge_to_find = new UndirectedWeightedEdge<>(first_node, second_node, weight);
 
     for (V edge : getAllEdges()) {
       if (edge.equals(edge_to_find))
@@ -41,8 +34,8 @@ public class DirectedGraph<N extends DefaultNode, V extends DirectedEdge<N>> ext
 
   @Override
   public boolean equals(Object obj) {
-    if (obj instanceof DirectedGraph) {
-      DirectedGraph<?, ?> graph_obj = (DirectedGraph<?, ?>) obj;
+    if (obj instanceof UndirectedWeightedGraph) {
+      UndirectedWeightedGraph<?, ?> graph_obj = (UndirectedWeightedGraph<?, ?>) obj;
 
       if (getAllNodes().size() != graph_obj.getAllNodes().size()
           || getAllEdges().size() != graph_obj.getAllEdges().size())

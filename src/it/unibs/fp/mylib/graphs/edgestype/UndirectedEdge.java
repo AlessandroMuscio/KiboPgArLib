@@ -32,7 +32,8 @@ public class UndirectedEdge<N extends DefaultNode> {
     if (obj instanceof UndirectedEdge) {
       UndirectedEdge<?> edge_obj = (UndirectedEdge<?>) obj;
 
-      if (first_node.equals(edge_obj.first_node) && second_node.equals(edge_obj.second_node))
+      if ((first_node.equals(edge_obj.first_node) || first_node.equals(edge_obj.second_node))
+          && (second_node.equals(edge_obj.first_node) || second_node.equals(edge_obj.second_node)))
         return true;
     }
 

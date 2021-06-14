@@ -22,9 +22,10 @@ public class UndirectedGraph<N extends DefaultNode, V extends UndirectedEdge<N>>
     if (first_node.equals(second_node))
       return null;
 
+    UndirectedEdge<N> edge_to_find = new UndirectedEdge<>(first_node, second_node);
+
     for (V edge : getAllEdges()) {
-      if ((edge.getFirstNode().equals(first_node) || edge.getFirstNode().equals(second_node))
-          && (edge.getSecondNode().equals(first_node) || edge.getSecondNode().equals(second_node)))
+      if (edge.equals(edge_to_find))
         return edge;
     }
 

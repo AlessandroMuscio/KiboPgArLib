@@ -27,6 +27,18 @@ public class DirectedEdge<N extends DefaultNode> {
     this.to_node = to_node;
   }
 
+  public DirectedEdge<N> getInverted() {
+    return new DirectedEdge<N>(to_node, from_node);
+  }
+
+  public void invert() {
+    N temp;
+
+    temp = from_node;
+    from_node = to_node;
+    to_node = temp;
+  }
+
   @Override
   public boolean equals(Object obj) {
     if (obj instanceof DirectedEdge) {
@@ -37,18 +49,6 @@ public class DirectedEdge<N extends DefaultNode> {
     }
 
     return false;
-  }
-
-  public DirectedEdge<N> getInverted() {
-    return new DirectedEdge<>(to_node, from_node);
-  }
-
-  public void invert() {
-    N temp;
-
-    temp = from_node;
-    from_node = to_node;
-    to_node = temp;
   }
 
   @Override

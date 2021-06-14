@@ -4,9 +4,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import it.unibs.fp.mylib.graphs.edgestype.DirectedEdge;
+import it.unibs.fp.mylib.graphs.edgestype.DirectedWeightedEdge;
 
-public class DirectedGraph<N extends DefaultNode, V extends DirectedEdge<N>> extends Graph<N, V> {
+public class DirectedWeightedGraph<N extends DefaultNode, V extends DirectedWeightedEdge<N>> extends Graph<N, V> {
   public Set<V> getEdgesByNode(N node, boolean from_node) {
     HashSet<V> edges_found = new HashSet<>();
 
@@ -25,11 +25,11 @@ public class DirectedGraph<N extends DefaultNode, V extends DirectedEdge<N>> ext
     return edges_found;
   }
 
-  public V getEdge(N from_node, N to_node) {
+  public V getEdge(N from_node, N to_node, double weight) {
     if (from_node.equals(to_node))
       return null;
 
-    DirectedEdge<N> edge_to_find = new DirectedEdge<>(from_node, to_node);
+    DirectedWeightedEdge<N> edge_to_find = new DirectedWeightedEdge<>(from_node, to_node, weight);
 
     for (V edge : getAllEdges()) {
       if (edge.equals(edge_to_find))
@@ -41,8 +41,8 @@ public class DirectedGraph<N extends DefaultNode, V extends DirectedEdge<N>> ext
 
   @Override
   public boolean equals(Object obj) {
-    if (obj instanceof DirectedGraph) {
-      DirectedGraph<?, ?> graph_obj = (DirectedGraph<?, ?>) obj;
+    if (obj instanceof DirectedWeightedGraph) {
+      DirectedWeightedGraph<?, ?> graph_obj = (DirectedWeightedGraph<?, ?>) obj;
 
       if (getAllNodes().size() != graph_obj.getAllNodes().size()
           || getAllEdges().size() != graph_obj.getAllEdges().size())
