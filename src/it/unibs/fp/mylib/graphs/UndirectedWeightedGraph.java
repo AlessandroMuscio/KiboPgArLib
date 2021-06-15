@@ -1,16 +1,50 @@
 package it.unibs.fp.mylib.graphs;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 import it.unibs.fp.mylib.graphs.edgestype.UndirectedWeightedEdge;
 
+/**
+ * La classe <strong>UndirectedWeightedGraph</strong> permette di creare un
+ * grafo non direzionale pesato generico, specificando il tipo dei nodi con
+ * <strong>N</strong>, che dovrà estendere <strong>DefaultNode</strong>, e il
+ * tipo degli archi con <strong>V</strong>, che dovrà estendere
+ * <strong>UndirectedWeightedEdge</strong>
+ * 
+ * @author Alessandro Muscio
+ * @see Graph
+ * @see DefaultNode
+ * @see UndirectedWeightedEdge
+ * @version 1.0
+ */
 public class UndirectedWeightedGraph<N extends DefaultNode, V extends UndirectedWeightedEdge<N>> extends Graph<N, V> {
+  /**
+   * Crea un oggetto della classe <strong>UndirectedWeightedGraph</strong>
+   * specificandone i nodi e gli archi
+   * 
+   * @param nodes Indica l'insieme dei <strong>nodi</strong>
+   * @param edges Indica l'insieme degli <strong>archi</strong>
+   */
   public UndirectedWeightedGraph(Set<N> nodes, Set<V> edges) {
     super(nodes, edges);
   }
 
+  /**
+   * Crea un oggetto della classe <strong>UndirectedWeightedGraph</strong>
+   * inizializzando i nodi e gli archi come due insiemi vuoti
+   */
+  public UndirectedWeightedGraph() {
+    super();
+  }
+
+  /**
+   * Restituisce tutti gli <strong>archi</strong> che hanno come uno dei due
+   * estremi il nodo passato come parametro
+   * 
+   * @param node Indica uno dei due estremi degli archi cercati
+   * @return Un <code>Set</code> rappresentante tutti gli archi trovati
+   */
   public Set<V> getEdgesByNode(N node) {
     HashSet<V> edges_found = new HashSet<>();
 
@@ -22,6 +56,15 @@ public class UndirectedWeightedGraph<N extends DefaultNode, V extends Undirected
     return edges_found;
   }
 
+  /**
+   * Restituisce l'<strong>arco</strong> che ha peso e come estremi i due nodi
+   * passati come parametri
+   * 
+   * @param first_node  Uno dei due nodi estremi dell'arco cercato
+   * @param second_node L'altro nodo estremo dell'arco cercato
+   * @param weight      Indica il peso dell'arco cercato
+   * @return L'arco avente come estremi <em>first_node</em> e <em>second_node</em>
+   */
   public V getEdge(N first_node, N second_node, double weight) {
     if (first_node.equals(second_node))
       return null;
@@ -34,36 +77,5 @@ public class UndirectedWeightedGraph<N extends DefaultNode, V extends Undirected
     }
 
     return null;
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (obj instanceof UndirectedWeightedGraph) {
-      UndirectedWeightedGraph<?, ?> graph_obj = (UndirectedWeightedGraph<?, ?>) obj;
-
-      if (getAllNodes().size() != graph_obj.getAllNodes().size()
-          || getAllEdges().size() != graph_obj.getAllEdges().size())
-        return false;
-
-      Iterator<N> this_nodes_iterator = getAllNodes().iterator();
-      Iterator<?> graph_obj_nodes_iterator = graph_obj.getAllNodes().iterator();
-
-      while (this_nodes_iterator.hasNext()) {
-        if (!this_nodes_iterator.next().equals(graph_obj_nodes_iterator.next()))
-          return false;
-      }
-
-      Iterator<V> this_edges_iterator = getAllEdges().iterator();
-      Iterator<?> graph_obj_edges_iterator = graph_obj.getAllEdges().iterator();
-
-      while (this_edges_iterator.hasNext()) {
-        if (!this_edges_iterator.next().equals(graph_obj_edges_iterator.next()))
-          return false;
-      }
-
-      return true;
-    }
-
-    return false;
   }
 }

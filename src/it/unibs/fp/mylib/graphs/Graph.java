@@ -1,16 +1,18 @@
 package it.unibs.fp.mylib.graphs;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
  * La classe <strong>Graph</strong> permette di creare un grafo generico,
- * specificando il tipo dei nodi con <strong>N</strong> eil tipo degli archi con
- * <strong>V</strong>. Sconsiglio di utilizzare questa classe per creare un
- * grafo, ci sono classi più specifiche, scegliere quella più adatta alla vostra
- * situazione
+ * specificando il tipo dei nodi con <strong>N</strong>, che dovrà estendere
+ * <strong>DefaultNode</strong>, e il tipo degli archi con <strong>V</strong>.
+ * Sconsiglio di utilizzare questa classe per creare un grafo, ci sono classi
+ * più specifiche, scegliere quella più adatta alla vostra situazione
  * 
  * @author Alessandro Muscio
+ * @see DefaultNode
  * @version 1.0
  */
 public class Graph<N extends DefaultNode, V> {
@@ -27,8 +29,8 @@ public class Graph<N extends DefaultNode, V> {
    * Crea un oggetto della classe <strong>Graph</strong> specificandone i nodi e
    * gli archi
    * 
-   * @param nodes Indica l'insieme dei <strong>nodi</strong> del <em>grafo</em>
-   * @param edges Indica l'insieme degli <strong>archi</strong> del <em>grafo</em>
+   * @param nodes Indica l'insieme dei <strong>nodi</strong>
+   * @param edges Indica l'insieme degli <strong>archi</strong>
    */
   public Graph(Set<N> nodes, Set<V> edges) {
     this.nodes = nodes;
@@ -124,6 +126,42 @@ public class Graph<N extends DefaultNode, V> {
    */
   public boolean removeEdge(V edge) {
     return edges.remove(edge);
+  }
+
+  /**
+   * Verifica se <strong>questo Graph</strong> e <strong>obj</strong> sono uguali
+   * 
+   * @param obj Indica l'oggetto da confrontare con <strong>questo Graph</strong>
+   * @return Un <code>boolean</code> che rappresenta se i due oggetti sono uguali
+   *         o no
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof Graph) {
+      Graph<?, ?> graph_obj = (Graph<?, ?>) obj;
+
+      if (nodes.size() == graph_obj.nodes.size() && edges.size() == graph_obj.edges.size()) {
+        Iterator<N> this_nodes_iterator = nodes.iterator();
+        Iterator<?> graph_obj_nodes_iterator = graph_obj.nodes.iterator();
+
+        while (this_nodes_iterator.hasNext()) {
+          if (!this_nodes_iterator.next().equals(graph_obj_nodes_iterator.next()))
+            return false;
+        }
+
+        Iterator<V> this_egdes_iterator = edges.iterator();
+        Iterator<?> graph_obj_edges_iterator = graph_obj.edges.iterator();
+
+        while (this_egdes_iterator.hasNext()) {
+          if (!this_egdes_iterator.next().equals(graph_obj_edges_iterator.next()))
+            return false;
+        }
+
+        return true;
+      }
+    }
+
+    return false;
   }
 
   /**
