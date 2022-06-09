@@ -1,4 +1,4 @@
-## MyUniBSFpLib
+# MyUniBSFpLib
 
 Questa è la libreria dell'UniBS modificata da me con metodi che possono tornare utili, e rimossi metodi inutili.<br>Modifiche attuali:
 
@@ -34,3 +34,12 @@ Questa è la libreria dell'UniBS modificata da me con metodi che possono tornare
 - Rimosso NumeriCasuali.java
 - ServizioFile.java
   - Invariato
+
+## Come utilizzarla?
+All'interno della cartella *jar* ci sono due file *.jar*:
+
+- KiboUniBSFpLib.jar
+- KiboUniBSFpLib_IntelliJ.jar
+
+Due versioni di queste libreria, la seconda, come si può intuire, è stata fatta per essere utilizzata con l'IDE IntelliJ IDEA in quanto un'istruzione dava problemi all'interno di questo specifico IDE.
+In caso non utilizziate IntelliJ IDEA sentitevi pure liberi di utilizzare l'altra.

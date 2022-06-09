@@ -1,4 +1,4 @@
-package it.unibs.fp.mylib;
+package KiboUniBSFpLib;
 
 import java.io.File;
 import java.io.ObjectInputStream;
@@ -27,23 +27,19 @@ public class ServizioFile {
 
     } catch (FileNotFoundException excNotFound) {
       System.out.println(MSG_NO_FILE + file.getName());
-    } catch (IOException excLettura) {
-      System.out.println(MSG_NO_LETTURA + file.getName());
-    } catch (ClassNotFoundException excLettura) {
+    } catch (IOException | ClassNotFoundException excLettura) {
       System.out.println(MSG_NO_LETTURA + file.getName());
     } finally {
-      if (ingresso != null) {
+      if (ingresso != null)
         try {
           ingresso.close();
         } catch (IOException excChiusura) {
           System.out.println(MSG_NO_CHIUSURA + file.getName());
         }
-      }
-    } // finally
+    }
 
     return letto;
-
-  } // metodo caricaSingoloOggetto
+  }
 
   public static void salvaSingoloOggetto(File file, Object daSalvare) {
     ObjectOutputStream uscita = null;
@@ -52,21 +48,17 @@ public class ServizioFile {
       uscita = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
 
       uscita.writeObject(daSalvare);
-
     } catch (IOException excScrittura) {
       System.out.println(MSG_NO_SCRITTURA + file.getName());
     }
 
     finally {
-      if (uscita != null) {
+      if (uscita != null)
         try {
           uscita.close();
         } catch (IOException excChiusura) {
           System.out.println(MSG_NO_CHIUSURA + file.getName());
         }
-      }
-    } // finally
-
-  } // metodo salvaSingoloOggetto
-
+    }
+  }
 }
