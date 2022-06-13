@@ -94,16 +94,16 @@ public class InputDati {
    * @return Una <code>String</code> rappresentante l'ingresso dell'utente.
    */
   public static String leggiStringaNonVuota(String messaggio, boolean alfanumerico) {
-    boolean isStringaVuota = false;
+    boolean isStringaVuota = true;
     String lettura;
 
     do {
       lettura = leggiStringa(messaggio, alfanumerico);
 
       if (lettura.length() > 0)
-        System.out.println(ERRORE_STRINGA_VUOTA);
+        isStringaVuota = false;
       else
-        isStringaVuota = true;
+        System.out.println(ERRORE_STRINGA_VUOTA);
     } while (isStringaVuota);
 
     return lettura;
