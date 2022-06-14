@@ -5,14 +5,17 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 
 /**
- * The class <strong>InputData</strong> can read a specific data type inserted in input by the user.It also allows the possibility to make controls on the data inserted.
+ * The class <strong>InputData</strong> can read a specific data type inserted
+ * in input by the user.It also allows the possibility to make controls on the
+ * data inserted.
  *
  * @author Alessandro Muscio
  * @version 1.0
  */
 public class InputData {
   /**
-   * Represents the <code>Scanner</code> object used to read the data inserted by the user.
+   * Represents the <code>Scanner</code> object used to read the data inserted by
+   * the user.
    */
   private static final Scanner reader = createScanner();
 
@@ -45,7 +48,8 @@ public class InputData {
    *
    * @param message The message to verify.
    * 
-   * @return        A <code>boolean</code> representing if the message is alphanumeric or not.
+   * @return A <code>boolean</code> representing if the message is alphanumeric or
+   *         not.
    */
   private static boolean hasAlphanumericCharacters(String message) {
     char currentChar;
@@ -61,12 +65,14 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. If it isn't a <code>String</code> an error message is printed. It's also possible to select if the inserted text needs to be alphanumeric or not.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. If it isn't a <code>String</code> an error message is printed. It's
+   * also possible to select if the inserted text needs to be alphanumeric or not.
    *
    * @param message      The message to print.
    * @param alphanumeric If the input needs to be alphanumeric or not.
    * 
-   * @return             A <code>String</code> representing the user input.
+   * @return A <code>String</code> representing the user input.
    */
   public static String readString(String message, boolean alphanumeric) {
     boolean isAlphanumeric;
@@ -95,12 +101,15 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user, given that it isn't empty. If it isn't a <code>String</code> an error message is printed. It's also possible to select if the inserted text needs to be alphanumeric or not.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user, given that it isn't empty. If it isn't a <code>String</code> an
+   * error message is printed. It's also possible to select if the inserted text
+   * needs to be alphanumeric or not.
    *
    * @param message      The message to print.
    * @param alphanumeric If the input needs to be alphanumeric or not.
    * 
-   * @return             A <code>String</code> representing the user input.
+   * @return A <code>String</code> representing the user input.
    */
   public static String readNonEmptyString(String message, boolean alphanumeric) {
     boolean isStringEmpty = true;
@@ -119,12 +128,15 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will take the first <code>char</code> in it and verify if it is in the <code>allowed</code> characters, if not, an error message will be printed.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will take the first <code>char</code> in it and verify if it is
+   * in the <code>allowed</code> characters, if not, an error message will be
+   * printed.
    *
    * @param message The message to print.
    * @param allowed All the allowed characters.
    * 
-   * @return        A <code>char</code> representing the character tha was read.
+   * @return A <code>char</code> representing the character tha was read.
    */
   public static char readChar(String message, String allowed) {
     boolean isAllowed = false;
@@ -146,11 +158,12 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user, it will take the first <code>char</code> in it.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user, it will take the first <code>char</code> in it.
    *
    * @param message The message to print.
    * 
-   * @return        A <code>char</code> representing the character tha was read.
+   * @return A <code>char</code> representing the character tha was read.
    */
   public static char readChar(String message) {
     String read;
@@ -161,11 +174,13 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will print an error message if the text inserted isn't an integer.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will print an error message if the text inserted isn't an
+   * integer.
    *
    * @param message The message to print.
    * 
-   * @return        An <code>int</code> representing the integer that was read.
+   * @return An <code>int</code> representing the integer that was read.
    */
   public static int readInteger(String message) {
     boolean isInteger;
@@ -193,12 +208,14 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will print an error message if the text inserted isn't an integer or if the integer inserted isn't greater equal than <code>min</code>.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will print an error message if the text inserted isn't an
+   * integer or if the integer inserted isn't greater equal than <code>min</code>.
    *
    * @param message The message to print.
    * @param min     The minimum value to read.
    * 
-   * @return        An <code>int</code> representing the integer that was read.
+   * @return An <code>int</code> representing the integer that was read.
    */
   public static int readIntegerWithMinimum(String message, int min) {
     boolean isAboveMin = false;
@@ -217,12 +234,14 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will print an error message if the text inserted isn't an integer or if the integer inserted isn't less equal than <code>max</code>.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will print an error message if the text inserted isn't an
+   * integer or if the integer inserted isn't less equal than <code>max</code>.
    *
    * @param message The message to print.
    * @param max     The maximum value to read.
    * 
-   * @return        An <code>int</code> representing the integer that was read.
+   * @return An <code>int</code> representing the integer that was read.
    */
   public static int readIntegerWithMaximum(String message, int max) {
     boolean isBelowMax = false;
@@ -241,13 +260,16 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will print an error message if the text inserted isn't an integer or if the integer inserted isn't between or equal than <code>min</code> and <code>max</code>.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will print an error message if the text inserted isn't an
+   * integer or if the integer inserted isn't between or equal than
+   * <code>min</code> and <code>max</code>.
    *
    * @param message The message to print.
    * @param min     The minimum value to read.
    * @param max     The maximum value to read.
    * 
-   * @return        An <code>int</code> representing the integer that was read.
+   * @return An <code>int</code> representing the integer that was read.
    */
   public static int readIntegerBetween(String message, int min, int max) {
     boolean isBetweenMinMax = false;
@@ -268,11 +290,12 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will print an error message if the text inserted isn't a double.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will print an error message if the text inserted isn't a double.
    *
    * @param message The message to print.
    * 
-   * @return        A <code>double</code> representing the double that was read.
+   * @return A <code>double</code> representing the double that was read.
    */
   public static double readDouble(String message) {
     boolean isDouble;
@@ -299,7 +322,9 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will print an error message if the text inserted isn't a double or if the double inserted isn't greater equal than <code>min</code>.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will print an error message if the text inserted isn't a double
+   * or if the double inserted isn't greater equal than <code>min</code>.
    *
    * @param message The message to print.
    * @param min     The minimum value to read.
@@ -323,12 +348,14 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will print an error message if the text inserted isn't a double or if the double inserted isn't less equal than <code>max</code>.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will print an error message if the text inserted isn't a double
+   * or if the double inserted isn't less equal than <code>max</code>.
    *
    * @param message The message to print.
    * @param max     The maximum value to read.
    * 
-   * @return        An <code>double</code> representing the double that was read.
+   * @return An <code>double</code> representing the double that was read.
    */
   public static double readDoubleWithMaximum(String message, double max) {
     boolean isBelowMax = false;
@@ -347,13 +374,16 @@ public class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will print an error message if the text inserted isn't an double or if the double inserted isn't between or equal than <code>min</code> and <code>max</code>.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will print an error message if the text inserted isn't an double
+   * or if the double inserted isn't between or equal than <code>min</code> and
+   * <code>max</code>.
    *
    * @param message The message to print.
    * @param min     The minimum value to read.
    * @param max     The maximum value to read.
    * 
-   * @return        An <code>double</code> representing the double that was read.
+   * @return An <code>double</code> representing the double that was read.
    */
   public static double readDoubleBetween(String message, int min, int max) {
     boolean isBetweenMinMax = false;
@@ -374,11 +404,14 @@ public class InputData {
   }
 
   /**
-   * Prints <code>question</code> in the terminal with the string "? [Y/n] " added. If the user answers with 'y' or 'Y' the method will return <code>true</code>, <code>false</code> otherwise.
+   * Prints <code>question</code> in the terminal with the string "? [Y/n] "
+   * added. If the user answers with 'y' or 'Y' the method will return
+   * <code>true</code>, <code>false</code> otherwise.
    *
    * @param question The question to print.
    * 
-   * @return         A <code>boolean</code> representing the affirmative or negative answer of the user.
+   * @return A <code>boolean</code> representing the affirmative or negative
+   *         answer of the user.
    */
   public static boolean readYesOrNo(String question) {
     char valoreLetto;
