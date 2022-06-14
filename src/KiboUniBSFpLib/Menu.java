@@ -3,15 +3,15 @@ package KiboUniBSFpLib;
 import java.io.IOException;
 
 /**
- * La classe <strong>Menu</strong> permette di generare un menu a più voci supponendo che la voce per uscire sia sempre lo zero. La classe offre anche alcuni metodi che possono tornare utili per la gestione della visualizzazione del menu.
+ * The <strong>Menu</strong> class creates a menu with multiple entry supposing that zero is always the exit option. The class also contains some method that may result useful visualizing the menu.
  *
  * @author Alessandro Muscio
  * @version 1.0
  */
 public class Menu {
-  final private static String CORNICE = "---------------------------------------------------";
-  final private static String VOCE_USCITA = "\n0\tEsci\n";
-  final private static String RICHIESTA_INSERIMENTO = "Digita il numero dell'opzione desiderata > ";
+  final private static String FRAME = "---------------------------------------------------";
+  final private static String EXIT_ENTRY = "\n0.\tExit\n";
+  final private static String INSERT_REQUEST = "Digit the number of the desired option > ";
 
   /**
    * Rappresenta il titolo del menu.
@@ -44,18 +44,17 @@ public class Menu {
    * Permette di stampare a video il menu. Per primo verrà stampato il titolo del menu incorniciato poi tutte le voci del menu.
    */
   public void stampaMenu() {
-    System.out.println(CORNICE);
-    System.out.println(titolo);
-    System.out.println(CORNICE);
+    StringBuffer menu = new StringBuffer();
 
-    for (int i = 0; i < voci.length; i++) {
-      System.out.println((i + 1) + ".\t" + voci[i]);
-    }
+    menu.append(String.format("%s\n%s\n%s\n", FRAME, titolo, FRAME));
+
+    for (int i = 0; i < voci.length; i++)
+      menu.append(String.format("%d.\t%s\n", (i + 1), voci[i]));
 
     if (voce_uscita)
-      System.out.println(VOCE_USCITA);
-    else
-      System.out.println();
+      menu.append(EXIT_ENTRY);
+
+    System.out.println(menu);
   }
 
   /**
@@ -67,9 +66,9 @@ public class Menu {
     stampaMenu();
 
     if (voce_uscita)
-      return InputData.readIntegerBetween(RICHIESTA_INSERIMENTO, 0, voci.length);
+      return InputData.readIntegerBetween(INSERT_REQUEST, 0, voci.length);
     else
-      return InputData.readIntegerBetween(RICHIESTA_INSERIMENTO, 1, voci.length);
+      return InputData.readIntegerBetween(INSERT_REQUEST, 1, voci.length);
   }
 
   /**
