@@ -10,8 +10,8 @@ import java.io.IOException;
  */
 public class Menu {
   final private static String FRAME = "---------------------------------------------------";
-  final private static String EXIT_ENTRY = "\n0.\tExit\n";
-  final private static String INSERT_REQUEST = "Digit the number of the desired option > ";
+  final private static String EXIT_ENTRY = "0.\tExit\n";
+  final private static String INSERT_REQUEST = "> ";
 
   /**
    * Rappresenta il titolo del menu.
@@ -71,23 +71,24 @@ public class Menu {
       return InputData.readIntegerBetween(INSERT_REQUEST, 1, voci.length);
   }
 
-  /**
-   * Rileva il sistema operativo ed esegue il comando "cls" o "clear" in modo da pulire la console.
-   */
-  public static void pulisciConsole() throws IOException, InterruptedException {
+  /*public static void pulisciConsole() throws IOException, InterruptedException {
     String operatingSystem = System.getProperty("os.name");
-
+  
     if (operatingSystem.contains("Windows")) {
       ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
       Process startProcess = pb.inheritIO().start();
-
+  
       startProcess.waitFor();
     } else {
       ProcessBuilder pb = new ProcessBuilder("clear");
       Process startProcess = pb.inheritIO().start();
-
+  
       startProcess.waitFor();
     }
+  }*/
+
+  public static void pulisciConsole() {
+    System.out.print(AnsiColors.CLEAR);
   }
 
   /**
