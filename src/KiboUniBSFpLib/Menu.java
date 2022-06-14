@@ -67,28 +67,28 @@ public class Menu {
     stampaMenu();
 
     if (voce_uscita)
-      return InputDati.leggiInteroCompreso(RICHIESTA_INSERIMENTO, 0, voci.length);
+      return InputData.readIntegerBetween(RICHIESTA_INSERIMENTO, 0, voci.length);
     else
-      return InputDati.leggiInteroCompreso(RICHIESTA_INSERIMENTO, 1, voci.length);
+      return InputData.readIntegerBetween(RICHIESTA_INSERIMENTO, 1, voci.length);
   }
 
   /**
    * Rileva il sistema operativo ed esegue il comando "cls" o "clear" in modo da pulire la console.
    */
   public static void pulisciConsole() throws IOException, InterruptedException {
-      String operatingSystem = System.getProperty("os.name");
+    String operatingSystem = System.getProperty("os.name");
 
-      if (operatingSystem.contains("Windows")) {
-        ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
-        Process startProcess = pb.inheritIO().start();
+    if (operatingSystem.contains("Windows")) {
+      ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
+      Process startProcess = pb.inheritIO().start();
 
-        startProcess.waitFor();
-      } else {
-        ProcessBuilder pb = new ProcessBuilder("clear");
-        Process startProcess = pb.inheritIO().start();
+      startProcess.waitFor();
+    } else {
+      ProcessBuilder pb = new ProcessBuilder("clear");
+      Process startProcess = pb.inheritIO().start();
 
-        startProcess.waitFor();
-      }
+      startProcess.waitFor();
+    }
   }
 
   /**

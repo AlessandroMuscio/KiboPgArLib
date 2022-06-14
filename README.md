@@ -17,6 +17,7 @@ Questa è la libreria dell'UniBS modificata da me con metodi che possono tornare
   - Aggiornato metodo <code>**leggiStringa(String messaggio, boolean alfanumerico)**</code>
   - Aggiornato metodo <code>**leggiStringaNonVuota(String messaggio, boolean alfanumerico)**</code>
   - Aggiornato metodo <code>**leggiChar(String messaggio, String ammissibili)**</code>
+  - Aggiunto metodo <code>**readChar(String message)**</code>
   - Rimosso metodo <code>**leggiUpperChar(String messaggio, String ammissibili)**</code>
   - Rimosso metodo <code>**leggiInteroPositivo(String messaggio)**</code>
   - Rimosso metodo <code>**leggiInteroNonNegativo(String messaggio)**</code>
@@ -34,12 +35,3 @@ Questa è la libreria dell'UniBS modificata da me con metodi che possono tornare
 - Rimosso NumeriCasuali.java
 - ServizioFile.java
   - Invariato
-
-## Come utilizzarla?
-All'interno della cartella *jar* ci sono due file *.jar*:
-
-- KiboUniBSFpLib.jar
-- KiboUniBSFpLib_IntelliJ.jar
-
-Due versioni di queste libreria, la seconda, come si può intuire, è stata fatta per essere utilizzata con l'IDE IntelliJ IDEA in quanto un'istruzione dava problemi all'interno di questo specifico IDE.
-In caso non utilizziate IntelliJ IDEA sentitevi pure liberi di utilizzare l'altra.
