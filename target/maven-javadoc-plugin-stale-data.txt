@@ -1,0 +1,47 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'1.7'
+-sourcepath
+'/home/kibo/Desktop/kibofplib/src/main/java:/home/kibo/Desktop/kibofplib/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/kibo/Desktop/kibofplib/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'kibofplib 1.0 API'
+-linkoffline
+'https://docs.oracle.com/javase/7/docs/api' '/home/kibo/Desktop/kibofplib/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'kibofplib 1.0 API'
+it.kibo.fp.lib
+/home/kibo/Desktop/kibofplib/src/main/java = 1655312549592
+/home/kibo/Desktop/kibofplib/target/generated-sources/annotations = 1655314507028
+/home/kibo/Desktop/kibofplib/target/apidocs/tag-search-index.js = 1655336147274
+/home/kibo/Desktop/kibofplib/target/apidocs/help-doc.html = 1655336147290
+/home/kibo/Desktop/kibofplib/target/apidocs/jquery-ui.overrides.css = 1655336147297
+/home/kibo/Desktop/kibofplib/target/apidocs/allpackages-index.html = 1655336147274
+/home/kibo/Desktop/kibofplib/target/apidocs/member-search-index.js = 1655336147274
+/home/kibo/Desktop/kibofplib/target/apidocs/constant-values.html = 1655315213936
+/home/kibo/Desktop/kibofplib/target/apidocs/element-list = 1655336147240
+/home/kibo/Desktop/kibofplib/target/apidocs/allclasses-index.html = 1655336147274
+/home/kibo/Desktop/kibofplib/target/apidocs/package-search-index.js = 1655336147274
+/home/kibo/Desktop/kibofplib/target/apidocs/index.html = 1655336147290
+/home/kibo/Desktop/kibofplib/target/apidocs/module-search-index.js = 1655336147274
+/home/kibo/Desktop/kibofplib/target/apidocs/stylesheet.css = 1655336147294
+/home/kibo/Desktop/kibofplib/target/apidocs/type-search-index.js = 1655336147274
+/home/kibo/Desktop/kibofplib/target/apidocs/copy.svg = 1655336147294
+/home/kibo/Desktop/kibofplib/target/apidocs/script.js = 1655336147294
+/home/kibo/Desktop/kibofplib/target/apidocs/index-all.html = 1655336147287
+/home/kibo/Desktop/kibofplib/target/apidocs/overview-tree.html = 1655336147264
+/home/kibo/Desktop/kibofplib/target/apidocs/search.js = 1655336147294
