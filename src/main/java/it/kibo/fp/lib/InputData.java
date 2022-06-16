@@ -17,10 +17,6 @@ public final class InputData {
     throw new UnsupportedOperationException();
   }
 
-  /**
-   * Represents the <code>Scanner</code> object used to read the data inserted by
-   * the user.
-   */
   private static final Scanner reader = createScanner();
 
   private static final String RED_ATTENTION = AnsiColors.RED + "Attention!" + AnsiColors.RESET;
@@ -389,7 +385,7 @@ public final class InputData {
    * 
    * @return An <code>double</code> representing the double that was read.
    */
-  public static double readDoubleBetween(String message, int min, int max) {
+  public static double readDoubleBetween(String message, double min, double max) {
     boolean isBetweenMinMax = false;
     double read;
 

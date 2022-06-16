@@ -1,12 +1,17 @@
 package it.kibo.fp.lib;
 
+import java.io.Serializable;
+import java.util.Arrays;
+
 /**
- * The <strong>Menu</strong> class creates a menu with multiple entry supposing that zero is always the exit option. The class also contains some method that may result useful in visualizing the menu.
+ * The <strong>Menu</strong> class creates a menu with multiple entry supposing
+ * that zero is always the exit option. The class also contains some method that
+ * may result useful in visualizing the menu.
  *
  * @author Alessandro Muscio
  * @version 1.0
  */
-public class Menu {
+public class Menu implements Serializable {
   private static final String EXIT_ENTRY = "0. Exit";
   private static final String INSERT_REQUEST = "> ";
   private static final String NEGATIVE_MILLIS_ERROR = AnsiColors.RED + "Attention!" + AnsiColors.RESET
@@ -16,6 +21,7 @@ public class Menu {
    * Represent the title of the menu.
    */
   private final String title;
+
   /**
    * Contains all the menu entries.
    */
@@ -25,21 +31,27 @@ public class Menu {
    * Represent if you want to use the exit entry or not.
    */
   private final boolean useExitEntry;
+
   /*
    * Represents the length of the frame.
    */
   private final int frameLength;
+
   /**
    * Represents if you want the title centred or not.
    */
   private final boolean centredTitle;
+
   /**
    * Represents if you want to use the vertical frame or not.
    */
   private final boolean useVerticalFrame;
 
   /**
-   * Constructor that creates a <code>Menu</code> object specifying a title, the entries of the menu, if you want the exit entry or not, if you want the title centred and if you also want the vertical frame in the title. It will also automatically calculate the frame length.
+   * Constructor that creates a <code>Menu</code> object specifying a title, the
+   * entries of the menu, if you want the exit entry or not, if you want the title
+   * centred and if you also want the vertical frame in the title. It will also
+   * automatically calculate the frame length.
    *
    * @param title            Represents the title of the menu.
    * @param entries          Represents the entries of the menu.
@@ -57,12 +69,14 @@ public class Menu {
   }
 
   /**
-   * Calculates the frame length by measuring the length of the title and of all the entries of the menu accounting for their number and the ". " string before the actual entry.
+   * Calculates the frame length by measuring the length of the title and of all
+   * the entries of the menu accounting for their number and the ". " string
+   * before the actual entry.
    * 
    * @param title   The title of the menu.
    * @param entries The entries of the menu.
    * 
-   * @return        An <code>int</code> representing the length of the frame.
+   * @return An <code>int</code> representing the length of the frame.
    */
   private int calculateFrameLength(String title, String[] entries) {
     int frameLength = title.length();
@@ -135,9 +149,12 @@ public class Menu {
   /**
    * Stops the program for a certain amount of milliseconds.
    * 
-   * @param milliseconds              The number of milliseconds to stop the program.
+   * @param milliseconds The number of milliseconds to stop the program.
    * 
-   * @throws InterruptedException     If any thread has interrupted the current thread. The <i>interrupted status</i> of the current thread is cleared when this exception is thrown.
+   * @throws InterruptedException If any thread has interrupted the current
+   *                              thread. The <i>interrupted status</i> of the
+   *                              current thread is cleared when this exception is
+   *                              thrown.
    */
   public static void wait(int milliseconds) throws InterruptedException {
     try {
@@ -150,7 +167,7 @@ public class Menu {
   /**
    * Prints a certain message simulating a loading by adding dots slowly.
    *
-   * @param message               The message to print.
+   * @param message The message to print.
    * 
    * @throws InterruptedException Read the {@link #wait() wait} method.
    */

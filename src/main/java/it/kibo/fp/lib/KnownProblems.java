@@ -1,7 +1,9 @@
 package it.kibo.fp.lib;
 
 /**
- * The class <strong>KnownProblems</strong> has the implementation of some of the usual problem that you always forget and need to go watch the solution on StackOverflow even though you know you've already solved them.
+ * The class <strong>KnownProblems</strong> has the implementation of some of
+ * the usual problem that you always forget and need to go watch the solution on
+ * StackOverflow even though you know you've already solved them.
  *
  * @author Alessandro Muscio
  * @version 1.0
@@ -17,7 +19,8 @@ public final class KnownProblems {
    * @param a The first number to calculate the MCD.
    * @param b The first number to calculate the MCD.
    * 
-   * @return  An <code>int</code> representing the MCD between <code>a</code> e <code>b</code>.
+   * @return An <code>int</code> representing the MCD between <code>a</code> e
+   *         <code>b</code>.
    */
   public static int MCD(int a, int b) {
     while (a != 0 && b != 0) {
@@ -31,11 +34,13 @@ public final class KnownProblems {
   }
 
   /**
-   * Finds the <strong>MCD</strong> (Maximum Common Divider) between an <code>array</code> of numbers.
+   * Finds the <strong>MCD</strong> (Maximum Common Divider) between an
+   * <code>array</code> of numbers.
    *
    * @param values The values used to find the MCD.
    * 
-   * @return       An <code>int</code> representing the MCD between all the values. If values is null or is an empty array <code>-1</code> will be given.
+   * @return An <code>int</code> representing the MCD between all the values. If
+   *         values is null or is an empty array <code>-1</code> will be given.
    */
   public static int MCD(int[] values) {
     if (values == null || values.length == 0)
@@ -50,12 +55,14 @@ public final class KnownProblems {
   }
 
   /**
-   * Finds the <strong>MCM</strong> (Minimum Common Multiplier) between two numbers.
+   * Finds the <strong>MCM</strong> (Minimum Common Multiplier) between two
+   * numbers.
    *
    * @param a The first number to calculate the MCM.
    * @param b The first number to calculate the MCM.
    * 
-   * @return  An <code>int</code> representing the MCM between <code>a</code> e <code>b</code>.
+   * @return An <code>int</code> representing the MCM between <code>a</code> e
+   *         <code>b</code>.
    */
   public static int MCM(int a, int b) {
     int mcd = MCD(a, b);
@@ -64,11 +71,13 @@ public final class KnownProblems {
   }
 
   /**
-   * Finds the <strong>MCM</strong> (Minimum Common Multiplier) between an <code>array</code> of numbers.
+   * Finds the <strong>MCM</strong> (Minimum Common Multiplier) between an
+   * <code>array</code> of numbers.
    *
    * @param values The values used to find the MCM.
    * 
-   * @return       An <code>int</code> representing the MCM between all the values. If values is null or is an empty array <code>-1</code> will be given.
+   * @return An <code>int</code> representing the MCM between all the values. If
+   *         values is null or is an empty array <code>-1</code> will be given.
    */
   public static int MCM(int[] values) {
     if (values == null || values.length == 0)
@@ -87,7 +96,7 @@ public final class KnownProblems {
    * 
    * @param n The number to calculate the digits.
    * 
-   * @return  An <code>int</code> representing the number of digits of n.
+   * @return An <code>int</code> representing the number of digits of n.
    */
   public static int countIntegerDigits(int n) {
     return Integer.toString(n).length();

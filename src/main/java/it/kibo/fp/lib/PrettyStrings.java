@@ -1,7 +1,8 @@
 package it.kibo.fp.lib;
 
 /**
- * The class <strong>PrettyStrings</strong> has various methods to better print strings to the terminal.
+ * The class <strong>PrettyStrings</strong> has various methods to better print
+ * strings to the terminal.
  */
 public final class PrettyStrings {
   /**
@@ -25,8 +26,11 @@ public final class PrettyStrings {
     throw new UnsupportedOperationException();
   }
 
-  /** 
-   * Puts the given string in the center or in the beginning of the line surrounded by the horizontal frame above and below and, if needed, also the vertical frame before and after. It's required to specify a frame length for the horizontal frame.
+  /**
+   * Puts the given string in the center or in the beginning of the line
+   * surrounded by the horizontal frame above and below and, if needed, also the
+   * vertical frame before and after. It's required to specify a frame length for
+   * the horizontal frame.
    * 
    * @param toFrame       The <code>String</code> to put in the frame.
    * @param frameLength   The length of the horizontal frame.
@@ -58,8 +62,10 @@ public final class PrettyStrings {
     return framed.toString();
   }
 
-  /** 
-   * Puts the given string at the beginning of the line and ads spaces until the end of the line. If the string is too long for the width of the line it will be cut.
+  /**
+   * Puts the given string at the beginning of the line and ads spaces until the
+   * end of the line. If the string is too long for the width of the line it will
+   * be cut.
    * 
    * @param toColumnise The string to put in column.
    * @param width       The length of the line.
@@ -77,9 +83,10 @@ public final class PrettyStrings {
     return columnated.toString();
   }
 
-  /** 
-   * Puts the given string in the center of the line of the given length. If the string is too long it will be cut. 
-   *  
+  /**
+   * Puts the given string in the center of the line of the given length. If the
+   * string is too long it will be cut.
+   * 
    * @param toCenter The string to center.
    * @param width    The length of the line where to center the string.
    * 
@@ -108,7 +115,7 @@ public final class PrettyStrings {
     return centred.toString();
   }
 
-  /** 
+  /**
    * Repeats a given character a given number of times.
    * 
    * @param character The <code>char</code> to repeat.
@@ -126,7 +133,7 @@ public final class PrettyStrings {
 
   /**
    * Isolates a given string by adding an empty line before and after it.
-   *  
+   * 
    * @param toIsolate The string to isolate
    * 
    * @return A <code>String</code> containing the isolated string.
