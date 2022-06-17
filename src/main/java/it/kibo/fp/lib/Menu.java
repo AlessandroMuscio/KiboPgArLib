@@ -1,7 +1,6 @@
 package it.kibo.fp.lib;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 /**
  * The <strong>Menu</strong> class creates a menu with multiple entry supposing
@@ -32,7 +31,7 @@ public class Menu implements Serializable {
    */
   private final boolean useExitEntry;
 
-  /*
+  /**
    * Represents the length of the frame.
    */
   private final int frameLength;
