@@ -118,9 +118,7 @@ public final class InputData {
     do {
       read = readString(message, alphanumeric);
 
-      if (read.length() > 0)
-        isStringEmpty = false;
-      else
+      if (isStringEmpty = read.isBlank())
         System.out.println(EMPTY_STRING_ERROR);
     } while (isStringEmpty);
 
@@ -174,11 +172,33 @@ public final class InputData {
   }
 
   /**
+   * Prints <code>question</code> in the terminal with the string "? [Y/n] "
+   * added. If the user answers with 'y' or 'Y' the method will return
+   * <code>true</code>, <code>false</code> otherwise.
+   *
+   * @param question The question to print.
+   * 
+   * @return A <code>boolean</code> representing the affirmative or negative
+   *         answer of the user.
+   */
+  public static boolean readYesOrNo(String question) {
+    char valoreLetto;
+
+    question = question + "? [" + YES_ANSWERS.charAt(1) + "/" + NO_ANSWERS.charAt(0) + "] ";
+
+    valoreLetto = readChar(question);
+
+    return YES_ANSWERS.indexOf(valoreLetto) != -1;
+  }
+
+  private static void flushReader() {
+    reader.nextLine();
+  }
+
+  /**
    * Prints <code>message</code> in the terminal and reads the text inserted by
    * the user. It will print an error message if the text inserted isn't an
    * integer.
-   *
-   * @param message The message to print.
    * 
    * @return An <code>int</code> representing the integer that was read.
    */
@@ -196,11 +216,9 @@ public final class InputData {
       } catch (InputMismatchException e) {
         System.out.println(INTEGER_FORMAT_ERROR);
 
-        // Clean the input buffer
-        while (reader.hasNext())
-          reader.next();
-
         isInteger = false;
+      } finally {
+        flushReader();
       }
     } while (!isInteger);
 
@@ -210,7 +228,7 @@ public final class InputData {
   /**
    * Prints <code>message</code> in the terminal and reads the text inserted by
    * the user. It will print an error message if the text inserted isn't an
-   * integer or if the integer inserted isn't greater equal than <code>min</code>.
+   * integer or if the integer inserted is greater equal than <code>min</code>.
    *
    * @param message The message to print.
    * @param min     The minimum value to read.
@@ -227,7 +245,7 @@ public final class InputData {
       if (read >= min)
         isAboveMin = true;
       else
-        System.out.println(String.format(MINIMUM_ERROR, min));
+        System.out.println(String.format(MINIMUM_ERROR, (double) min));
     } while (!isAboveMin);
 
     return read;
@@ -236,7 +254,7 @@ public final class InputData {
   /**
    * Prints <code>message</code> in the terminal and reads the text inserted by
    * the user. It will print an error message if the text inserted isn't an
-   * integer or if the integer inserted isn't less equal than <code>max</code>.
+   * integer or if the integer inserted is less equal than <code>max</code>.
    *
    * @param message The message to print.
    * @param max     The maximum value to read.
@@ -253,7 +271,7 @@ public final class InputData {
       if (read <= max)
         isBelowMax = true;
       else
-        System.out.println(String.format(MAXIMUM_ERROR, max));
+        System.out.println(String.format(MAXIMUM_ERROR, (double) max));
     } while (!isBelowMax);
 
     return read;
@@ -279,9 +297,9 @@ public final class InputData {
       read = readInteger(message);
 
       if (read < min)
-        System.out.println(String.format(MINIMUM_ERROR, min));
+        System.out.println(String.format(MINIMUM_ERROR, (double) min));
       else if (read > max)
-        System.out.println(String.format(MAXIMUM_ERROR, max));
+        System.out.println(String.format(MAXIMUM_ERROR, (double) max));
       else
         isBetweenMinMax = true;
     } while (!isBetweenMinMax);
@@ -310,11 +328,9 @@ public final class InputData {
       } catch (InputMismatchException e) {
         System.out.println(DOUBLE_FORMAT_ERROR);
 
-        // Clean the input buffer
-        while (reader.hasNext())
-          reader.next();
-
         isDouble = false;
+      } finally {
+        flushReader();
       }
     } while (!isDouble);
 
@@ -401,25 +417,5 @@ public final class InputData {
     } while (!isBetweenMinMax);
 
     return read;
-  }
-
-  /**
-   * Prints <code>question</code> in the terminal with the string "? [Y/n] "
-   * added. If the user answers with 'y' or 'Y' the method will return
-   * <code>true</code>, <code>false</code> otherwise.
-   *
-   * @param question The question to print.
-   * 
-   * @return A <code>boolean</code> representing the affirmative or negative
-   *         answer of the user.
-   */
-  public static boolean readYesOrNo(String question) {
-    char valoreLetto;
-
-    question = question + "? [" + YES_ANSWERS.charAt(1) + "/" + NO_ANSWERS.charAt(0) + "] ";
-
-    valoreLetto = readChar(question);
-
-    return YES_ANSWERS.indexOf(valoreLetto) != -1;
   }
 }

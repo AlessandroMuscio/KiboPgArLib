@@ -9,7 +9,7 @@
 '/home/kibo/Documents/KiboUniBSFpLib/src/main/java:/home/kibo/Documents/KiboUniBSFpLib/target/generated-sources/annotations'
 -author
 -bottom
-'Copyright &#169; 2022. All rights reserved.'
+'Copyright &#169; 2023. All rights reserved.'
 -charset
 'UTF-8'
 -d
@@ -25,21 +25,23 @@
 it.kibo.fp.lib
 /home/kibo/Documents/KiboUniBSFpLib/src/main/java = 1655372641796
 /home/kibo/Documents/KiboUniBSFpLib/target/generated-sources/annotations = 1655463437026
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/element-list = 1655463470659
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/allpackages-index.html = 1655463470719
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/element-list = 1681481559508
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/allpackages-index.html = 1681481559585
 /home/kibo/Documents/KiboUniBSFpLib/target/apidocs/jquery-ui.overrides.css = 1655463470749
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/stylesheet.css = 1655463470743
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/script.js = 1655463470743
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/search.js = 1655463470746
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/help-doc.html = 1655463470743
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/type-search-index.js = 1655463470719
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/serialized-form.html = 1655463470683
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/allclasses-index.html = 1655463470716
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/tag-search-index.js = 1655463470719
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/module-search-index.js = 1655463470719
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/package-search-index.js = 1655463470719
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/index-all.html = 1655463470736
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/copy.svg = 1655463470743
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/index.html = 1655463470739
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/overview-tree.html = 1655463470703
-/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/member-search-index.js = 1655463470719
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/stylesheet.css = 1681481559622
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/script.js = 1681481559623
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/search.js = 1681481559625
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/help-doc.html = 1681481559620
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/type-search-index.js = 1681481559586
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/serialized-form.html = 1681481559538
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/search-page.js = 1681481559626
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/allclasses-index.html = 1681481559583
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/tag-search-index.js = 1681481559587
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/module-search-index.js = 1681481559585
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/package-search-index.js = 1681481559586
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/index-all.html = 1681481559612
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/copy.svg = 1681481559623
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/search.html = 1681481559614
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/index.html = 1681481559616
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/overview-tree.html = 1681481559566
+/home/kibo/Documents/KiboUniBSFpLib/target/apidocs/member-search-index.js = 1681481559587
