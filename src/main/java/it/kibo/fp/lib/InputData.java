@@ -29,8 +29,10 @@ public final class InputData {
       + "\nThe inserted data is in a incorrect format. An integer is required.";
   private static final String DOUBLE_FORMAT_ERROR = RED_ATTENTION
       + "\nThe inserted data is in a incorrect format. A double is required.";
-  private static final String MINIMUM_ERROR = RED_ATTENTION + "\nA value greater equal than %.2f is required.";
-  private static final String MAXIMUM_ERROR = RED_ATTENTION + "\nA value less equal than %.2f is required.";
+  private static final String MINIMUM_ERROR_INTEGER = RED_ATTENTION + "\nA value greater or equal than %d is required.";
+  private static final String MAXIMUM_ERROR_INTEGER = RED_ATTENTION + "\nA value less or equal than %d is required.";
+  private static final String MINIMUM_ERROR_DOUBLE = RED_ATTENTION + "\nA value greater or equal than %.2f is required.";
+  private static final String MAXIMUM_ERROR_DOUBLE = RED_ATTENTION + "\nA value less or equal than %.2f is required.";
   private static final String YES_ANSWERS = "yY";
   private static final String NO_ANSWERS = "nN";
 
@@ -245,7 +247,7 @@ public final class InputData {
       if (read >= min)
         isAboveMin = true;
       else
-        System.out.println(String.format(MINIMUM_ERROR, (double) min));
+        System.out.println(String.format(MINIMUM_ERROR_INTEGER, min));
     } while (!isAboveMin);
 
     return read;
@@ -271,7 +273,7 @@ public final class InputData {
       if (read <= max)
         isBelowMax = true;
       else
-        System.out.println(String.format(MAXIMUM_ERROR, (double) max));
+        System.out.println(String.format(MAXIMUM_ERROR_INTEGER, max));
     } while (!isBelowMax);
 
     return read;
@@ -297,9 +299,9 @@ public final class InputData {
       read = readInteger(message);
 
       if (read < min)
-        System.out.println(String.format(MINIMUM_ERROR, (double) min));
+        System.out.println(String.format(MINIMUM_ERROR_INTEGER, min));
       else if (read > max)
-        System.out.println(String.format(MAXIMUM_ERROR, (double) max));
+        System.out.println(String.format(MAXIMUM_ERROR_INTEGER, max));
       else
         isBetweenMinMax = true;
     } while (!isBetweenMinMax);
@@ -357,7 +359,7 @@ public final class InputData {
       if (read >= min)
         isAboveMin = true;
       else
-        System.out.println(String.format(MINIMUM_ERROR, min));
+        System.out.println(String.format(MINIMUM_ERROR_DOUBLE, min));
     } while (!isAboveMin);
 
     return read;
@@ -383,7 +385,7 @@ public final class InputData {
       if (read <= max)
         isBelowMax = true;
       else
-        System.out.println(String.format(MAXIMUM_ERROR, max));
+        System.out.println(String.format(MAXIMUM_ERROR_DOUBLE, max));
     } while (!isBelowMax);
 
     return read;
@@ -409,9 +411,9 @@ public final class InputData {
       read = readDouble(message);
 
       if (read < min)
-        System.out.println(String.format(MINIMUM_ERROR, min));
+        System.out.println(String.format(MINIMUM_ERROR_DOUBLE, min));
       else if (read > max)
-        System.out.println(String.format(MAXIMUM_ERROR, max));
+        System.out.println(String.format(MAXIMUM_ERROR_DOUBLE, max));
       else
         isBetweenMinMax = true;
     } while (!isBetweenMinMax);

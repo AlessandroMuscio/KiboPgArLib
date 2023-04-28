@@ -7,8 +7,8 @@ import java.io.Serializable;
  * that zero is always the exit option. The class also contains some method that
  * may result useful in visualizing the menu.
  *
- * @author Alessandro Muscio
- * @version 1.0
+ * @author Alessandro Marpicati Tedoldi
+ * @version 2.0
  */
 public class Menu implements Serializable {
   private static final String EXIT_ENTRY = "0. Exit";
@@ -89,14 +89,19 @@ public class Menu implements Serializable {
   /**
    * Prints the menu: first the framed title and then all the entries.
    */
-  private void printMenu() {
+  public void printMenuTitle() {
     StringBuffer menu = new StringBuffer();
 
     menu.append(PrettyStrings.frame(title, frameLength, centredTitle, useVerticalFrame));
+    System.out.print(menu);
+  }
+
+  private void printMenuItems() {
+    StringBuffer menu = new StringBuffer();
 
     for (int i = 0; i < entries.length; i++)
       menu.append(i != entries.length - 1 ? String.format("%d. %s\n", (i + 1), entries[i])
-          : String.format("%d. %s", (i + 1), entries[i]));
+              : String.format("%d. %s", (i + 1), entries[i]));
 
     if (useExitEntry)
       menu.append(PrettyStrings.isolatedLine(EXIT_ENTRY));
@@ -110,7 +115,7 @@ public class Menu implements Serializable {
    * @return An <code>int</code> representing the choice of the user.
    */
   public int choose() {
-    printMenu();
+    printMenuItems();
 
     if (useExitEntry)
       return InputData.readIntegerBetween(INSERT_REQUEST, 0, entries.length);
