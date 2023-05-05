@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>it.kibo.fp.lib</groupId>
-  <artifactId>kibofplib</artifactId>
+  <artifactId>aymanfplib</artifactId>
   <packaging>jar</packaging>
   <version>1.0</version>
 
