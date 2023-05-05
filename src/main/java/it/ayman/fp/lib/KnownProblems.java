@@ -9,109 +9,104 @@ package it.ayman.fp.lib;
  * @version 1.0
  */
 public final class KnownProblems {
-  private KnownProblems() {
-    throw new UnsupportedOperationException();
-  }
-
-  /**
-   * Finds the <strong>MCD</strong> (Maximum Common Divider) between two numbers.
-   *
-   * @param a The first number to calculate the MCD.
-   * @param b The first number to calculate the MCD.
-   * 
-   * @return An <code>int</code> representing the MCD between <code>a</code> e
-   *         <code>b</code>.
-   */
-  public static int MCD(int a, int b) {
-    while (a != 0 && b != 0) {
-      if (a > b)
-        a %= b;
-      else
-        b %= a;
+    private KnownProblems() {
+        throw new UnsupportedOperationException();
     }
 
-    return a == 0 ? b : a;
-  }
+    /**
+     * Finds the <strong>MCD</strong> (Maximum Common Divider) between two numbers.
+     *
+     * @param a The first number to calculate the MCD.
+     * @param b The first number to calculate the MCD.
+     * @return An <code>int</code> representing the MCD between <code>a</code> e
+     * <code>b</code>.
+     */
+    public static int MCD(int a, int b) {
+        while (a != 0 && b != 0) {
+            if (a > b)
+                a %= b;
+            else
+                b %= a;
+        }
 
-  /**
-   * Finds the <strong>MCD</strong> (Maximum Common Divider) between an
-   * <code>array</code> of numbers.
-   *
-   * @param values The values used to find the MCD.
-   * 
-   * @return An <code>int</code> representing the MCD between all the values. If
-   *         values is null or is an empty array <code>-1</code> will be given.
-   */
-  public static int MCD(int[] values) {
-    if (values == null || values.length == 0)
-      return -1;
+        return a == 0 ? b : a;
+    }
 
-    int mcd = values[0];
+    /**
+     * Finds the <strong>MCD</strong> (Maximum Common Divider) between an
+     * <code>array</code> of numbers.
+     *
+     * @param values The values used to find the MCD.
+     * @return An <code>int</code> representing the MCD between all the values. If
+     * values is null or is an empty array <code>-1</code> will be given.
+     */
+    public static int MCD(int[] values) {
+        if (values == null || values.length == 0)
+            return -1;
 
-    for (int i = 1; i < values.length; i++)
-      mcd = MCD(mcd, values[i]);
+        int mcd = values[0];
 
-    return mcd;
-  }
+        for (int i = 1; i < values.length; i++)
+            mcd = MCD(mcd, values[i]);
 
-  /**
-   * Finds the <strong>MCM</strong> (Minimum Common Multiplier) between two
-   * numbers.
-   *
-   * @param a The first number to calculate the MCM.
-   * @param b The first number to calculate the MCM.
-   * 
-   * @return An <code>int</code> representing the MCM between <code>a</code> e
-   *         <code>b</code>.
-   */
-  public static int MCM(int a, int b) {
-    int mcd = MCD(a, b);
+        return mcd;
+    }
 
-    return (a * b) / mcd;
-  }
+    /**
+     * Finds the <strong>MCM</strong> (Minimum Common Multiplier) between two
+     * numbers.
+     *
+     * @param a The first number to calculate the MCM.
+     * @param b The first number to calculate the MCM.
+     * @return An <code>int</code> representing the MCM between <code>a</code> e
+     * <code>b</code>.
+     */
+    public static int MCM(int a, int b) {
+        int mcd = MCD(a, b);
 
-  /**
-   * Finds the <strong>MCM</strong> (Minimum Common Multiplier) between an
-   * <code>array</code> of numbers.
-   *
-   * @param values The values used to find the MCM.
-   * 
-   * @return An <code>int</code> representing the MCM between all the values. If
-   *         values is null or is an empty array <code>-1</code> will be given.
-   */
-  public static int MCM(int[] values) {
-    if (values == null || values.length == 0)
-      return -1;
+        return (a * b) / mcd;
+    }
 
-    int mcm = values[0];
+    /**
+     * Finds the <strong>MCM</strong> (Minimum Common Multiplier) between an
+     * <code>array</code> of numbers.
+     *
+     * @param values The values used to find the MCM.
+     * @return An <code>int</code> representing the MCM between all the values. If
+     * values is null or is an empty array <code>-1</code> will be given.
+     */
+    public static int MCM(int[] values) {
+        if (values == null || values.length == 0)
+            return -1;
 
-    for (int i = 1; i < values.length; i++)
-      mcm = MCM(mcm, values[i]);
+        int mcm = values[0];
 
-    return mcm;
-  }
+        for (int i = 1; i < values.length; i++)
+            mcm = MCM(mcm, values[i]);
 
-  /**
-   * Counts the number of digits of an integer.
-   * 
-   * @param n The number to calculate the digits.
-   * 
-   * @return An <code>int</code> representing the number of digits of n.
-   */
-  public static int countIntegerDigits(int n) {
-    return Integer.toString(n).length();
-  }
+        return mcm;
+    }
 
-  /**
-   * Counts the number of decimal digits in a <code>double</code>.
-   * 
-   * @param n The number to calculate the decimal digits.
-   * @return An <code>int</code> representing the number of decimal digits of n.
-   */
-  public static int countDecimalDigits(double n) {
-    String nString = Double.toString(n);
-    int integerPlaces = nString.indexOf('.') + 1;
+    /**
+     * Counts the number of digits of an integer.
+     *
+     * @param n The number to calculate the digits.
+     * @return An <code>int</code> representing the number of digits of n.
+     */
+    public static int countIntegerDigits(int n) {
+        return Integer.toString(n).length();
+    }
 
-    return nString.length() - integerPlaces;
-  }
+    /**
+     * Counts the number of decimal digits in a <code>double</code>.
+     *
+     * @param n The number to calculate the decimal digits.
+     * @return An <code>int</code> representing the number of decimal digits of n.
+     */
+    public static int countDecimalDigits(double n) {
+        String nString = Double.toString(n);
+        int integerPlaces = nString.indexOf('.') + 1;
+
+        return nString.length() - integerPlaces;
+    }
 }

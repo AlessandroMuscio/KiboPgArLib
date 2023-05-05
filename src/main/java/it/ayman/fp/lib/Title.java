@@ -319,18 +319,19 @@ public class Title {
     /**
      * This method takes a sentence or name as an input and beautifies it with ascii art
      * so that it becomes a title for the program.
+     *
      * @param title il titolo che si vuole convertite in ascii
      * @return la stringa titolo in ascii
      */
     public static String convertTitle(String title) {
         String trimmedTitle = title.trim();
-        char [] titleCharArray = trimmedTitle.toUpperCase().toCharArray();
+        char[] titleCharArray = trimmedTitle.toUpperCase().toCharArray();
         StringBuilder finalTitle = new StringBuilder();
         try {
-            for (int i = 0; i <LINE_HEIGHT; i++) {
-                for (char letter: titleCharArray) {
+            for (int i = 0; i < LINE_HEIGHT; i++) {
+                for (char letter : titleCharArray) {
                     if (letter == ' ') {
-                        char [] asciLetterArray = space.toCharArray();
+                        char[] asciLetterArray = space.toCharArray();
                         int newLineCounter = 0;
                         int position = 0;
 
@@ -341,10 +342,8 @@ public class Title {
                         while (asciLetterArray[position] != '\n') {
                             finalTitle.append(asciLetterArray[position++]);
                         }
-                    }
-
-                    else if (letter >= 'A' && letter <= 'Z') {
-                        char [] asciLetterArray = alphabet.get(letter - 'A' + 10).toCharArray();
+                    } else if (letter >= 'A' && letter <= 'Z') {
+                        char[] asciLetterArray = alphabet.get(letter - 'A' + 10).toCharArray();
                         int newLineCounter = 0;
                         int position = 0;
 
@@ -355,10 +354,8 @@ public class Title {
                         while (asciLetterArray[position] != '\n') {
                             finalTitle.append(asciLetterArray[position++]);
                         }
-                    }
-
-                    else if (letter >= '0' && letter <= '9') {
-                        char [] asciLetterArray = alphabet.get(letter - '0').toCharArray();
+                    } else if (letter >= '0' && letter <= '9') {
+                        char[] asciLetterArray = alphabet.get(letter - '0').toCharArray();
                         int newLineCounter = 0;
                         int position = 0;
 
@@ -368,9 +365,7 @@ public class Title {
 
                         while (asciLetterArray[position] != '\n')
                             finalTitle.append(asciLetterArray[position++]);
-                    }
-
-                    else
+                    } else
                         throw new Exception();
                 }
                 finalTitle.append('\n');
