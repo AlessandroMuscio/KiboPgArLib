@@ -15,6 +15,9 @@ public class Menu implements Serializable {
     private static final String INSERT_REQUEST = "> ";
     private static final String NEGATIVE_MILLIS_ERROR = AnsiColors.RED + "Attention!" + AnsiColors.RESET
             + "\nYou can't have negative time.";
+    private static final String CHOICE = "Insert your choice:";
+
+    private String header;
 
     /**
      * Contains all the menu entries.
@@ -22,22 +25,17 @@ public class Menu implements Serializable {
     private final String[] entries;
 
     /**
-     * Represent if you want to use the exit entry or not.
-     */
-    private final boolean useExitEntry;
-
-    /**
      * Constructor that creates a <code>Menu</code> object specifying a title, the
      * entries of the menu, if you want the exit entry or not, if you want the title
      * centred and if you also want the vertical frame in the title. It will also
      * automatically calculate the frame length.
      *
+     * @param header           Represents the header of the menu.
      * @param entries          Represents the entries of the menu.
-     * @param useExitEntry     If you want the exit entry or not.
      */
-    public Menu(String[] entries, boolean useExitEntry) {
+    public Menu(String header, String[] entries) {
+        this.header = header;
         this.entries = entries;
-        this.useExitEntry = useExitEntry;
     }
 
     /**
@@ -81,17 +79,19 @@ public class Menu implements Serializable {
         clearConsole();
     }
 
-    private void printMenuItems() {
+    private void printMenu(boolean hasHeader, boolean hasExitEntry) {
         StringBuffer menu = new StringBuffer();
 
-        for (int i = 0; i < entries.length; i++)
-            menu.append(i != entries.length - 1 ? String.format("%d. %s\n", (i + 1), entries[i])
-                    : String.format("%d. %s", (i + 1), entries[i]));
+        if (hasHeader)
+            menu.append(INSERT_REQUEST).append(header).append("\n");
 
-        if (useExitEntry)
+        for (int i = 0; i < entries.length; i++)
+            menu.append(String.format("%d. %s\n", (i + 1), entries[i]));
+
+        if (hasExitEntry)
             menu.append(PrettyStrings.isolatedLine(EXIT_ENTRY));
 
-        System.out.println(menu);
+        System.out.print(menu);
     }
 
     /**
@@ -99,12 +99,16 @@ public class Menu implements Serializable {
      *
      * @return An <code>int</code> representing the choice of the user.
      */
-    public int choose() {
-        printMenuItems();
+    public int choose(boolean hasHeader, boolean hasExitEntry) {
+        printMenu(hasHeader, hasExitEntry);
 
-        if (useExitEntry)
-            return InputData.readIntegerBetween("", 0, entries.length);
+        if (hasExitEntry)
+            return InputData.readIntegerBetween(CHOICE, 0, entries.length);
         else
-            return InputData.readIntegerBetween("", 1, entries.length);
+            return InputData.readIntegerBetween(CHOICE, 1, entries.length);
+    }
+
+    public void changeHeader(String header) {
+        this.header = header;
     }
 }

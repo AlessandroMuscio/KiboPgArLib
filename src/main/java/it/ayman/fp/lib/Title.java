@@ -323,7 +323,7 @@ public class Title {
      * @param title il titolo che si vuole convertite in ascii
      * @return la stringa titolo in ascii
      */
-    public static String convertTitle(String title) {
+    public static String createTitle(String title) {
         String trimmedTitle = title.trim();
         char[] titleCharArray = trimmedTitle.toUpperCase().toCharArray();
         StringBuilder finalTitle = new StringBuilder();
