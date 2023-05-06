@@ -196,10 +196,6 @@ public final class InputData {
         }
     }
 
-    public static void main(String[] args) {
-        readYesOrNo("Do you want to play again?");
-    }
-
     private static void flushReader() {
         reader.nextLine();
     }
