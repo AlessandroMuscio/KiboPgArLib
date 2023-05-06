@@ -35,7 +35,8 @@ public final class InputData {
             + COMMAND_INPUT + "A value greater or equal than %.2f is required.";
     private static final String MAXIMUM_ERROR_DOUBLE = COMMAND_INPUT + RED_ATTENTION + "\n"
             + COMMAND_INPUT + "A value less or equal than %.2f is required.";
-    private static final String INVALID_ANSWER = RED_ATTENTION + "The answer is invalid!";
+    private static final String INVALID_ANSWER = COMMAND_INPUT + RED_ATTENTION + "\n"
+            + COMMAND_INPUT + "The answer is not valid!";
     private InputData() {
         throw new UnsupportedOperationException();
     }
@@ -183,16 +184,20 @@ public final class InputData {
      * answer of the user.
      */
     public static boolean readYesOrNo(String question) {
-        question = question + " [Y/n] ";
-
-        String answer = readNonEmptyString(question, true).toUpperCase();
+        String answer = readNonEmptyString(question + " [Y/n]", true).toUpperCase();
 
         if (answer.equals("Y") || answer.equals("YES"))
             return true;
         else if (answer.equals("N") || answer.equals("NO"))
             return false;
-        else
-            return readYesOrNo(INVALID_ANSWER + "\n" + question);
+        else {
+            System.out.println(INVALID_ANSWER);
+            return readYesOrNo(question);
+        }
+    }
+
+    public static void main(String[] args) {
+        readYesOrNo("Do you want to play again?");
     }
 
     private static void flushReader() {
