@@ -76,6 +76,7 @@ public class Menu implements Serializable {
         wait(1000);
         System.out.print(".");
         wait(1000);
+        System.out.print("\n");
         clearConsole();
     }
 

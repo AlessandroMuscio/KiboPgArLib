@@ -316,14 +316,18 @@ public class Title {
             a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z
     ));
 
+    private final static char HORIZONTAL_CHAR = '~';
+    private final static char VERTICAL_CHAR = '|';
+
     /**
      * This method takes a sentence or name as an input and beautifies it with ascii art
      * so that it becomes a title for the program.
      *
-     * @param title il titolo che si vuole convertite in ascii
+     * @param title the title to be converted to ascii art
+     * @param frame if you want the title to be surrounded by a frame
      * @return la stringa titolo in ascii
      */
-    public static String createTitle(String title) {
+    public static String createTitle(String title, boolean frame) {
         String trimmedTitle = title.trim();
         char[] titleCharArray = trimmedTitle.toUpperCase().toCharArray();
         StringBuilder finalTitle = new StringBuilder();
@@ -365,14 +369,30 @@ public class Title {
 
                         while (asciLetterArray[position] != '\n')
                             finalTitle.append(asciLetterArray[position++]);
-                    } else
+                    }
+                    else
                         throw new Exception();
                 }
-                finalTitle.append('\n');
+                if (i < LINE_HEIGHT - 1)
+                    finalTitle.append('\n');
             }
         } catch (Exception e) {
             System.out.println(AnsiColors.RED + "Attention!" + AnsiColors.RESET + "\n" +
                     "One of the title characters is not supported!");
+        }
+
+        if (frame) {
+            int frameLength = (finalTitle.length() / 6) + 6;
+            StringBuilder horizontalFrame = new StringBuilder();
+
+            horizontalFrame.append(String.valueOf(HORIZONTAL_CHAR).repeat(Math.max(0, frameLength)));
+
+            finalTitle.insert(0, horizontalFrame + "\n");
+            for (int i = 0; i < 6; i++) {
+                finalTitle.insert(frameLength + frameLength * i + i + 1, VERTICAL_CHAR + "  ");
+                finalTitle.insert(2 * frameLength + frameLength * i + i - 2, "  " + VERTICAL_CHAR);
+            }
+            finalTitle.append("\n").append(horizontalFrame);
         }
         return finalTitle.toString();
     }
