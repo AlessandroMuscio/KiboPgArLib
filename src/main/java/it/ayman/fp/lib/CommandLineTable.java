@@ -57,8 +57,6 @@ public class CommandLineTable {
         }
         for (String[] cells : rows) {
             printRow(cells, maxWidths);
-        }
-        if (headers != null) {
             printLine(maxWidths);
         }
     }
