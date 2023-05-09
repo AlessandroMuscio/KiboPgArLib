@@ -42,6 +42,8 @@ public class Menu implements Serializable {
      * Clear any character from the console.
      */
     public static void clearConsole() {
+        for (int i = 0; i < 100; i++)
+            System.out.println("\n");
         System.out.print(AnsiColors.CLEAR);
         System.out.flush();
     }
@@ -71,11 +73,11 @@ public class Menu implements Serializable {
      */
     public static void loadingMessage(String message) throws InterruptedException {
         System.out.print(message + ".");
-        wait(1000);
+        wait(500);
         System.out.print(".");
-        wait(1000);
+        wait(500);
         System.out.print(".");
-        wait(1000);
+        wait(500);
         System.out.print("\n");
         clearConsole();
     }
