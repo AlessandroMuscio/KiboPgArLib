@@ -47,7 +47,7 @@ public final class InputData {
      * @return A <code>Scanner</code> object.
      */
     private static Scanner createScanner() {
-        return new Scanner(System.in);
+        return new Scanner(System.in).useDelimiter("\n");
     }
 
     /**
