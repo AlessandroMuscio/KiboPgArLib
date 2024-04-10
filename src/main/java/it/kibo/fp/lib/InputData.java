@@ -186,7 +186,7 @@ public final class InputData {
 
     question = question + "? [" + YES_ANSWERS.charAt(1) + "/" + NO_ANSWERS.charAt(0) + "] ";
 
-    valoreLetto = readChar(question);
+    valoreLetto = readChar(question, "yYnN");
 
     return YES_ANSWERS.indexOf(valoreLetto) != -1;
   }
