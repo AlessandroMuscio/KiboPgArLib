@@ -4,17 +4,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>it.kibo.fp.lib</groupId>
-  <artifactId>kibofplib</artifactId>
+  <artifactId>aymanfplib</artifactId>
   <packaging>jar</packaging>
   <version>1.0</version>
 
-  <name>kibofplib</name>
-  <url>https://github.com/AlessandroMuscio/KiboUniBSFpLib</url>
+  <name>aymanfplib</name>
+  <url>https://github.com/aventayman/KiboUniBSFpLib</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>20</maven.compiler.source>
-    <maven.compiler.target>20</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
