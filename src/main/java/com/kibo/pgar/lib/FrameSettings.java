@@ -1,5 +1,11 @@
 package com.kibo.pgar.lib;
 
+/**
+ * <code>Class</code> that let's you specify the settings for framing a
+ * <code>String</code>.
+ * 
+ * @author Alessandro Muscio (Kibo)
+ */
 public class FrameSettings {
   private static final char HORIZONTAL_FRAME = '-';
   private static final char VERTICAL_FRAME = '|';
@@ -10,6 +16,16 @@ public class FrameSettings {
   private boolean verticalFrameEnabled;
   private char verticalFrame;
 
+  /**
+   * Creates a new <i>settings</i> instance specifying the width of the frame, its
+   * alignment and if the vertical frame is enabled or not. The constructor will
+   * automatically set the default vertical and horizontal frame, change it with
+   * the appropriate setters.
+   * 
+   * @param width                The width of the frame.
+   * @param alignment            The alignment of the frame.
+   * @param verticalFrameEnabled If teh vertical frame is enabled or not.
+   */
   public FrameSettings(int width, Alignment alignment, boolean verticalFrameEnabled) {
     this.width = width;
     this.alignment = alignment;

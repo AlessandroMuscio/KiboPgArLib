@@ -1,5 +1,11 @@
 package com.kibo.pgar.lib;
 
+/**
+ * <code>Class</code> that let's you prettify the strings to output in the
+ * terminal.
+ * 
+ * @author Alessandro Muscio (Kibo)
+ */
 public class PrettyStrings {
   private static final String UNSUPPORTED_OP_ERR_MSG = String
       .format("%sThis class isn't instantiable!%s", AnsiColors.RED, AnsiColors.RESET);
@@ -38,6 +44,15 @@ public class PrettyStrings {
     return framed.toString();
   }
 
+  /**
+   * Columnize the given <code>String</code>, to the left or to the right.
+   * 
+   * @param toColumnize The <code>String</code> to columnize.
+   * @param width       The width where to columnize the <code>String</code>.
+   * @param left        If columnize it to the left or to the right.
+   * 
+   * @return A <code>String</code> representing the given one columnized.
+   */
   public static String column(String toColumnize, int width, boolean left) {
     int toColumnizeLength = toColumnize.length();
     int charsToPrint = Math.min(width, toColumnizeLength);
@@ -48,6 +63,14 @@ public class PrettyStrings {
     return left ? columned.concat(spaces) : spaces.concat(columned);
   }
 
+  /**
+   * Centers the given <code>String</code> in the given space.
+   * 
+   * @param toCenter The <code>String</code> to center.
+   * @param width    The width where to center the <code>String</code>.
+   * 
+   * @return A <code>String</code> representing the given one centered.
+   */
   public static String center(String toCenter, int width) {
     int toCenterLength = toCenter.length();
 
@@ -69,10 +92,26 @@ public class PrettyStrings {
     return builder.toString();
   }
 
+  /**
+   * Repeats a given <code>char</code> for a given number of times.
+   * 
+   * @param character The <code>char</code> to repeat.
+   * @param times     The number of times to repeat the <code>char</code>.
+   * 
+   * @return A <code>String</code> representing the given <code>char</code>
+   *         repeated the given number of times.
+   */
   public static String repeatChar(char character, int times) {
     return String.valueOf(character).repeat(Math.max(0, times));
   }
 
+  /**
+   * Isolates the given <code>String</code>.
+   * 
+   * @param toIsolate The <code>String</code> to isolate.
+   * 
+   * @return A <code>String</code> isolated in it's own line.
+   */
   public static String isolatedLine(String toIsolate) {
     StringBuilder builder = new StringBuilder();
 
@@ -83,6 +122,20 @@ public class PrettyStrings {
     return builder.toString();
   }
 
+  /**
+   * Prettifies the given <code>String</code> by adding a <i>color</i>,
+   * <i>weight</i> and <i>decoration</i>, if given.
+   * 
+   * @param toPrettify The <code>String</code> to be prettified.
+   * @param color      The color given to the <code>String</code>,
+   *                   <code>null</code> for default color.
+   * @param weight     The weight given to the <code>String</code>,
+   *                   <code>null</code> for default weight.
+   * @param decoration The decoration given to the <code>String</code>,
+   *                   <code>null</code> for no decoration.
+   * 
+   * @return A <code>String</code> representing the given one prettified.
+   */
   public static String prettify(String toPrettify, AnsiColors color, AnsiWeights weight, AnsiDecorations decoration) {
     StringBuilder builder = new StringBuilder();
     boolean reset = false;
