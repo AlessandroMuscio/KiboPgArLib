@@ -4,17 +4,38 @@ public class PrettyStrings {
   private static final String UNSUPPORTED_OP_ERR_MSG = String
       .format("%sThis class isn't instantiable!%s", AnsiColors.RED, AnsiColors.RESET);
   private static final char SPACE = ' ';
-  private static final char HORIZONTAL_FRAME = '-';
-  private static final char VERTICAL_FRAME = '|';
   private static final char NEW_LINE = '\n';
 
   public PrettyStrings() throws UnsupportedOperationException {
     throw new UnsupportedOperationException(PrettyStrings.UNSUPPORTED_OP_ERR_MSG);
   }
 
-  // TODO: Complete method and contemplete the add of a Settings class
-  public static String frame(String toFrame, int width) {
-    return "";
+  public static String frame(String toFrame, FrameSettings settings) {
+    StringBuilder framed = new StringBuilder();
+    String horizontalFrame = PrettyStrings.repeatChar(settings.getHorizontalFrame(), settings.getWidth());
+
+    framed.append(horizontalFrame);
+    framed.append(PrettyStrings.NEW_LINE);
+
+    if (settings.isVerticalFrameEnabled()) {
+      settings.setWidth(settings.getWidth() - 2);
+
+      framed.append(settings.getVerticalFrame());
+    }
+
+    if (settings.getAlignment().equals(Alignment.CENTER))
+      framed.append(PrettyStrings.center(toFrame, settings.getWidth()));
+    else
+      framed.append(PrettyStrings.column(
+          toFrame,
+          settings.getWidth(),
+          settings.getAlignment().equals(Alignment.LEFT)));
+
+    framed.append(settings.isVerticalFrameEnabled() ? settings.getVerticalFrame() : "");
+
+    framed.append(PrettyStrings.isolatedLine(horizontalFrame));
+
+    return framed.toString();
   }
 
   public static String column(String toColumnize, int width, boolean left) {
@@ -53,8 +74,9 @@ public class PrettyStrings {
   }
 
   public static String isolatedLine(String toIsolate) {
-    StringBuilder builder = new StringBuilder(PrettyStrings.NEW_LINE);
+    StringBuilder builder = new StringBuilder();
 
+    builder.append(PrettyStrings.NEW_LINE);
     builder.append(toIsolate);
     builder.append(PrettyStrings.NEW_LINE);
 
