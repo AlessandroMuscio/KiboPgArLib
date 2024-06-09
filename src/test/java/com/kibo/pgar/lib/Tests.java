@@ -80,12 +80,12 @@ public class Tests {
   public void KnownProblems() {
     LOGGER.info(String.format(Tests.TEST_START, Tests.TESTS_NAMES[1]));
 
-    List<GCD_LCMtestCase> testCasesGCD_LCM = new ArrayList<>();
-    testCasesGCD_LCM.add(new GCD_LCMtestCase(48, 18, 6, 144));
-    testCasesGCD_LCM.add(new GCD_LCMtestCase(101, 103, 1, 10403));
-    testCasesGCD_LCM.add(new GCD_LCMtestCase(56, 98, 14, 392));
-    testCasesGCD_LCM.add(new GCD_LCMtestCase(144, 89, 1, 12816));
-    testCasesGCD_LCM.add(new GCD_LCMtestCase(252, 105, 21, 1260));
+    List<GCD_LCMTestCase> testCasesGCD_LCM = new ArrayList<>();
+    testCasesGCD_LCM.add(new GCD_LCMTestCase(48, 18, 6, 144));
+    testCasesGCD_LCM.add(new GCD_LCMTestCase(101, 103, 1, 10403));
+    testCasesGCD_LCM.add(new GCD_LCMTestCase(56, 98, 14, 392));
+    testCasesGCD_LCM.add(new GCD_LCMTestCase(144, 89, 1, 12816));
+    testCasesGCD_LCM.add(new GCD_LCMTestCase(252, 105, 21, 1260));
 
     List<Map.Entry<Long, Long>> testCasesCountDigits = new ArrayList<>();
     testCasesCountDigits.add(new SimpleEntry<>(12345L, 5L));
@@ -101,7 +101,7 @@ public class Tests {
     testCasesCountDecimalDigits.add(new SimpleEntry<>(456.0, 1));
     testCasesCountDecimalDigits.add(new SimpleEntry<>(123.5, 1));
 
-    for (GCD_LCMtestCase testCase : testCasesGCD_LCM) {
+    for (GCD_LCMTestCase testCase : testCasesGCD_LCM) {
       assertEquals(testCase.getGCD(), KnownProblems.gcd(testCase.getA(), testCase.getB()));
 
       assertEquals(testCase.getLCM(), KnownProblems.lcm(testCase.getA(), testCase.getB()));
@@ -114,35 +114,5 @@ public class Tests {
       assertEquals(testCase.getValue(), KnownProblems.countDecimalDigits(testCase.getKey()));
 
     LOGGER.info(String.format(Tests.TEST_END, Tests.TESTS_NAMES[1]));
-  }
-}
-
-class GCD_LCMtestCase {
-  private final int a;
-  private final int b;
-  private final int gcd;
-  private final int lcm;
-
-  public GCD_LCMtestCase(int a, int b, int gcd, int lcm) {
-    this.a = a;
-    this.b = b;
-    this.gcd = gcd;
-    this.lcm = lcm;
-  }
-
-  public int getA() {
-    return a;
-  }
-
-  public int getB() {
-    return b;
-  }
-
-  public int getGCD() {
-    return gcd;
-  }
-
-  public int getLCM() {
-    return lcm;
   }
 }
