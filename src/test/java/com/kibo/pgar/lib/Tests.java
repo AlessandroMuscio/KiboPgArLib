@@ -3,22 +3,22 @@ package com.kibo.pgar.lib;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Tests {
   private static final Logger LOGGER = LoggerFactory.getLogger(Tests.class);
   private static final String TEST_START = "Test Started - %s";
   private static final String TEST_END = "Test Ended - %s";
-  private static final String[] TESTS_NAMES = new String[] { "AnsiClasses", "KnownProblems" };
+  private static final String[] TESTS_NAMES = new String[] { "AnsiClasses", "KnownProblems", "PrettyStrings" };
 
   @Test
   @Order(1)
@@ -77,7 +77,7 @@ public class Tests {
   }
 
   @Test
-  public void KnownProblems() {
+  public void testKnownProblems() {
     LOGGER.info(String.format(Tests.TEST_START, Tests.TESTS_NAMES[1]));
 
     List<GCD_LCMTestCase> testCasesGCD_LCM = new ArrayList<>();
@@ -114,5 +114,70 @@ public class Tests {
       assertEquals(testCase.getValue(), KnownProblems.countDecimalDigits(testCase.getKey()));
 
     LOGGER.info(String.format(Tests.TEST_END, Tests.TESTS_NAMES[1]));
+  }
+
+  @Test
+  public void testPrettyStrings() {
+    LOGGER.info(String.format(Tests.TEST_START, Tests.TESTS_NAMES[2]));
+
+    final String NEW_LINE = "\n";
+    final String SEPARATOR = NEW_LINE + "~~~~~~~~~~~~~~~~~~~~" + NEW_LINE;
+    final String TEST_IL = "Isolated Line";
+    final char TEST_RC = 'a';
+    final String TEST_CL = "Column Left";
+    final String TEST_CR = "Column Right";
+    final String TEST_C = "Centered";
+    final String TEST_FC = "Framed Centered, no VFrame";
+    final String TEST_FCV = "Framed Centered, VFrame";
+    final String TEST_FL = "Framed Left, no VFrame";
+    final String TEST_FLV = "Framed Left, VFrame";
+    final String TEST_FR = "Framed Right, no VFrame";
+    final String TEST_FRV = "Framed Right, VFrame";
+
+    final FrameSettings SETTINGS_FC = new FrameSettings(30, Alignment.CENTER, false);
+    final FrameSettings SETTINGS_FCV = new FrameSettings(27, Alignment.CENTER, true);
+    final FrameSettings SETTINGS_FL = new FrameSettings(26, Alignment.LEFT, false);
+    final FrameSettings SETTINGS_FLV = new FrameSettings(23, Alignment.LEFT, true);
+    final FrameSettings SETTINGS_FR = new FrameSettings(27, Alignment.RIGHT, false);
+    final FrameSettings SETTINGS_FRV = new FrameSettings(24, Alignment.RIGHT, true);
+
+    StringBuilder builder = new StringBuilder();
+
+    builder.append(PrettyStrings.isolatedLine(TEST_IL));
+
+    builder.append(SEPARATOR);
+
+    builder.append(PrettyStrings.repeatChar(TEST_RC, 10));
+
+    builder.append(SEPARATOR);
+
+    builder.append(PrettyStrings.column(TEST_CL, 16, true));
+    builder.append(NEW_LINE);
+    builder.append(PrettyStrings.column(TEST_CR, 16, false));
+
+    builder.append(SEPARATOR);
+
+    builder.append(PrettyStrings.center(TEST_C, 18));
+
+    builder.append(SEPARATOR);
+
+    builder.append(PrettyStrings.frame(TEST_FC, SETTINGS_FC));
+    builder.append(NEW_LINE);
+    builder.append(PrettyStrings.frame(TEST_FCV, SETTINGS_FCV));
+    builder.append(NEW_LINE);
+    builder.append(PrettyStrings.frame(TEST_FL, SETTINGS_FL));
+    builder.append(NEW_LINE);
+    builder.append(PrettyStrings.frame(TEST_FLV, SETTINGS_FLV));
+    builder.append(NEW_LINE);
+    builder.append(PrettyStrings.frame(TEST_FR, SETTINGS_FR));
+    builder.append(NEW_LINE);
+    builder.append(PrettyStrings.frame(TEST_FRV, SETTINGS_FRV));
+    builder.append(NEW_LINE);
+
+    LOGGER.info(builder.toString());
+
+    assertTrue(true);
+
+    LOGGER.info(String.format(Tests.TEST_END, Tests.TESTS_NAMES[2]));
   }
 }
