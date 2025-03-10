@@ -56,11 +56,11 @@ public class SimpleInput {
         }
     }
 
-    public static int readInt(String message) {
+    public static int readInt(String message, boolean fromSting) {
         while (true) {
             System.out.printf("%s -> ", message);
-
             try {
+                if (fromSting) return Integer.parseInt(scanner.nextLine());
                 return scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println(ERRORE_MINIMO);
@@ -69,39 +69,26 @@ public class SimpleInput {
         }
     }
 
-    public static int readIntFromSting(String message) {
+    public static int readIntPos(String message, boolean fromSting) {
+        return readIntMin(message, 1, fromSting);
+    }
+
+    public static int readIntNotNeg(String message, boolean fromSting) {
+        return readIntMin(message, 0,  fromSting);
+    }
+
+    public static int readIntMin(String message, int min, boolean fromSting) {
         while (true) {
-            System.out.printf("%s -> ", message);
-
-            try {
-                return Integer.parseInt(scanner.nextLine());
-            } catch (InputMismatchException e) {
-                System.out.println(ERRORE_MINIMO);
-                scanner.next();
-            }
-        }
-    }
-
-    public static int readIntPos(String message) {
-        return readIntWithMin(message, 1);
-    }
-
-    public static int readIntNotNeg(String message) {
-        return readIntWithMin(message, 0);
-    }
-
-    public static int readIntWithMin(String message, int min) {
-        while (true) {
-            int valoreLetto = readIntFromSting(message);
+            int valoreLetto = readInt(message, fromSting);
 
             if (valoreLetto >= min) return valoreLetto;
             else System.out.printf("%s %+.2f\n", ERRORE_MINIMO, min);
         }
     }
 
-    public static int readIntFromSting(String message, int min, int max) {
+    public static int readIntMinMax(String message, int min, int max, boolean fromSting) {
         while (true) {
-            int valoreLetto = readIntFromSting(message);
+            int valoreLetto = readInt(message, fromSting);
 
             if (valoreLetto >= min && valoreLetto <= max) return valoreLetto;
             else if (valoreLetto < min) System.out.printf("%s %+.2f\n", ERRORE_MINIMO, min);
@@ -109,11 +96,12 @@ public class SimpleInput {
         }
     }
 
-    public static double readDubleFromSting(String message) {
+    public static double readDuble(String message, boolean fromString) {
         while (true) {
             System.out.printf("%s -> ", message);
             try {
-                return Double.parseDouble(scanner.nextLine());
+                if (fromString) return Double.parseDouble(scanner.nextLine());
+                else return scanner.nextDouble();
             } catch (InputMismatchException e) {
                 System.out.println(ERRORE_MINIMO);
                 scanner.next();
@@ -121,13 +109,13 @@ public class SimpleInput {
         }
     }
 
-    public static double readDoublePos(String message) { return leggiDoubleConMinimo(message, 1); }
+    public static double readDoublePos(String message, boolean fromSting) { return readDouble(message, 1, fromSting); }
 
-    public static double readDubleNotNeg(String message) { return leggiDoubleConMinimo(message, 0); }
+    public static double readDubleNotNeg(String message, boolean fromSting) { return readDouble(message, 0, fromSting); }
 
-    public static double leggiDoubleConMinimo(String message, double minimo) {
+    public static double readDouble(String message, double minimo, boolean fromSting) {
         while (true) {
-            double valoreLetto = readDubleFromSting(message);
+            double valoreLetto = readDuble(message, fromSting);
 
             if (valoreLetto >= minimo) return valoreLetto;
             else System.out.printf("%s %+.2f\n", ERRORE_MINIMO, minimo);
