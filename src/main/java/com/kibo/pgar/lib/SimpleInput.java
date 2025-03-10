@@ -5,12 +5,12 @@ import java.util.*;
 public class SimpleInput {
     private static Scanner scanner = creaScanner();
 
-    private final static String ERRORE_FORMATO = "Attenzione: il dato inserito non e' nel formato corretto";
-    private final static String ERRORE_MINIMO = "Attenzione: e' richiesto un valore maggiore o uguale a ";
-    private final static String ERRORE_STRINGA_VUOTA = "Attenzione: non hai inserito alcun carattere";
-    private final static String ERRORE_STRINGA_CHAR_DIVERSA_DA_LUNGHEZZA_UNO = "Attenzione inserire solo un carattere";
-    private final static String ERRORE_MASSIMO = "Attenzione: e' richiesto un valore minore o uguale a ";
-    private final static String MESSAGGIO_AMMISSIBILI = "Attenzione: i caratteri ammissibili sono: ";
+    private final static String ERROR_FORMAT = "Warning the input given is not the correct format";
+    private final static String ERROR_MIN = "Warning the input is lower than: ";
+    private final static String ERROR_EMPTHY_STRING = "Warning the input is empty";
+    private final static String ERROR_STRING_LENGHT_NOT_ONE = "Warning input one character";
+    private final static String ERROR_MAX = "Warning the input is higher than: ";
+    private final static String MESSAGE_POSSIBLE_CHARACTERS = "Warning the input characters only in this list: ";
 
     private final static char YES = 'Y';
     private final static char NO = 'N';
@@ -32,7 +32,7 @@ public class SimpleInput {
             String lettura = readSting(message).trim();
 
             if (!lettura.isEmpty()) return lettura;
-            else System.out.println(ERRORE_FORMATO);
+            else System.out.println(ERROR_FORMAT);
         }
     }
 
@@ -43,7 +43,7 @@ public class SimpleInput {
             String valoreLetto = scanner.nextLine();
 
             if (valoreLetto.length() == 1) return  valoreLetto.charAt(0);
-            else System.out.println(ERRORE_STRINGA_CHAR_DIVERSA_DA_LUNGHEZZA_UNO);
+            else System.out.println(ERROR_STRING_LENGHT_NOT_ONE);
         }
     }
 
@@ -52,7 +52,7 @@ public class SimpleInput {
             char valoreLetto = Character.toUpperCase(readCharUpper(message));
 
             if (possible.indexOf(valoreLetto) != -1) return valoreLetto;
-            else System.out.printf("%s %s\n", MESSAGGIO_AMMISSIBILI, possible);
+            else System.out.printf("%s %s\n", MESSAGE_POSSIBLE_CHARACTERS, possible);
         }
     }
 
@@ -63,7 +63,7 @@ public class SimpleInput {
                 if (fromSting) return Integer.parseInt(scanner.nextLine());
                 return scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println(ERRORE_MINIMO);
+                System.out.println(ERROR_MIN);
                 scanner.next();
             }
         }
@@ -82,7 +82,7 @@ public class SimpleInput {
             int valoreLetto = readInt(message, fromSting);
 
             if (valoreLetto >= min) return valoreLetto;
-            else System.out.printf("%s %+.2f\n", ERRORE_MINIMO, min);
+            else System.out.printf("%s %+.2f\n", ERROR_MIN, min);
         }
     }
 
@@ -91,8 +91,8 @@ public class SimpleInput {
             int valoreLetto = readInt(message, fromSting);
 
             if (valoreLetto >= min && valoreLetto <= max) return valoreLetto;
-            else if (valoreLetto < min) System.out.printf("%s %+.2f\n", ERRORE_MINIMO, min);
-            else System.out.printf("%s %+.2f\n", ERRORE_MASSIMO, max);
+            else if (valoreLetto < min) System.out.printf("%s %+.2f\n", ERROR_MIN, min);
+            else System.out.printf("%s %+.2f\n", ERROR_MAX, max);
         }
     }
 
@@ -103,7 +103,7 @@ public class SimpleInput {
                 if (fromString) return Double.parseDouble(scanner.nextLine());
                 else return scanner.nextDouble();
             } catch (InputMismatchException e) {
-                System.out.println(ERRORE_MINIMO);
+                System.out.println(ERROR_MIN);
                 scanner.next();
             }
         }
@@ -118,7 +118,7 @@ public class SimpleInput {
             double valoreLetto = readDuble(message, fromSting);
 
             if (valoreLetto >= minimo) return valoreLetto;
-            else System.out.printf("%s %+.2f\n", ERRORE_MINIMO, minimo);
+            else System.out.printf("%s %+.2f\n", ERROR_MIN, minimo);
         }
     }
 
