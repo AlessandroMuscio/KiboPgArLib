@@ -3,7 +3,7 @@ package com.kibo.pgar.lib;
 import java.util.Random;
 
 /**
- * <code>Class</code> that let's you draw a specific data type in a
+ * <code>Class</code> that let you draw a specific data type in a
  * pseudo-random way.
  * 
  * @author Alessandro Muscio (Kibo)
