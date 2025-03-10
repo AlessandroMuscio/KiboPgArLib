@@ -2,6 +2,14 @@ package com.kibo.pgar.lib;
 
 import java.util.*;
 
+/*
+* @author Mattia Tognela
+*
+* Is a little class for delivering input functionality to the dev.
+*
+* Was created for let me input stuff with easy in my Java project.
+ */
+
 public class SimpleInput {
     private static Scanner scanner = creaScanner();
 
@@ -17,18 +25,30 @@ public class SimpleInput {
 
 
     private static Scanner creaScanner() {
-        Scanner creato = new Scanner(System.in);
-        creato.useDelimiter(System.lineSeparator());
-        return creato;
+        Scanner create = new Scanner(System.in);
+        create.useDelimiter(System.lineSeparator());
+        return create;
     }
+
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @return it returns a String form the method scanner.nexline();
+     */
 
     public static String readSting(String message) {
         System.out.printf("%s -> ", message);
         return scanner.nextLine();
     }
 
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @return it returns a not empthy String form the method scanner.nexline().trim();
+     */
+
     public static String readStringNotEmpthy(String message) {
-        while(true) {
+        while (true) {
             String lettura = readSting(message).trim();
 
             if (!lettura.isEmpty()) return lettura;
@@ -36,25 +56,46 @@ public class SimpleInput {
         }
     }
 
-    public static char readCharUpper(String message) {
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @return it returns character form the method scanner.nexline().atChar(0);
+     */
+
+    public static char readChar(String message) {
         while (true) {
             System.out.printf("%s -> ", message);
 
             String valoreLetto = scanner.nextLine();
 
-            if (valoreLetto.length() == 1) return  valoreLetto.charAt(0);
+            if (valoreLetto.length() == 1) return valoreLetto.charAt(0);
             else System.out.println(ERROR_STRING_LENGHT_NOT_ONE);
         }
     }
 
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @return it returns character form the list of possible characters
+     */
+
     public static char readCharUpper(String message, String possible) {
         while (true) {
-            char valoreLetto = Character.toUpperCase(readCharUpper(message));
+            char valoreLetto = Character.toUpperCase(readChar(message));
 
             if (possible.indexOf(valoreLetto) != -1) return valoreLetto;
             else System.out.printf("%s %s\n", MESSAGE_POSSIBLE_CHARACTERS, possible);
         }
     }
+
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @param fromSting if true it will convert an int from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextInt;
+     *
+     * @return an int
+     */
 
     public static int readInt(String message, boolean fromSting) {
         while (true) {
@@ -63,19 +104,47 @@ public class SimpleInput {
                 if (fromSting) return Integer.parseInt(scanner.nextLine());
                 return scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println(ERROR_MIN);
+                System.out.println(ERROR_FORMAT);
                 scanner.next();
             }
         }
     }
 
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @param fromSting if true it will convert an int from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextInt;
+     *
+     * @return an int more or equal than 1
+     */
+
     public static int readIntPos(String message, boolean fromSting) {
         return readIntMin(message, 1, fromSting);
     }
 
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @param fromSting if true it will convert an int from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextInt;
+     *
+     * @return an int more or equal than 0
+     */
+
     public static int readIntNotNeg(String message, boolean fromSting) {
-        return readIntMin(message, 0,  fromSting);
+        return readIntMin(message, 0, fromSting);
     }
+
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @param min let you define a min val under then the input is not acceptable
+     * @param fromSting if true it will convert an int from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextInt;
+     *
+     * @return an int more or equal than min
+     */
 
     public static int readIntMin(String message, int min, boolean fromSting) {
         while (true) {
@@ -86,6 +155,18 @@ public class SimpleInput {
         }
     }
 
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @param min let you define a min val under then the input is not acceptable
+     * @param max let you define a min val over then the input is not acceptable
+     * @param fromSting if true it will convert an int from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextInt;
+     *
+     * @return an int between min and max
+     */
+
+
     public static int readIntMinMax(String message, int min, int max, boolean fromSting) {
         while (true) {
             int valoreLetto = readInt(message, fromSting);
@@ -95,6 +176,15 @@ public class SimpleInput {
             else System.out.printf("%s %+.2f\n", ERROR_MAX, max);
         }
     }
+
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @param fromSting if true it will convert a double from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextDouble;
+     *
+     * @return a double
+     */
 
     public static double readDuble(String message, boolean fromString) {
         while (true) {
@@ -109,11 +199,43 @@ public class SimpleInput {
         }
     }
 
-    public static double readDoublePos(String message, boolean fromSting) { return readDouble(message, 1, fromSting); }
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @param fromSting if true it will convert an int from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextInt;
+     *
+     * @return a double more or equal than 1
+     */
 
-    public static double readDubleNotNeg(String message, boolean fromSting) { return readDouble(message, 0, fromSting); }
+    public static double readDoublePos(String message, boolean fromSting) {
+        return readDouble(message, 1, fromSting);
+    }
 
-    public static double readDouble(String message, double minimo, boolean fromSting) {
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @param fromSting if true it will convert an int from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextInt;
+     *
+     * @return a double more or equal than 0
+     */
+
+    public static double readDubleNotNeg(String message, boolean fromSting) {
+        return readDoubleMin(message, 0, fromSting);
+    }
+
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     * @param min let you define a min val under then the input is not acceptable
+     * @param fromSting if true it will convert an int from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextInt;
+     *
+     * @return a double over min
+     */
+
+    public static double readDoubleMin(String message, double minimo, boolean fromSting) {
         while (true) {
             double valoreLetto = readDuble(message, fromSting);
 
@@ -121,6 +243,13 @@ public class SimpleInput {
             else System.out.printf("%s %+.2f\n", ERROR_MIN, minimo);
         }
     }
+
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
+     *
+     * @return a double between min and max
+     */
 
     public static boolean yesOrNo(String message) {
         String mioMessaggio = String.format("%s (%s/%s) -> ", message, YES, NO);
