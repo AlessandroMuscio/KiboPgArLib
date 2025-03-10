@@ -248,7 +248,7 @@ public class SimpleInput {
      * @author Mattia Tognela
      * @param message Let you deliver a message for the user
      *
-     * @return a double between min and max
+     * @return a boolean
      */
 
     public static boolean yesOrNo(String message) {
