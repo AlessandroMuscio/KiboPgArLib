@@ -252,6 +252,6 @@ public class SimpleInput {
      */
 
     public static boolean yesOrNo(String message) {
-        return readCharUpper( String.format("%s (%s/%s) -> ", message, YES, NO), String.valueOf(YES) + String.valueOf(NO)) == YES;
+        return readCharUpper(String.format("%s (%s/%s) -> ", message, YES, NO), String.format("%c%c", YES, NO)) == YES;
     }
 }
