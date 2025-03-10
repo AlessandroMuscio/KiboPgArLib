@@ -151,7 +151,7 @@ public class SimpleInput {
             int valoreLetto = readInt(message, fromSting);
 
             if (valoreLetto >= min) return valoreLetto;
-            else System.out.printf("%s %+.2f\n", ERROR_MIN, min);
+            else System.out.printf("%s %+d\n", ERROR_MIN, min);
         }
     }
 
@@ -172,8 +172,8 @@ public class SimpleInput {
             int valoreLetto = readInt(message, fromSting);
 
             if (valoreLetto >= min && valoreLetto <= max) return valoreLetto;
-            else if (valoreLetto < min) System.out.printf("%s %+.2f\n", ERROR_MIN, min);
-            else System.out.printf("%s %+.2f\n", ERROR_MAX, max);
+            else if (valoreLetto < min) System.out.printf("%s %+d\n", ERROR_MIN, min);
+            else System.out.printf("%s %+d\n", ERROR_MAX, max);
         }
     }
 
