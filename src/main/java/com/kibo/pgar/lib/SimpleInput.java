@@ -209,7 +209,7 @@ public class SimpleInput {
      */
 
     public static double readDoublePos(String message, boolean fromSting) {
-        return readDouble(message, 1, fromSting);
+        return readDoubleMin(message, 1, fromSting);
     }
 
     /*
