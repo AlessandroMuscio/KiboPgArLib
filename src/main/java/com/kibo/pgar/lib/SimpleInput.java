@@ -247,6 +247,27 @@ public class SimpleInput {
     /*
      * @author Mattia Tognela
      * @param message Let you deliver a message for the user
+     * @param min let you define a min val under then the input is not acceptable
+     * @param max let you define a min val over then the input is not acceptable
+     * @param fromSting if true it will convert an int from a String red with the method scanner.nextLine;
+     *        if false it will read an int with the method scanner.nextDouble;
+     *
+     * @return a double between min and max
+     */
+
+    public static double readDoubleMinMax(String message, double min, double max, boolean fromSting) {
+        while (true) {
+            double valoreLetto = readDuble(message, fromSting);
+
+            if (valoreLetto >= min && valoreLetto <= max) return valoreLetto;
+            else if (valoreLetto < min) System.out.printf("%s %+d\n", ERROR_MIN, min);
+            else System.out.printf("%s %+d\n", ERROR_MAX, max);
+        }
+    }
+
+    /*
+     * @author Mattia Tognela
+     * @param message Let you deliver a message for the user
      *
      * @return a boolean
      */
