@@ -3,4 +3,4 @@
 
 - Just added a SimpleInput.java class to do simple input stuff
 
-> for more information on the original [Repo]((https://github.com/AlessandroMuscio/KiboPgArLib)) and [Author](https://github.com/AlessandroMuscio)
+> for more information on the original [Repo](https://github.com/AlessandroMuscio/KiboPgArLib) and [Author](https://github.com/AlessandroMuscio)
