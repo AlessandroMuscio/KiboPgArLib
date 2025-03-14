@@ -1,0 +1,72 @@
+X16:30:53.305 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Started - PrettyStrings
+<16:30:53.310 [Test worker] INFO  com.kibo.pgar.lib.Tests - 
+Isolated Line
+
+~~~~~~~~~~~~~~~~~~~~
+aaaaaaaaaa
+~~~~~~~~~~~~~~~~~~~~
+Column Left     
+    Column Right
+~~~~~~~~~~~~~~~~~~~~
+     Centered     
+~~~~~~~~~~~~~~~~~~~~
+------------------------------
+  Framed Centered, no VFrame  
+------------------------------
+
+---------------------------
+| Framed Centered, VFrame |
+---------------------------
+
+--------------------------
+Framed Left, no VFrame    
+--------------------------
+
+-----------------------
+|Framed Left, VFrame  |
+-----------------------
+
+---------------------------
+    Framed Right, no VFrame
+---------------------------
+
+------------------------
+|  Framed Right, VFrame|
+------------------------
+
+
+V16:30:53.313 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Ended - PrettyStrings
+V16:30:53.321 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Started - AnsiClasses
+<16:30:53.322 [Test worker] INFO  com.kibo.pgar.lib.Tests - 
+[7minvert[0m
+[30mblack[0m
+[31mred[0m
+[32mgreen[0m
+[33myellow[0m
+[34mblue[0m
+[35mpurple[0m
+[36mcyan[0m
+[37mwhite[0m
+[40mblack_background[0m
+[41mred_background[0m
+[42mgreen_background[0m
+[43myellow_background[0m
+[44mblue_background[0m
+[45mpurple_background[0m
+[46mcyan_background[0m
+[47mwhite_background[0m
+~~~~~~~~~~~~~~~~~~~~
+[1mbold[0m
+[2mlight[0m
+[3mitalic[0m
+~~~~~~~~~~~~~~~~~~~~
+[4munderline[0m
+[8mhide[0m
+[9mstrikethrough[0m
+[21mdouble_underline[0m
+
+[53moverline[0m
+
+T16:30:53.323 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Ended - AnsiClasses
+X16:30:53.325 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Started - KnownProblems
+V16:30:53.326 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Ended - KnownProblems
