@@ -10,7 +10,7 @@ import java.util.*;
 * Was created for let me input stuff with easy in my Java project.
  */
 
-public class SimpleInput {
+public class InputData {
     private static Scanner scanner = creaScanner();
 
     private final static String ERROR_FORMAT = "Warning the input given is not the correct format";
