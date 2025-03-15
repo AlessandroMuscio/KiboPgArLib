@@ -5,6 +5,7 @@
 plugins {
     `java-library`
     `maven-publish`
+    id("scala")
     id("com.gradleup.shadow") version "9.0.0-beta10"
 }
 
@@ -15,6 +16,8 @@ repositories {
 }
 
 dependencies {
+    implementation("org.scala-lang:scala3-library_3:3.6.3")
+
     api("org.slf4j:slf4j-api:2.0.17")
     api("com.google.guava:guava:33.4.0-jre")
     runtimeOnly("ch.qos.logback:logback-classic:1.5.17")
