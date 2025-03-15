@@ -23,7 +23,7 @@ dependencies {
 }
 
 group = "com.kibo.pgar.lib"
-version = "0.0.1"
+version = "1.0.0"
 description = "kibo-pgar-lib"
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -64,9 +64,17 @@ tasks.shadowJar {
     manifest.inheritFrom(testJar.get().manifest)
 
     dependencies {
-        include(dependency("org.jetbrains.kotlin:kotlin-stdlib"))
+        exclude(dependency("org.junit.jupiter:junit-jupiter:5.12.1"))
+        exclude(dependency("org.junit.platform:junit-platform-launcher:1.12.1"))
+
+        include(dependency("org.slf4j:slf4j-api:2.0.17"))
+        include(dependency("com.google.guava:guava:33.4.0-jre"))
 
         configurations = provider { listOf(project.configurations.runtimeClasspath.get()) }
+    }
+
+    minimize {
+        exclude(project(":api"))
     }
 
 }
