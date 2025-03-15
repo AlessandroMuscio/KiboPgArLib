@@ -32,6 +32,10 @@ java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
 }
+scala {
+    scalaVersion = "3.6.3"
+    zincVersion = "1.10.8"
+}
 
 publishing {
     publications.create<MavenPublication>("maven") {
