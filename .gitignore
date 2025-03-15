@@ -1,9 +1,26 @@
+# Gradle build files
+.gradle/
+build/
+
+# IntelliJ IDEA/Android Studio files
+.idea/
+*.iml
+
+# Gradle-related cache files
+.gradle/8.13/
+.gradle/configuration-cache/
+.gradle/checksums/
+
+# Build and test reports
+build/reports/
+build/test-results/
+
+# Ignore temporary files
+*.log
+
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
-target
-build
-.gradle
 
 ### STS ###
 .apt_generated
