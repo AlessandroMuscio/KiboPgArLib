@@ -30,7 +30,7 @@ public class InputData {
     /**
      * @author Mattia Tognela
      * @param message Let you deliver a message for the user
-     * @return it returns a String form the method scanner.nexline();
+     * @return it returns a String form the method scanner.nextline();
      */
 
     public static String readSting(String message) {
@@ -41,7 +41,7 @@ public class InputData {
     /**
      * @author Mattia Tognela
      * @param message Let you deliver a message for the user
-     * @return it returns a not empthy String form the method scanner.nexline().trim();
+     * @return it returns a not empty String form the method scanner.nextline().trim();
      */
 
     public static String readStringNotEmpthy(String message) {
@@ -170,7 +170,7 @@ public class InputData {
      * @return a double
      */
 
-    public static double readDuble(String message) {
+    public static double readDouble(String message) {
         while (true) {
             System.out.printf("%s -> ", message);
             try {
@@ -214,7 +214,7 @@ public class InputData {
 
     public static double readDoubleMin(String message, double min) {
         while (true) {
-            double valoreLetto = readDuble(message);
+            double valoreLetto = readDouble(message);
 
             if (valoreLetto >= min) return valoreLetto;
             else System.out.printf("%s %+.2f\n", ERROR_MIN, min);
@@ -232,7 +232,7 @@ public class InputData {
 
     public static double readDoubleMinMax(String message, double min, double max) {
         while (true) {
-            double valoreLetto = readDuble(message);
+            double valoreLetto = readDouble(message);
 
             if (valoreLetto >= min && valoreLetto <= max) return valoreLetto;
             else if (valoreLetto < min) System.out.printf("%s %+d\n", ERROR_MIN, min);
