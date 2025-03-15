@@ -11,8 +11,6 @@ import java.util.*;
  */
 
 public class InputData {
-    private static Scanner scanner = creaScanner();
-
     private final static String ERROR_FORMAT = "Warning the input given is not the correct format";
     private final static String ERROR_MIN = "Warning the input is lower than: ";
     private final static String ERROR_EMPTHY_STRING = "Warning the input is empty";
@@ -24,11 +22,11 @@ public class InputData {
     private final static char NO = 'N';
 
 
-    private static Scanner creaScanner() {
-        Scanner create = new Scanner(System.in);
-        create.useDelimiter(System.lineSeparator());
-        return create;
+    private static final Scanner scanner = createScanner();
+    private static Scanner createScanner() {
+        return new Scanner(System.in).useDelimiter("\n");
     }
+
 
     /*
      * @author Mattia Tognela
