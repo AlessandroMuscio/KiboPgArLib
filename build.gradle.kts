@@ -74,7 +74,8 @@ tasks.shadowJar {
     }
 
     minimize {
-        exclude(project(":api"))
+        exclude(dependency("org.slf4j:slf4j-api:2.0.17"))
+        exclude(dependency("com.google.guava:guava:33.4.0-jre"))
     }
 
 }
