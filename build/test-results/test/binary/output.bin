@@ -1,5 +1,5 @@
-X18:04:07.884 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Started - PrettyStrings
-<18:04:07.890 [Test worker] INFO  com.kibo.pgar.lib.Tests - 
+X22:14:11.727 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Started - PrettyStrings
+<22:14:11.732 [Test worker] INFO  com.kibo.pgar.lib.Tests - 
 Isolated Line
 
 ~~~~~~~~~~~~~~~~~~~~
@@ -35,9 +35,9 @@
 ------------------------
 
 
-V18:04:07.893 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Ended - PrettyStrings
-V18:04:07.904 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Started - AnsiClasses
-<18:04:07.905 [Test worker] INFO  com.kibo.pgar.lib.Tests - 
+V22:14:11.734 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Ended - PrettyStrings
+V22:14:11.743 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Started - AnsiClasses
+<22:14:11.744 [Test worker] INFO  com.kibo.pgar.lib.Tests - 
 [7minvert[0m
 [30mblack[0m
 [31mred[0m
@@ -67,6 +67,6 @@
 
 [53moverline[0m
 
-T18:04:07.906 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Ended - AnsiClasses
-X18:04:07.909 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Started - KnownProblems
-V18:04:07.911 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Ended - KnownProblems
+T22:14:11.745 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Ended - AnsiClasses
+X22:14:11.747 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Started - KnownProblems
+V22:14:11.749 [Test worker] INFO  com.kibo.pgar.lib.Tests - Test Ended - KnownProblems

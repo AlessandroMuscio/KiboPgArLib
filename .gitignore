@@ -6,7 +6,6 @@ build/
 .idea/
 *.iml
 
-
 # Gradle-related cache files
 .gradle/8.13/
 .gradle/configuration-cache/
