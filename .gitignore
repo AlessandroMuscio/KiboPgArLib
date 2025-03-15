@@ -5,7 +5,7 @@ build/
 # IntelliJ IDEA/Android Studio files
 .idea/
 *.iml
-*.html
+
 
 # Gradle-related cache files
 .gradle/8.13/
