@@ -5,30 +5,38 @@
 plugins {
     `java-library`
     `maven-publish`
+    id("com.gradleup.shadow") version "9.0.0-beta10"
 }
 
 repositories {
     mavenLocal()
-    maven {
-        url = uri("https://repo.maven.apache.org/maven2/")
-    }
+    mavenCentral()
+    gradlePluginPortal()
 }
 
 dependencies {
-    api(libs.org.slf4j.slf4j.api)
-    api(libs.com.google.guava.guava)
-    runtimeOnly(libs.ch.qos.logback.logback.classic)
-    testImplementation(libs.org.junit.jupiter.junit.jupiter.engine)
+    api("org.slf4j:slf4j-api:2.0.17")
+    api("com.google.guava:guava:33.4.0-jre")
+    runtimeOnly("ch.qos.logback:logback-classic:1.5.17")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.12.1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.12.1")
 }
 
 group = "com.kibo.pgar.lib"
 version = "0.0.1"
 description = "kibo-pgar-lib"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
 
 publishing {
     publications.create<MavenPublication>("maven") {
         from(components["java"])
+    }
+
+    publications.create<MavenPublication>("shadow") {
+        from(components["shadow"])
     }
 }
 
@@ -42,4 +50,23 @@ tasks.withType<Javadoc>() {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+val testJar by tasks.registering(Jar::class) {
+    manifest {
+        attributes["Description"] = "Don't know what I'm doing"
+    }
+}
+
+tasks.shadowJar {
+    archiveClassifier = ""
+
+    manifest.inheritFrom(testJar.get().manifest)
+
+    dependencies {
+        include(dependency("org.jetbrains.kotlin:kotlin-stdlib"))
+
+        configurations = provider { listOf(project.configurations.runtimeClasspath.get()) }
+    }
+
 }
