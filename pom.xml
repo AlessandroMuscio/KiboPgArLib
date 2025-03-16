@@ -37,11 +37,6 @@
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
-          <archive>
-            <manifest>
-              <mainClass>com.your-package.MainClass</mainClass>
-            </manifest>
-          </archive>
         </configuration>
         <executions>
           <execution>
@@ -95,5 +90,6 @@
       <version>1.12.1</version>
       <scope>test</scope>
     </dependency>
+    
   </dependencies>
 </project>

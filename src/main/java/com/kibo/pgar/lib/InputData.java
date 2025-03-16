@@ -2,15 +2,6 @@ package com.kibo.pgar.lib;
 
 import java.util.*;
 
-/**
-* @author Mattia Tognela
- *
- * 
-* Is a little class for delivering input functionality to the dev.
-*
-* It Was created for let me input stuff with easy in my Java project.
- */
-
 public class InputData {
     private static final Scanner reader = createScanner();
     private static final String COMMAND_INPUT = "> ";
@@ -95,7 +86,7 @@ public class InputData {
                 read = reader.next();
                 read = read.trim();
 
-                isAlphanumeric = hasAlphanumericCharacters(read);
+                isAlphanumeric   = AlphanumericChecker.hasAlphanumericCharacters(message);
 
                 if (!isAlphanumeric)
                     System.out.println(ALPHANUMERIC_CHARACTERS_ERROR);
@@ -109,11 +100,11 @@ public class InputData {
 
         return read;
     }
-
+    
     /**
      * @author Mattia Tognela
      * @param message Let you deliver a message for the user
-     * @return it returns a not empty String form the method scanner.nextline().trim();
+     * @return A <code>String</code> form the method <code>scanner.nextLine().trim();</code>;
      */
 
     public static String readStringNotEmpty(String message) {
@@ -380,3 +371,4 @@ public class InputData {
         return readCharUpper(String.format("%s (%s/%s) -> ", message, YES, NO), String.format("%c%c", YES, NO)) == YES;
     }
 }
+
