@@ -4,6 +4,13 @@ import java.util.*;
 
 public class InputData {
     private static final Scanner reader = createScanner();
+    private final static String ERROR_FORMAT = "Warning the input given is not the correct format";
+    private final static String ERROR_MIN = "Warning the input is lower than: ";
+    private final static String ERROR_EMPTHY_STRING = "Warning the input is empty";
+    private final static String ERROR_STRING_LENGHT_NOT_ONE = "Warning input one character";
+    private final static String ERROR_MAX = "Warning the input is higher than: ";
+    private final static String MESSAGE_POSSIBLE_CHARACTERS = "Warning the input characters only in this list: ";
+
     private static final String COMMAND_INPUT = "> ";
     private static final String RED_ATTENTION = AnsiColors.RED + "Attention!" + AnsiColors.RESET;
     private static final String ALPHANUMERIC_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
@@ -28,6 +35,7 @@ public class InputData {
     private static final String INVALID_ANSWER = COMMAND_INPUT + RED_ATTENTION + "\n"
             + COMMAND_INPUT + "The answer is not valid!";
 
+    private static void flushReader() { reader.nextLine(); }
 
     private static Scanner createScanner() {
         return new Scanner(System.in).useDelimiter("\n");
@@ -83,10 +91,9 @@ public class InputData {
             do {
                 System.out.print(COMMAND_INPUT + message + " ");
 
-                read = reader.next();
-                read = read.trim();
+                read = reader.next().trim();
 
-                isAlphanumeric   = AlphanumericChecker.hasAlphanumericCharacters(message);
+                isAlphanumeric  = hasAlphanumericCharacters(read); //AlphanumericChecker.hasAlphanumericCharacters(message);
 
                 if (!isAlphanumeric)
                     System.out.println(ALPHANUMERIC_CHARACTERS_ERROR);
@@ -94,13 +101,12 @@ public class InputData {
         } else {
             System.out.print(COMMAND_INPUT + message + " ");
 
-            read = reader.next();
-            read = read.trim();
+            read = reader.next().trim();
         }
 
         return read;
     }
-    
+
     /**
      * @author Mattia Tognela
      * @param message Let you deliver a message for the user
@@ -127,7 +133,7 @@ public class InputData {
      * @return A <code>String</code> representing the user input.
      */
 
-    public static String readEmptyNotString(String message, boolean alphanumeric) {
+    public static String readStringNotEmpty(String message, boolean alphanumeric) {
         boolean isStringEmpty = true;
         String read;
 
@@ -176,7 +182,7 @@ public class InputData {
         char readChar;
 
         do {
-            read = readEmptyNotString(message,);
+            read = readStringNotEmpty(message);
 
             readChar = read.charAt(0);
 
@@ -189,27 +195,11 @@ public class InputData {
         return readChar;
     }
 
-
     /**
      * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     * @return it returns character form the list of possible characters
-     */
-
-    public static char readCharUpper(String message, String possible) {
-        while (true) {
-            char valoreLetto = Character.toUpperCase(readChar(message));
-
-            if (possible.indexOf(valoreLetto) != -1) return valoreLetto;
-            else System.out.printf("%s %s\n", MESSAGE_POSSIBLE_CHARACTERS, possible);
-        }
-    }
-
-    /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
+     * @param message Leèt you deliver a message for the user
      *
-     * @return an int
+     * @return an <code>int</code>
      */
 
     public static int readInt(String message) {
@@ -225,150 +215,247 @@ public class InputData {
     }
 
     /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
+     * Prints <code>message</code> in the terminal and reads the text inserted by
+     * the user. It will print an error message if the text inserted isn't an
+     * integer.
      *
-     * @return an int more or equal than 1
+     * @return An <code>int</code> representing the integer that was read.
      */
 
-    public static int readIntPos(String message) {
-        return readIntMin(message, 1);
+    public static int readInteger(String message) {
+        boolean isInteger;
+        int read = 0;
+
+        do {
+            try {
+                System.out.print(COMMAND_INPUT + message + " ");
+
+                read = reader.nextInt();
+
+                isInteger = true;
+            } catch (InputMismatchException e) {
+                System.out.println(INTEGER_FORMAT_ERROR);
+
+                isInteger = false;
+            } finally {
+                flushReader();
+            }
+        } while (!isInteger);
+
+        return read;
     }
 
     /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
+     * Prints <code>message</code> in the terminal and reads the text inserted by
+     * the user. It will print an error message if the text inserted isn't an
+     * integer or if the integer inserted is greater equal than <code>min</code>.
      *
-     * @return an int more or equal than 0
+     * @param message The message to print.
+     * @param min     The minimum value to read.
+     * @return An <code>int</code> representing the integer that was read.
      */
+    public static int readIntegerWithMinimum(String message, int min) {
+        boolean isAboveMin = false;
+        int read;
 
-    public static int readIntNotNeg(String message) {
-        return readIntMin(message, 0);
+        do {
+            read = readInteger(COMMAND_INPUT + message + " ");
+
+            if (read >= min)
+                isAboveMin = true;
+            else
+                System.out.printf(MINIMUM_ERROR_INTEGER + "\n", min);
+        } while (!isAboveMin);
+
+        return read;
     }
 
     /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     * @param min let you define a min val under then the input is not acceptable
+     * Prints <code>message</code> in the terminal and reads the text inserted by
+     * the user. It will print an error message if the text inserted isn't an
+     * integer or if the integer inserted is less equal than <code>max</code>.
      *
-     * @return an int more or equal than min
+     * @param message The message to print.
+     * @param max     The maximum value to read.
+     * @return An <code>int</code> representing the integer that was read.
      */
+    public static int readIntegerWithMaximum(String message, int max) {
+        boolean isBelowMax = false;
+        int read;
 
-    public static int readIntMin(String message, int min) {
-        while (true) {
-            int valoreLetto = readInt(message);
+        do {
+            read = readInteger(COMMAND_INPUT + message + " ");
 
-            if (valoreLetto >= min) return valoreLetto;
-            else System.out.printf("%s %+d\n", ERROR_MIN, min);
-        }
+            if (read <= max)
+                isBelowMax = true;
+            else
+                System.out.printf(MAXIMUM_ERROR_INTEGER + "\n", max);
+        } while (!isBelowMax);
+
+        return read;
     }
 
     /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     * @param min let you define a min val under then the input is not acceptable
-     * @param max let you define a min val over then the input is not acceptable
+     * Prints <code>message</code> in the terminal and reads the text inserted by
+     * the user. It will print an error message if the text inserted isn't an
+     * integer or if the integer inserted isn't between or equal than
+     * <code>min</code> and <code>max</code>.
      *
-     * @return an int between min and max
+     * @param message The message to print.
+     * @param min     The minimum value to read.
+     * @param max     The maximum value to read.
+     * @return An <code>int</code> representing the integer that was read.
      */
+    public static int readIntegerBetween(String message, int min, int max) {
+        boolean isBetweenMinMax = false;
+        int read;
 
+        do {
+            read = readInteger(message);
 
-    public static int readIntMinMax(String message, int min, int max) {
-        while (true) {
-            int valoreLetto = readInt(message);
+            if (read < min)
+                System.out.printf(MINIMUM_ERROR_INTEGER + "\n", min);
+            else if (read > max)
+                System.out.printf(MAXIMUM_ERROR_INTEGER + "\n", max);
+            else
+                isBetweenMinMax = true;
+        } while (!isBetweenMinMax);
 
-            if (valoreLetto >= min && valoreLetto <= max) return valoreLetto;
-            else if (valoreLetto < min) System.out.printf("%s %+d\n", ERROR_MIN, min);
-            else System.out.printf("%s %+d\n", ERROR_MAX, max);
-        }
+        return read;
     }
 
     /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
+     * Prints <code>message</code> in the terminal and reads the text inserted by
+     * the user. It will print an error message if the text inserted isn't a double.
      *
-     * @return a double
+     * @param message The message to print.
+     * @return A <code>double</code> representing the double that was read.
      */
 
     public static double readDouble(String message) {
-        while (true) {
-            System.out.printf("%s -> ", message);
+        boolean isDouble;
+        double read = Double.NaN;
+
+        do {
+            System.out.print(COMMAND_INPUT + message + " ");
+
             try {
-                return reader.nextDouble();
+                read = reader.nextDouble();
+                isDouble = true;
             } catch (InputMismatchException e) {
-                System.out.println(ERROR_MIN);
-                reader.next();
+                System.out.println(DOUBLE_FORMAT_ERROR);
+
+                isDouble = false;
+            } finally {
+                flushReader();
             }
+        } while (!isDouble);
+
+        return read;
+    }
+
+
+    /**
+     * Prints <code>message</code> in the terminal and reads the text inserted by
+     * the user. It will print an error message if the text inserted isn't a double
+     * or if the double inserted isn't greater equal than <code>min</code>.
+     *
+     * @param message The message to print.
+     * @param min     The minimum value to read.
+     * @return A <code>double</code> representing the double that was read.
+     */
+    public static double readDoubleWithMinimum(String message, double min) {
+        boolean isAboveMin = false;
+        double read;
+
+        do {
+            read = readDouble(COMMAND_INPUT + message + " ");
+
+            if (read >= min)
+                isAboveMin = true;
+            else
+                System.out.printf(MINIMUM_ERROR_DOUBLE + "\n", min);
+        } while (!isAboveMin);
+
+        return read;
+    }
+
+    /**
+     * Prints <code>message</code> in the terminal and reads the text inserted by
+     * the user. It will print an error message if the text inserted isn't a double
+     * or if the double inserted isn't less equal than <code>max</code>.
+     *
+     * @param message The message to print.
+     * @param max     The maximum value to read.
+     * @return An <code>double</code> representing the double that was read.
+     */
+    public static double readDoubleWithMaximum(String message, double max) {
+        boolean isBelowMax = false;
+        double read;
+
+        do {
+            read = readDouble(COMMAND_INPUT + message + " ");
+
+            if (read <= max)
+                isBelowMax = true;
+            else
+                System.out.printf(MAXIMUM_ERROR_DOUBLE + "\n", max);
+        } while (!isBelowMax);
+
+        return read;
+    }
+
+    /**
+     * Prints <code>message</code> in the terminal and reads the text inserted by
+     * the user. It will print an error message if the text inserted isn't an double
+     * or if the double inserted isn't between or equal than <code>min</code> and
+     * <code>max</code>.
+     *
+     * @param message The message to print.
+     * @param min     The minimum value to read.
+     * @param max     The maximum value to read.
+     * @return An <code>double</code> representing the double that was read.
+     */
+    public static double readDoubleBetween(String message, double min, double max) {
+        boolean isBetweenMinMax = false;
+        double read;
+
+        do {
+            read = readDouble(COMMAND_INPUT + message + " ");
+
+            if (read < min)
+                System.out.printf(MINIMUM_ERROR_DOUBLE + "\n", min);
+            else if (read > max)
+                System.out.printf(MAXIMUM_ERROR_DOUBLE + "\n", max);
+            else
+                isBetweenMinMax = true;
+        } while (!isBetweenMinMax);
+
+        return read;
+    }
+
+
+    /**
+     * Prints <code>question</code> in the terminal with the string "? [Y/n] "
+     * added. If the user answers with 'y' or 'Y' the method will return
+     * <code>true</code>, <code>false</code> otherwise.
+     *
+     * @param question The question to print.
+     * @return A <code>boolean</code> representing the affirmative or negative
+     * answer of the user.
+     */
+
+    public static boolean readYesOrNo(String question) {
+        String answer = readStringNotEmpty(question + " [Y/n]");
+
+        if (answer.equals("Y") || answer.equals("YES"))
+            return true;
+        else if (answer.equals("N") || answer.equals("NO"))
+            return false;
+        else {
+            System.out.println(ERROR_FORMAT);
+            return readYesOrNo(question);
         }
-    }
-
-    /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     *
-     * @return a double more or equal than 1
-     */
-
-    public static double readDoublePos(String message) {
-        return readDoubleMin(message, 1);
-    }
-
-    /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     *
-     * @return a double more or equal than 0
-     */
-
-    public static double readDoubleNotNeg(String message) {
-        return readDoubleMin(message, 0);
-    }
-
-    /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     * @param min let you define a min val under then the input is not acceptable
-     *
-     * @return a double over min
-     */
-
-    public static double readDoubleMin(String message, double min) {
-        while (true) {
-            double valoreLetto = readDouble(message);
-
-            if (valoreLetto >= min) return valoreLetto;
-            else System.out.printf("%s %+.2f\n", ERROR_MIN, min);
-        }
-    }
-
-    /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     * @param min let you define a min val under then the input is not acceptable
-     * @param max let you define a min val over then the input is not acceptable
-     *
-     * @return a double between min and max
-     */
-
-    public static double readDoubleMinMax(String message, double min, double max) {
-        while (true) {
-            double valoreLetto = readDouble(message);
-
-            if (valoreLetto >= min && valoreLetto <= max) return valoreLetto;
-            else if (valoreLetto < min) System.out.printf("%s %+d\n", ERROR_MIN, min);
-            else System.out.printf("%s %+d\n", ERROR_MAX, max);
-        }
-    }
-
-    /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     *
-     * @return a boolean
-     */
-
-    public static boolean yesOrNo(String message) {
-        return readCharUpper(String.format("%s (%s/%s) -> ", message, YES, NO), String.format("%c%c", YES, NO)) == YES;
     }
 }
 
