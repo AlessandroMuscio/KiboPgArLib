@@ -1,6 +1,7 @@
 # Gradle build files
 .gradle/
 build/
+target/
 
 # IntelliJ IDEA/Android Studio files
 .idea/
