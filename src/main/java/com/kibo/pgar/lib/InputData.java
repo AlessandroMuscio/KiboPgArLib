@@ -1,6 +1,7 @@
 package com.kibo.pgar.lib;
 
 import java.util.*;
+import java.util.function.Function;
 
 public class InputData {
     private static final Scanner reader = createScanner();
@@ -10,7 +11,7 @@ public class InputData {
     private final static String ERROR_STRING_LENGHT_NOT_ONE = "Warning input one character";
     private final static String ERROR_MAX = "Warning the input is higher than: ";
     private final static String MESSAGE_POSSIBLE_CHARACTERS = "Warning the input characters only in this list: ";
-
+    // i need to reformat all this 
     private static final String COMMAND_INPUT = "> ";
     private static final String RED_ATTENTION = AnsiColors.RED + "Attention!" + AnsiColors.RESET;
     private static final String ALPHANUMERIC_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
@@ -49,6 +50,7 @@ public class InputData {
      * not.
      */
 
+    
     private static boolean hasAlphanumericCharacters(String message) {
         char currentChar;
 
@@ -458,4 +460,3 @@ public class InputData {
         }
     }
 }
-
