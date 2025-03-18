@@ -16,9 +16,9 @@ repositories {
 
 dependencies {
 
-    api("org.slf4j:slf4j-api:2.0.17")
-    api("com.google.guava:guava:33.4.0-jre")
-    runtimeOnly("ch.qos.logback:logback-classic:1.5.17")
+    api("org.slf4j:slf4j-api:2.0.17") // under MIT licence
+    api("com.google.guava:guava:33.4.0-jre") // under APACHE 2.0 licence
+    runtimeOnly("ch.qos.logback:logback-classic:1.5.17") // under GNU Lesser General Public License version 2.1 or Eclipse Public License v1.0
     testImplementation("org.junit.jupiter:junit-jupiter:5.12.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.12.1")
 }
