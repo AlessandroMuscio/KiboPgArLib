@@ -43,6 +43,7 @@ public enum AnsiColors {
 	CYAN_BACKGROUND("\u001B[46m"),
 	/** Colors the background <i>white</i>. */
 	WHITE_BACKGROUND("\u001B[47m");
+	/** Clear the console  <i>clear</i>*/
 
 	private final String ansiCode;
 
