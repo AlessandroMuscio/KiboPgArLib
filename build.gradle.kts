@@ -5,7 +5,6 @@
 plugins {
     `java-library`
     `maven-publish`
-    id("scala")
     id("com.gradleup.shadow") version "9.0.0-beta10"
 }
 
@@ -16,7 +15,6 @@ repositories {
 }
 
 dependencies {
-    implementation("org.scala-lang:scala3-library_3:3.6.3")
 
     api("org.slf4j:slf4j-api:2.0.17")
     api("com.google.guava:guava:33.4.0-jre")
@@ -31,10 +29,6 @@ description = "kibo-pgar-lib"
 java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
-}
-scala {
-    scalaVersion = "3.6.3"
-    zincVersion = "1.10.8"
 }
 
 publishing {
@@ -61,7 +55,7 @@ tasks.test {
 
 val testJar by tasks.registering(Jar::class) {
     manifest {
-        attributes["Description"] = "Don't know what I'm doing"
+        attributes["Description"] = "Don't know what I'm doing" // help me out to use manisfst jar
     }
 }
 
