@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "START SCRIP"
+./gradlew shadowjar
+jar tf build/libs/kibo-pgar-lib-1.0.0-shadowjar.jar
+jar xf build/libs/kibo-pgar-lib-1.0.0-shadowjar.jar META-INF/MANIFEST.MF
+echo "END SCRIP"
+# just a simple script to inspect the shadowjar
