@@ -1,118 +1,76 @@
 package com.kibo.pgar.lib;
 
-import java.io.Serializable;
-
 /**
- * The <strong>Menu</strong> class creates a menu with multiple entry supposing
- * that zero is always the exit option. The class also contains some method that
- * may result useful in visualizing the menu.
+ * <code>Class</code> that represents a generic text menu with multiple options.
+ * <p>
+ * It is assumed that the exit option is always associated with choice 0 and is presented at the bottom of the menu (when it must be shown).
  *
- * @author Ayman Marpicati
- * @version 1.0
+ * @author Minini Luca
  */
 
-public class Menu implements Serializable {
-    private static final String EXIT_ENTRY = "0. Exit";
-    private static final String INSERT_REQUEST = "> ";
-    private static final String NEGATIVE_MILLIS_ERROR = AnsiColors.RED + "Attention!" + AnsiColors.RESET
-            + "\nYou can't have negative time.";
-    private static final String CHOICE = "Insert your choice:";
+public class Menu {
+    final private static String FRAME = "--------------------------------";
+    final private static String EXIT_OPTION = "0.\tExit";
+    final private static String INPUT_REQUEST = "Enter the number of the desired option";
+    final private static boolean SHOW_EXIT_OPTION_DEFAULT = true;
 
-    private String header;
 
-    /**
-     * Contains all the menu entries.
-     */
-    private final String[] entries;
+    private String title;
+    private String[] options;
+    private boolean showExitOption;
 
     /**
-     * Constructor that creates a <code>Menu</code> object specifying a title, the
-     * entries of the menu, if you want the exit entry or not, if you want the title
-     * centred and if you also want the vertical frame in the title. It will also
-     * automatically calculate the frame length.
+     * Constructs a <code>MyMenu</code> with the given title and options, showing the exit option by default.
      *
-     * @param header           Represents the header of the menu.
-     * @param entries          Represents the entries of the menu.
+     * @param title   The title of the menu.
+     * @param options The array of menu options.
      */
-
-    public Menu(String header, String[] entries) {
-        this.header = header;
-        this.entries = entries;
+    public Menu(String title, String[] options) {
+        this(title, options, Menu.SHOW_EXIT_OPTION_DEFAULT);
     }
-    /*
-    public static void clearConsole() {
-        for (int i = 0; i < 30; i++)
-            System.out.println("\n");
-        System.out.print(AnsiColors.CLEAR);
-        System.out.flush();
-    }
-    */
 
     /**
-     * Stops the program for a certain amount of milliseconds.
+     * Constructs a <code>MyMenu</code> with the given title, options, and whether to show the exit option.
      *
-     * @param milliseconds The number of milliseconds to stop the program.
-     * @throws InterruptedException If any thread has interrupted the current
-     *                              thread. The <i>interrupted status</i> of the
-     *                              current thread is cleared when this exception is
-     *                              thrown.
+     * @param title          The title of the menu.
+     * @param options        The array of menu options.
+     * @param showExitOption Whether the exit option is to be shown.
      */
+    public Menu(String title, String[] options, boolean showExitOption) {
+        this.title = title;
+        this.options = options;
+        this.showExitOption = showExitOption;
+    }
 
-    public static void wait(int milliseconds) throws InterruptedException {
-        try {
-            Thread.sleep(milliseconds);
-        } catch (IllegalArgumentException e) {
-            System.out.println(NEGATIVE_MILLIS_ERROR);
+    /**
+     * Displays the menu and returns the user's choice.
+     *PrettyStrings
+     * @return The user's choice.
+     */
+    public int choose() {
+        int minOptionChoiceValue = (this.showExitOption) ? 0 : 1;
+
+        displayMenu();
+
+        return InputData.readIntegerBetween(Menu.INPUT_REQUEST, minOptionChoiceValue, this.options.length);
+    }
+
+    /**
+     * Displays the menu to the console.
+     */
+    public void displayMenu() {
+        String prettifiedTitle = PrettyStrings.prettify(this.title, AnsiColors.GREEN, AnsiWeights.BOLD, null);
+        System.out.println(Menu.FRAME);
+        System.out.println(PrettyStrings.center(prettifiedTitle, Menu.FRAME.length()));
+        System.out.println(Menu.FRAME);
+
+        for (int i = 0; i < this.options.length; i++) {
+            System.out.println(String.format("%d.\t%s", i + 1, this.options[i]));
         }
-    }
-
-    /**
-     * Prints a certain message simulating a loading by adding dots slowly.
-     *
-     * @param message The message to print.
-     * @throws InterruptedException Read the {@link #wait() wait} method.
-     */
-    public static void loadingMessage(String message) throws InterruptedException {
-        System.out.print(message + ".");
-        wait(500);
-        System.out.print(".");
-        wait(500);
-        System.out.print(".");
-        wait(500);
-        System.out.print("\n");
-        //clearConsole();
-    }
-
-    private void printMenu(boolean hasHeader, boolean hasExitEntry) {
-        StringBuffer menu = new StringBuffer();
-
-        if (hasHeader)
-            menu.append(INSERT_REQUEST).append(header).append("\n");
-
-        for (int i = 0; i < entries.length; i++)
-            menu.append(String.format("%d. %s\n", (i + 1), entries[i]));
-
-        if (hasExitEntry)
-            menu.append(PrettyStrings.isolatedLine(EXIT_ENTRY));
-
-        System.out.print(menu);
-    }
-
-    /**
-     * Prints the menu and lets the user choose an option from it.
-     *
-     * @return An <code>int</code> representing the choice of the user.
-     */
-    public int choose(boolean hasHeader, boolean hasExitEntry) {
-        printMenu(hasHeader, hasExitEntry);
-
-        if (hasExitEntry)
-            return InputData.readIntegerBetween(CHOICE, 0, entries.length);
-        else
-            return InputData.readIntegerBetween(CHOICE, 1, entries.length);
-    }
-
-    public void changeHeader(String header) {
-        this.header = header;
+        if (this.showExitOption) {
+            System.out.println();
+            System.out.println(Menu.EXIT_OPTION);
+        }
+        System.out.println();
     }
 }
