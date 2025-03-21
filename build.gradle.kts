@@ -81,8 +81,6 @@ tasks.shadowJar {
         exclude(dependency("org.junit.platform:junit-platform-launcher:1.12.1"))
 
         exclude(dependency("org.slf4j:slf4j-api:2.0.17"))
-        // include(dependency("com.google.guava:guava:33.4.0-jre"))
-        // shadow(org.slf4j:slf4j-api:2.0.17))
 
         configurations = provider { listOf(project.configurations.runtimeClasspath.get()) }
     }
