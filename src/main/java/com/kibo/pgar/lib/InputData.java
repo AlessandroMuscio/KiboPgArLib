@@ -1,17 +1,23 @@
 package com.kibo.pgar.lib;
 
-import java.util.*;
-import java.util.function.Function;
+import java.io.File;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class InputData {
     private static final Scanner reader = createScanner();
+    private static final String UNSUPPORTED_OP_ERR_MSG = String
+            .format("%sThis class isn't instantiable!%s", AnsiColors.RED, AnsiColors.RESET);
+
     private final static String ERROR_FORMAT = "Warning the input given is not the correct format";
     private final static String ERROR_MIN = "Warning the input is lower than: ";
     private final static String ERROR_EMPTHY_STRING = "Warning the input is empty";
     private final static String ERROR_STRING_LENGHT_NOT_ONE = "Warning input one character";
     private final static String ERROR_MAX = "Warning the input is higher than: ";
     private final static String MESSAGE_POSSIBLE_CHARACTERS = "Warning the input characters only in this list: ";
-    // i need to reformat all this 
+    // i need to reformat all thisF
+
     private static final String COMMAND_INPUT = "> ";
     private static final String RED_ATTENTION = AnsiColors.RED + "Attention!" + AnsiColors.RESET;
     private static final String ALPHANUMERIC_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
@@ -36,10 +42,35 @@ public class InputData {
     private static final String INVALID_ANSWER = COMMAND_INPUT + RED_ATTENTION + "\n"
             + COMMAND_INPUT + "The answer is not valid!";
 
+    public InputData() throws UnsupportedOperationException {
+        throw new UnsupportedOperationException(InputData.UNSUPPORTED_OP_ERR_MSG);
+    }
+
     private static void flushReader() { reader.nextLine(); }
 
     private static Scanner createScanner() {
-        return new Scanner(System.in).useDelimiter("\n");
+        // Check if the code is being executed from Eclipse
+        if (isEclipseEnvironment()) {
+            // If running in Eclipse, use System.lineSeparator() as the delimiter
+            return new Scanner(System.in).useDelimiter(System.getProperty("line.separator"));
+        } else {
+            // If not running in Eclipse, use "\n" as the delimiter
+            return new Scanner(System.in).useDelimiter("\n");
+        }
+    }
+
+    /**
+     * Determines if the code is being executed within an Eclipse environment.<br><br>
+     *
+     * This method checks for the presence of the <code>.project</code> file and <code>.settings</code> directory
+     * in the current working directory, which are standard indicators of an Eclipse project.<br><br>
+     *
+     * @return <code>true</code> if the code is running in Eclipse, <code>false</code> otherwise.
+     */
+    private static boolean isEclipseEnvironment() {
+        File projectFile = new File(".project");
+        File settingsDir = new File(".settings");
+        return projectFile.exists() && settingsDir.exists();
     }
 
     /**
@@ -110,21 +141,6 @@ public class InputData {
     }
 
     /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     * @return A <code>String</code> form the method <code>scanner.nextLine().trim();</code>;
-     */
-
-    public static String readStringNotEmpty(String message) {
-        while (true) {
-            String lettura = readSting(message).trim();
-
-            if (!lettura.isEmpty()) return lettura;
-            else System.out.println(EMPTY_STRING_ERROR);
-        }
-    }
-
-    /**
      * Prints <code>message</code> in the terminal and reads the text inserted by
      * the user, given that it isn't empty. If it isn't a <code>String</code> an
      * error message is printed. It's also possible to select if the inserted text
@@ -151,23 +167,6 @@ public class InputData {
     }
 
     /**
-     * @author Mattia Tognela
-     * @param message Let you deliver a message for the user
-     * @return it returns character form the method scanner.nexline().atChar(0);
-     */
-
-    public static char readChar(String message) {
-        while (true) {
-            System.out.printf("%s -> ", message);
-
-            String valoreLetto = reader.nextLine();
-
-            if (valoreLetto.length() == 1) return valoreLetto.charAt(0);
-            else System.out.println(ERROR_STRING_LENGHT_NOT_ONE);
-        }
-    }
-
-    /**
      * Prints <code>message</code> in the terminal and reads the text inserted by
      * the user. It will take the first <code>char</code> in it and verify if it is
      * in the <code>allowed</code> characters, if not, an error message will be
@@ -184,7 +183,7 @@ public class InputData {
         char readChar;
 
         do {
-            read = readStringNotEmpty(message);
+            read = readStringNotEmpty(message, false);
 
             readChar = read.charAt(0);
 
@@ -195,25 +194,6 @@ public class InputData {
         } while (!isAllowed);
 
         return readChar;
-    }
-
-    /**
-     * @author Mattia Tognela
-     * @param message Leèt you deliver a message for the user
-     *
-     * @return an <code>int</code>
-     */
-
-    public static int readInt(String message) {
-        while (true) {
-            System.out.printf("%s -> ", message);
-            try {
-                return reader.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println(ERROR_FORMAT);
-                reader.next();
-            }
-        }
     }
 
     /**
@@ -256,6 +236,7 @@ public class InputData {
      * @param min     The minimum value to read.
      * @return An <code>int</code> representing the integer that was read.
      */
+
     public static int readIntegerWithMinimum(String message, int min) {
         boolean isAboveMin = false;
         int read;
@@ -281,6 +262,7 @@ public class InputData {
      * @param max     The maximum value to read.
      * @return An <code>int</code> representing the integer that was read.
      */
+
     public static int readIntegerWithMaximum(String message, int max) {
         boolean isBelowMax = false;
         int read;
@@ -308,6 +290,7 @@ public class InputData {
      * @param max     The maximum value to read.
      * @return An <code>int</code> representing the integer that was read.
      */
+
     public static int readIntegerBetween(String message, int min, int max) {
         boolean isBetweenMinMax = false;
         int read;
@@ -366,6 +349,7 @@ public class InputData {
      * @param min     The minimum value to read.
      * @return A <code>double</code> representing the double that was read.
      */
+
     public static double readDoubleWithMinimum(String message, double min) {
         boolean isAboveMin = false;
         double read;
@@ -391,6 +375,7 @@ public class InputData {
      * @param max     The maximum value to read.
      * @return An <code>double</code> representing the double that was read.
      */
+
     public static double readDoubleWithMaximum(String message, double max) {
         boolean isBelowMax = false;
         double read;
@@ -418,6 +403,7 @@ public class InputData {
      * @param max     The maximum value to read.
      * @return An <code>double</code> representing the double that was read.
      */
+
     public static double readDoubleBetween(String message, double min, double max) {
         boolean isBetweenMinMax = false;
         double read;
@@ -448,14 +434,14 @@ public class InputData {
      */
 
     public static boolean readYesOrNo(String question) {
-        String answer = readStringNotEmpty(question + " [Y/n]");
+        String answer = readStringNotEmpty(question + " [Y/n]", true);
 
         if (answer.equals("Y") || answer.equals("YES"))
             return true;
         else if (answer.equals("N") || answer.equals("NO"))
             return false;
         else {
-            System.out.println(ERROR_FORMAT);
+            System.out.println(INVALID_ANSWER);
             return readYesOrNo(question);
         }
     }
