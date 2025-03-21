@@ -10,37 +10,30 @@ public class InputData {
     private static final String UNSUPPORTED_OP_ERR_MSG = String
             .format("%sThis class isn't instantiable!%s", AnsiColors.RED, AnsiColors.RESET);
 
-    private final static String ERROR_FORMAT = "Warning the input given is not the correct format";
-    private final static String ERROR_MIN = "Warning the input is lower than: ";
-    private final static String ERROR_EMPTHY_STRING = "Warning the input is empty";
-    private final static String ERROR_STRING_LENGHT_NOT_ONE = "Warning input one character";
-    private final static String ERROR_MAX = "Warning the input is higher than: ";
-    private final static String MESSAGE_POSSIBLE_CHARACTERS = "Warning the input characters only in this list: ";
-    // i need to reformat all thisF
+    private static final String RED_ATTENTION = PrettyStrings.prettify("Attention!", AnsiColors.RED, null, null);
 
-    private static final String COMMAND_INPUT = "> ";
-    private static final String RED_ATTENTION = AnsiColors.RED + "Attention!" + AnsiColors.RESET;
     private static final String ALPHANUMERIC_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
-    private static final String ALPHANUMERIC_CHARACTERS_ERROR = COMMAND_INPUT + RED_ATTENTION
-            + "\nOnly alphanumeric characters are allowed.";
-    private static final String EMPTY_STRING_ERROR = COMMAND_INPUT + RED_ATTENTION + "\n"
-            + COMMAND_INPUT + "No characters were inserted.";
-    private static final String ALLOWED_CHARACTERS_ERROR = COMMAND_INPUT + RED_ATTENTION + "\n"
-            + COMMAND_INPUT + "The only allowed characters are: %s";
-    private static final String INTEGER_FORMAT_ERROR = COMMAND_INPUT + RED_ATTENTION
-            + "\n" + COMMAND_INPUT + "The inserted data is in a incorrect format. An integer is required.";
-    private static final String DOUBLE_FORMAT_ERROR = COMMAND_INPUT + RED_ATTENTION
-            + "\n" + COMMAND_INPUT + "The inserted data is in a incorrect format. A double is required.";
-    private static final String MINIMUM_ERROR_INTEGER = COMMAND_INPUT + RED_ATTENTION + "\n"
-            + COMMAND_INPUT + "A value greater or equal than %d is required.";
-    private static final String MAXIMUM_ERROR_INTEGER = COMMAND_INPUT + RED_ATTENTION + "\n"
-            + COMMAND_INPUT + "A value less or equal than %d is required.";
-    private static final String MINIMUM_ERROR_DOUBLE = COMMAND_INPUT + RED_ATTENTION + "\n"
-            + COMMAND_INPUT + "A value greater or equal than %.2f is required.";
-    private static final String MAXIMUM_ERROR_DOUBLE = COMMAND_INPUT + RED_ATTENTION + "\n"
-            + COMMAND_INPUT + "A value less or equal than %.2f is required.";
-    private static final String INVALID_ANSWER = COMMAND_INPUT + RED_ATTENTION + "\n"
-            + COMMAND_INPUT + "The answer is not valid!";
+    private static final String ALPHANUMERIC_CHARACTERS_ERROR = PrettyStrings.prettify(
+            "\nOnly alphanumeric characters are allowed.", AnsiColors.RED, null, null);
+    private static final String EMPTY_STRING_ERROR = PrettyStrings.prettify(
+            "\nNo characters were inserted.", AnsiColors.RED, null, null);
+    private static final String ALLOWED_CHARACTERS_ERROR = PrettyStrings.prettify(
+            "\nThe only allowed characters are: %s", AnsiColors.RED, null, null);
+    private static final String INTEGER_FORMAT_ERROR = PrettyStrings.prettify(
+            "\nThe inserted data is in an incorrect format. An integer is required.", AnsiColors.RED, null, null);
+    private static final String DOUBLE_FORMAT_ERROR = PrettyStrings.prettify(
+            "\nThe inserted data is in an incorrect format. A double is required.", AnsiColors.RED, null, null);
+    private static final String MINIMUM_ERROR_INTEGER = PrettyStrings.prettify(
+            "\nA value greater or equal than %d is required.", AnsiColors.RED, null, null);
+    private static final String MAXIMUM_ERROR_INTEGER = PrettyStrings.prettify(
+            "\nA value less or equal than %d is required.", AnsiColors.RED, null, null);
+    private static final String MINIMUM_ERROR_DOUBLE = PrettyStrings.prettify(
+            "\nA value greater or equal than %.2f is required.", AnsiColors.RED, null, null);
+    private static final String MAXIMUM_ERROR_DOUBLE = PrettyStrings.prettify(
+            "\nA value less or equal than %.2f is required.", AnsiColors.RED, null, null);
+    private static final String INVALID_ANSWER = PrettyStrings.prettify(
+            "\nThe answer is not valid!", AnsiColors.RED, null, null);
+
 
     public InputData() throws UnsupportedOperationException {
         throw new UnsupportedOperationException(InputData.UNSUPPORTED_OP_ERR_MSG);
@@ -67,6 +60,7 @@ public class InputData {
      *
      * @return <code>true</code> if the code is running in Eclipse, <code>false</code> otherwise.
      */
+
     private static boolean isEclipseEnvironment() {
         File projectFile = new File(".project");
         File settingsDir = new File(".settings");
@@ -122,7 +116,7 @@ public class InputData {
 
         if (alphanumeric) {
             do {
-                System.out.print(COMMAND_INPUT + message + " ");
+                System.out.printf("%s ", message);
 
                 read = reader.next().trim();
 
@@ -132,7 +126,7 @@ public class InputData {
                     System.out.println(ALPHANUMERIC_CHARACTERS_ERROR);
             } while (!isAlphanumeric);
         } else {
-            System.out.print(COMMAND_INPUT + message + " ");
+            System.out.printf("%s ", message);
 
             read = reader.next().trim();
         }
@@ -210,7 +204,7 @@ public class InputData {
 
         do {
             try {
-                System.out.print(COMMAND_INPUT + message + " ");
+                System.out.printf("%s ", message);
 
                 read = reader.nextInt();
 
@@ -242,7 +236,7 @@ public class InputData {
         int read;
 
         do {
-            read = readInteger(COMMAND_INPUT + message + " ");
+            read = readInteger(message);
 
             if (read >= min)
                 isAboveMin = true;
@@ -268,7 +262,7 @@ public class InputData {
         int read;
 
         do {
-            read = readInteger(COMMAND_INPUT + message + " ");
+            read = readInteger(message);
 
             if (read <= max)
                 isBelowMax = true;
@@ -322,7 +316,7 @@ public class InputData {
         double read = Double.NaN;
 
         do {
-            System.out.print(COMMAND_INPUT + message + " ");
+            System.out.printf("%s ", message);
 
             try {
                 read = reader.nextDouble();
@@ -355,7 +349,7 @@ public class InputData {
         double read;
 
         do {
-            read = readDouble(COMMAND_INPUT + message + " ");
+            read = readDouble(message);
 
             if (read >= min)
                 isAboveMin = true;
@@ -381,7 +375,7 @@ public class InputData {
         double read;
 
         do {
-            read = readDouble(COMMAND_INPUT + message + " ");
+            read = readDouble(message);
 
             if (read <= max)
                 isBelowMax = true;
@@ -409,7 +403,7 @@ public class InputData {
         double read;
 
         do {
-            read = readDouble(COMMAND_INPUT + message + " ");
+            read = readDouble(message);
 
             if (read < min)
                 System.out.printf(MINIMUM_ERROR_DOUBLE + "\n", min);
