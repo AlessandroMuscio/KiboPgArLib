@@ -45,7 +45,7 @@ public class InputData {
         // Check if the code is being executed from Eclipse
         if (isEclipseEnvironment()) {
             // If running in Eclipse, use System.lineSeparator() as the delimiter
-            return new Scanner(System.in).useDelimiter(System.getProperty("line.separator"));
+            return new Scanner(System.in).useDelimiter(System.lineSeparator());
         } else {
             // If not running in Eclipse, use "\n" as the delimiter
             return new Scanner(System.in).useDelimiter("\n");
@@ -96,7 +96,7 @@ public class InputData {
      */
 
     public static String readSting(String message) {
-        System.out.printf("%s -> ", message);
+        System.out.printf("%s ", message);
         return reader.nextLine();
     }
 
