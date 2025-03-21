@@ -25,6 +25,7 @@ public class Menu {
      * @param title   The title of the menu.
      * @param options The array of menu options.
      */
+    
     public Menu(String title, String[] options) {
         this(title, options, Menu.SHOW_EXIT_OPTION_DEFAULT);
     }
@@ -36,6 +37,7 @@ public class Menu {
      * @param options        The array of menu options.
      * @param showExitOption Whether the exit option is to be shown.
      */
+    
     public Menu(String title, String[] options, boolean showExitOption) {
         this.title = title;
         this.options = options;
@@ -58,6 +60,7 @@ public class Menu {
     /**
      * Displays the menu to the console.
      */
+    
     public void displayMenu() {
         String prettifiedTitle = PrettyStrings.prettify(this.title, AnsiColors.GREEN, AnsiWeights.BOLD, null);
         System.out.println(Menu.FRAME);
@@ -65,11 +68,10 @@ public class Menu {
         System.out.println(Menu.FRAME);
 
         for (int i = 0; i < this.options.length; i++) {
-            System.out.println(String.format("%d.\t%s", i + 1, this.options[i]));
+            System.out.printf("%d.\t%s%n\n", i + 1, this.options[i]);
         }
         if (this.showExitOption) {
-            System.out.println();
-            System.out.println(Menu.EXIT_OPTION);
+            System.out.printf("\n%s\n", Menu.EXIT_OPTION);
         }
         System.out.println();
     }
