@@ -1,77 +1,119 @@
 package com.kibo.pgar.lib;
 
+import java.io.Serializable;
+
 /**
- * <code>Class</code> that represents a generic text menu with multiple options.
- * <p>
- * It is assumed that the exit option is always associated with choice 0 and is presented at the bottom of the menu (when it must be shown).
+ * The <strong>Menu</strong> class creates a menu with multiple entries, assuming
+ * that zero is always the exit option. It also provides methods for displaying
+ * the menu in a visually appealing manner.
  *
- * @author Minini Luca
+ * @author Alessandro Muscio
+ * @version 1.1
  */
+public class Menu implements Serializable {
+    private static final String EXIT_OPTION = "0. Exit";
+    private static final String INPUT_PROMPT = "> ";
+    private static final String NEGATIVE_MILLIS_ERROR = AnsiColors.RED + "Error: Negative time is not allowed." + AnsiColors.RESET;
 
-public class Menu {
-    final private static String FRAME = "--------------------------------";
-    final private static String EXIT_OPTION = "0.\tExit";
-    final private static String INPUT_REQUEST = "Enter the number of the desired option";
-    final private static boolean SHOW_EXIT_OPTION_DEFAULT = true;
-
-
-    private String title;
-    private String[] options;
-    private boolean showExitOption;
-
-    /**
-     * Constructs a <code>MyMenu</code> with the given title and options, showing the exit option by default.
-     *
-     * @param title   The title of the menu.
-     * @param options The array of menu options.
-     */
-    
-    public Menu(String title, String[] options) {
-        this(title, options, Menu.SHOW_EXIT_OPTION_DEFAULT);
-    }
+    private final String title;
+    private final String[] entries;
+    private final boolean useExitOption;
+    private final boolean centerTitle;
+    private final boolean useVerticalFrame;
+    private final int frameWidth;
 
     /**
-     * Constructs a <code>MyMenu</code> with the given title, options, and whether to show the exit option.
+     * Constructs a <code>Menu</code> with a specified title, entries, and formatting options.
      *
      * @param title          The title of the menu.
-     * @param options        The array of menu options.
-     * @param showExitOption Whether the exit option is to be shown.
+     * @param entries        The menu entries.
+     * @param useExitOption  Whether to include an exit option.
+     * @param centerTitle    Whether to center the title.
+     * @param useVerticalFrame Whether to include a vertical frame around the title.
      */
-    
-    public Menu(String title, String[] options, boolean showExitOption) {
+    public Menu(String title, String[] entries, boolean useExitOption, boolean centerTitle, boolean useVerticalFrame) {
         this.title = title;
-        this.options = options;
-        this.showExitOption = showExitOption;
+        this.entries = entries;
+        this.useExitOption = useExitOption;
+        this.centerTitle = centerTitle;
+        this.useVerticalFrame = useVerticalFrame;
+        this.frameWidth = calculateFrameWidth(title, entries);
     }
 
     /**
-     * Displays the menu and returns the user's choice.
-     *PrettyStrings
-     * @return The user's choice.
+     * Determines the frame width based on the title and the longest menu entry.
+     *
+     * @param title   The menu title.
+     * @param entries The menu entries.
+     * @return The calculated frame width.
+     */
+    private int calculateFrameWidth(String title, String[] entries) {
+        int maxWidth = title.length();
+        for (int i = 0; i < entries.length; i++) {
+            int entryWidth = entries[i].length() + KnownProblems.countIntegerDigits(i + 1) + 2;
+            maxWidth = Math.max(maxWidth, entryWidth);
+        }
+        return maxWidth + 10;
+    }
+
+    /**
+     * Displays the menu with appropriate formatting.
+     */
+    private void printMenu() {
+        StringBuilder menuBuilder = new StringBuilder();
+        FrameSettings frameSettings = new FrameSettings(frameWidth, centerTitle ? Alignment.CENTER : Alignment.LEFT, useVerticalFrame);
+
+        menuBuilder.append(PrettyStrings.frame(title, frameSettings)).append("\n");
+
+        for (int i = 0; i < entries.length; i++) {
+            menuBuilder.append(String.format("%d. %s\n", (i + 1), entries[i]));
+        }
+
+        if (useExitOption) {
+            menuBuilder.append(PrettyStrings.isolatedLine(EXIT_OPTION));
+        }
+
+        System.out.println(menuBuilder);
+    }
+
+    /**
+     * Displays the menu and allows the user to choose an option.
+     *
+     * @return The user's menu selection.
      */
     public int choose() {
-        int minOptionChoiceValue = (this.showExitOption) ? 0 : 1;
-
-        displayMenu();
-
-        return InputData.readIntegerBetween(Menu.INPUT_REQUEST, minOptionChoiceValue, this.options.length);
+        printMenu();
+        return useExitOption ? InputData.readIntegerBetween(INPUT_PROMPT, 0, entries.length)
+                : InputData.readIntegerBetween(INPUT_PROMPT, 1, entries.length);
     }
 
     /**
-     * Displays the menu to the console.
+     * Pauses execution for a given number of milliseconds.
+     *
+     * @param milliseconds The pause duration.
      */
-    
-    public void displayMenu() {
-        String prettifiedTitle = PrettyStrings.prettify(this.title, AnsiColors.GREEN, AnsiWeights.BOLD, null);
-        System.out.println(Menu.FRAME);
-        System.out.println(PrettyStrings.center(prettifiedTitle, Menu.FRAME.length()));
-        System.out.println(Menu.FRAME);
-
-        for (int i = 0; i < this.options.length; i++) {
-            System.out.printf("%d.\t%s%n\n", i + 1, this.options[i]);
+    public static void wait(int milliseconds) {
+        if (milliseconds < 0) {
+            System.out.println(NEGATIVE_MILLIS_ERROR);
+            return;
         }
-        if (this.showExitOption) {
-            System.out.printf("\n%s\n", Menu.EXIT_OPTION);
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    /**
+     * Displays a loading message with animated dots.
+     *
+     * @param message The message to display.
+     */
+    public static void loadingMessage(String message) {
+        System.out.print(message);
+        for (int i = 0; i < 3; i++) {
+            wait(1000);
+            System.out.print(".");
         }
         System.out.println();
     }
