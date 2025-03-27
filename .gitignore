@@ -1,69 +1,42 @@
-**/index.html
-# Gradle build files
-.gradle/
+.gradle
 build/
-target/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# IntelliJ IDEA/Android Studio files
-.idea/
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
 *.iml
-
-# Gradle-related cache files
-.gradle/*
-
-# Build and test reports
-build/reports/
-build/test-results/
-
-# Ignore temporary files
-*.log
-*.tmp
-*.bak
-*.swp
-*~.nib
-
-# Maven Wrapper files
-.mvn/wrapper/
-!.mvn/wrapper/maven-wrapper.jar
-
-# Eclipse-specific files
-.metadata/
-*.class
-bin/
-tmp/
-.settings/
-.project
-.classpath
-
-# STS (Spring Tool Suite)
-.sts4-cache/
-.springBeans
-.apt_generated
-
-# Java-specific files
-*.class
-*.jar
-*.war
-*.ear
-*.nar
-*.zip
-*.tar.gz
-*.rar
-hs_err_pid*
-
-# OS-specific files
-Thumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-.DS_Store
-
-# Logs and dumps
-*.stackdump
-
-# IDE-specific launch configurations
-*.launch
-
-# Generated files
+*.ipr
 out/
-dist/
-node_modules/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
