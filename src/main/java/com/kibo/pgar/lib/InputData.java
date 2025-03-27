@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class InputData {
     private static final Scanner reader = createScanner();
     private static final String UNSUPPORTED_OP_ERR_MSG = PrettyStrings
-            .prettify("%sThis class isn't instantiable!%s", AnsiColors.RED, null, null);
+            .prettify("%sThis class isn't instantiable!%s", AnsiColors.RED, AnsiWeights.BOLD, null);
 
     private static final String ALPHANUMERIC_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
     private static final String ALPHANUMERIC_CHARACTERS_ERROR = PrettyStrings.prettify(
