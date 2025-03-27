@@ -12,25 +12,25 @@ public class InputData {
 
     private static final String ALPHANUMERIC_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ";
     private static final String ALPHANUMERIC_CHARACTERS_ERROR = PrettyStrings.prettify(
-            "Only alphanumeric characters are allowed.", AnsiColors.RED, null, null);
+            "Only alphanumeric characters are allowed.", AnsiColors.RED, AnsiWeights.BOLD, null);
     private static final String EMPTY_STRING_ERROR = PrettyStrings.prettify(
-            "No characters were inserted.", AnsiColors.RED, null, null);
+            "No characters were inserted.", AnsiColors.RED, AnsiWeights.BOLD, null);
     private static final String ALLOWED_CHARACTERS_ERROR = PrettyStrings.prettify(
-            "The only allowed characters are: %s", AnsiColors.RED, null, null);
+            "The only allowed characters are: %s", AnsiColors.RED, AnsiWeights.BOLD, null);
     private static final String INTEGER_FORMAT_ERROR = PrettyStrings.prettify(
-            "The inserted data is in an incorrect format. An integer is required.", AnsiColors.RED, null, null);
+            "The inserted data is in an incorrect format. An integer is required.", AnsiColors.RED, AnsiWeights.BOLD, null);
     private static final String DOUBLE_FORMAT_ERROR = PrettyStrings.prettify(
-            "The inserted data is in an incorrect format. A double is required.", AnsiColors.RED, null, null);
+            "The inserted data is in an incorrect format. A double is required.", AnsiColors.RED, AnsiWeights.BOLD, null);
     private static final String MINIMUM_ERROR_INTEGER = PrettyStrings.prettify(
-            "A value greater or equal than %d is required.", AnsiColors.RED, null, null);
+            "A value greater or equal than %d is required.", AnsiColors.RED, AnsiWeights.BOLD, null);
     private static final String MAXIMUM_ERROR_INTEGER = PrettyStrings.prettify(
-            "A value less or equal than %d is required.", AnsiColors.RED, null, null);
+            "A value less or equal than %d is required.", AnsiColors.RED, AnsiWeights.BOLD, null);
     private static final String MINIMUM_ERROR_DOUBLE = PrettyStrings.prettify(
-            "A value greater or equal than %.2f is required.", AnsiColors.RED, null, null);
+            "A value greater or equal than %.2f is required.", AnsiColors.RED, AnsiWeights.BOLD, null);
     private static final String MAXIMUM_ERROR_DOUBLE = PrettyStrings.prettify(
-            "A value less or equal than %.2f is required.", AnsiColors.RED, null, null);
+            "A value less or equal than %.2f is required.", AnsiColors.RED, AnsiWeights.BOLD, null);
     private static final String INVALID_ANSWER = PrettyStrings.prettify(
-            "The answer is not valid!", AnsiColors.RED, null, null);
+            "The answer is not valid!", AnsiColors.RED, AnsiWeights.BOLD, null);
 
     public InputData() throws UnsupportedOperationException {
         throw new UnsupportedOperationException(InputData.UNSUPPORTED_OP_ERR_MSG);
