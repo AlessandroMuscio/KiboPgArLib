@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.kibo.pgar.lib.Tests" time="0.242" tests="3" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/mattia/Source/repos/school/java/KiboPgArLib/target/test-classes:/home/mattia/Source/repos/school/java/KiboPgArLib/target/classes:/home/mattia/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/mattia/.m2/repository/com/google/guava/guava/33.4.0-jre/guava-33.4.0-jre.jar:/home/mattia/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/mattia/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/mattia/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/mattia/.m2/repository/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar:/home/mattia/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/mattia/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/mattia/.m2/repository/ch/qos/logback/logback-classic/1.5.17/logback-classic-1.5.17.jar:/home/mattia/.m2/repository/ch/qos/logback/logback-core/1.5.17/logback-core-1.5.17.jar:/home/mattia/.m2/repository/org/apache/maven/plugins/maven-assembly-plugin/3.7.1/maven-assembly-plugin-3.7.1.jar:/home/mattia/.m2/repository/org/apache/maven/resolver/maven-resolver-util/1.4.1/maven-resolver-util-1.4.1.jar:/home/mattia/.m2/repository/org/apache/maven/resolver/maven-resolver-api/1.4.1/maven-resolver-api-1.4.1.jar:/home/mattia/.m2/repository/org/apache/maven/shared/maven-common-artifact-filters/3.3.2/maven-common-artifact-filters-3.3.2.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-interpolation/1.27/plexus-interpolation-1.27.jar:/home/mattia/.m2/repository/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/mattia/.m2/repository/org/apache/maven/shared/maven-filtering/3.3.2/maven-filtering-3.3.2.jar:/home/mattia/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/home/mattia/.m2/repository/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar:/home/mattia/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-io/3.4.2/plexus-io-3.4.2.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-archiver/4.9.2/plexus-archiver-4.9.2.jar:/home/mattia/.m2/repository/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.jar:/home/mattia/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar:/home/mattia/.m2/repository/org/iq80/snappy/snappy/0.4/snappy-0.4.jar:/home/mattia/.m2/repository/org/tukaani/xz/1.9/xz-1.9.jar:/home/mattia/.m2/repository/com/github/luben/zstd-jni/1.5.5-11/zstd-jni-1.5.5-11.jar:/home/mattia/.m2/repository/org/apache/maven/maven-archiver/3.6.1/maven-archiver-3.6.1.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-utils/4.0.0/plexus-utils-4.0.0.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-xml/3.0.0/plexus-xml-3.0.0.jar:/home/mattia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.1/junit-jupiter-engine-5.12.1.jar:/home/mattia/.m2/repository/org/junit/platform/junit-platform-engine/1.12.1/junit-platform-engine-1.12.1.jar:/home/mattia/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/mattia/.m2/repository/org/junit/platform/junit-platform-commons/1.12.1/junit-platform-commons-1.12.1.jar:/home/mattia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.1/junit-jupiter-api-5.12.1.jar:/home/mattia/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/mattia/.m2/repository/org/junit/platform/junit-platform-launcher/1.12.1/junit-platform-launcher-1.12.1.jar:"/>
+    <property name="java.vm.vendor" value="Red Hat, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://www.redhat.com/"/>
+    <property name="user.timezone" value="Europe/Rome"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk/lib"/>
+    <property name="sun.java.command" value="/home/mattia/Source/repos/school/java/KiboPgArLib/target/surefire/surefirebooter-20250317135504765_3.jar /home/mattia/Source/repos/school/java/KiboPgArLib/target/surefire 2025-03-17T13-55-04_688-jvmRun1 surefire-20250317135504765_1tmp surefire_0-20250317135504765_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/mattia/Source/repos/school/java/KiboPgArLib/target/test-classes:/home/mattia/Source/repos/school/java/KiboPgArLib/target/classes:/home/mattia/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/mattia/.m2/repository/com/google/guava/guava/33.4.0-jre/guava-33.4.0-jre.jar:/home/mattia/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/mattia/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/mattia/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/mattia/.m2/repository/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar:/home/mattia/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/mattia/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/mattia/.m2/repository/ch/qos/logback/logback-classic/1.5.17/logback-classic-1.5.17.jar:/home/mattia/.m2/repository/ch/qos/logback/logback-core/1.5.17/logback-core-1.5.17.jar:/home/mattia/.m2/repository/org/apache/maven/plugins/maven-assembly-plugin/3.7.1/maven-assembly-plugin-3.7.1.jar:/home/mattia/.m2/repository/org/apache/maven/resolver/maven-resolver-util/1.4.1/maven-resolver-util-1.4.1.jar:/home/mattia/.m2/repository/org/apache/maven/resolver/maven-resolver-api/1.4.1/maven-resolver-api-1.4.1.jar:/home/mattia/.m2/repository/org/apache/maven/shared/maven-common-artifact-filters/3.3.2/maven-common-artifact-filters-3.3.2.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-interpolation/1.27/plexus-interpolation-1.27.jar:/home/mattia/.m2/repository/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/mattia/.m2/repository/org/apache/maven/shared/maven-filtering/3.3.2/maven-filtering-3.3.2.jar:/home/mattia/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/home/mattia/.m2/repository/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar:/home/mattia/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-io/3.4.2/plexus-io-3.4.2.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-archiver/4.9.2/plexus-archiver-4.9.2.jar:/home/mattia/.m2/repository/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.jar:/home/mattia/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar:/home/mattia/.m2/repository/org/iq80/snappy/snappy/0.4/snappy-0.4.jar:/home/mattia/.m2/repository/org/tukaani/xz/1.9/xz-1.9.jar:/home/mattia/.m2/repository/com/github/luben/zstd-jni/1.5.5-11/zstd-jni-1.5.5-11.jar:/home/mattia/.m2/repository/org/apache/maven/maven-archiver/3.6.1/maven-archiver-3.6.1.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-utils/4.0.0/plexus-utils-4.0.0.jar:/home/mattia/.m2/repository/org/codehaus/plexus/plexus-xml/3.0.0/plexus-xml-3.0.0.jar:/home/mattia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.1/junit-jupiter-engine-5.12.1.jar:/home/mattia/.m2/repository/org/junit/platform/junit-platform-engine/1.12.1/junit-platform-engine-1.12.1.jar:/home/mattia/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/mattia/.m2/repository/org/junit/platform/junit-platform-commons/1.12.1/junit-platform-commons-1.12.1.jar:/home/mattia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.1/junit-jupiter-api-5.12.1.jar:/home/mattia/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/mattia/.m2/repository/org/junit/platform/junit-platform-launcher/1.12.1/junit-platform-launcher-1.12.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/mattia"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-01-21"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/mattia/Source/repos/school/java/KiboPgArLib"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/mattia/Source/repos/school/java/KiboPgArLib/target/surefire/surefirebooter-20250317135504765_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.6+7"/>
+    <property name="user.name" value="mattia"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.13.6-200.fc41.x86_64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="(Red_Hat-21.0.6.0.7-1)"/>
+    <property name="localRepository" value="/home/mattia/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=java-21-openjdk&amp;version=40"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.6"/>
+    <property name="user.dir" value="/home/mattia/Source/repos/school/java/KiboPgArLib"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Red Hat, Inc."/>
+    <property name="java.vm.version" value="21.0.6+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testPrettyStrings" classname="com.kibo.pgar.lib.Tests" time="0.027">
+    <system-out><![CDATA[13:55:05.410 [main] INFO  com.kibo.pgar.lib.Tests - Test Started - PrettyStrings
+13:55:05.413 [main] INFO  com.kibo.pgar.lib.Tests - 
+Isolated Line
+
+~~~~~~~~~~~~~~~~~~~~
+aaaaaaaaaa
+~~~~~~~~~~~~~~~~~~~~
+Column Left     
+    Column Right
+~~~~~~~~~~~~~~~~~~~~
+     Centered     
+~~~~~~~~~~~~~~~~~~~~
+------------------------------
+  Framed Centered, no VFrame  
+------------------------------
+
+---------------------------
+| Framed Centered, VFrame |
+---------------------------
+
+--------------------------
+Framed Left, no VFrame    
+--------------------------
+
+-----------------------
+|Framed Left, VFrame  |
+-----------------------
+
+---------------------------
+    Framed Right, no VFrame
+---------------------------
+
+------------------------
+|  Framed Right, VFrame|
+------------------------
+
+
+13:55:05.415 [main] INFO  com.kibo.pgar.lib.Tests - Test Ended - PrettyStrings
+]]></system-out>
+  </testcase>
+  <testcase name="testAnsiClasses" classname="com.kibo.pgar.lib.Tests" time="0.006">
+    <system-out><![CDATA[13:55:05.432 [main] INFO  com.kibo.pgar.lib.Tests - Test Started - AnsiClasses
+13:55:05.433 [main] INFO  com.kibo.pgar.lib.Tests - 
+&amp#27;[7minvert&amp#27;[0m
+&amp#27;[30mblack&amp#27;[0m
+&amp#27;[31mred&amp#27;[0m
+&amp#27;[32mgreen&amp#27;[0m
+&amp#27;[33myellow&amp#27;[0m
+&amp#27;[34mblue&amp#27;[0m
+&amp#27;[35mpurple&amp#27;[0m
+&amp#27;[36mcyan&amp#27;[0m
+&amp#27;[37mwhite&amp#27;[0m
+&amp#27;[40mblack_background&amp#27;[0m
+&amp#27;[41mred_background&amp#27;[0m
+&amp#27;[42mgreen_background&amp#27;[0m
+&amp#27;[43myellow_background&amp#27;[0m
+&amp#27;[44mblue_background&amp#27;[0m
+&amp#27;[45mpurple_background&amp#27;[0m
+&amp#27;[46mcyan_background&amp#27;[0m
+&amp#27;[47mwhite_background&amp#27;[0m
+~~~~~~~~~~~~~~~~~~~~
+&amp#27;[1mbold&amp#27;[0m
+&amp#27;[2mlight&amp#27;[0m
+&amp#27;[3mitalic&amp#27;[0m
+~~~~~~~~~~~~~~~~~~~~
+&amp#27;[4munderline&amp#27;[0m
+&amp#27;[8mhide&amp#27;[0m
+&amp#27;[9mstrikethrough&amp#27;[0m
+&amp#27;[21mdouble_underline&amp#27;[0m
+
+&amp#27;[53moverline&amp#27;[0m
+
+13:55:05.434 [main] INFO  com.kibo.pgar.lib.Tests - Test Ended - AnsiClasses
+]]></system-out>
+  </testcase>
+  <testcase name="testKnownProblems" classname="com.kibo.pgar.lib.Tests" time="0.004">
+    <system-out><![CDATA[13:55:05.437 [main] INFO  com.kibo.pgar.lib.Tests - Test Started - KnownProblems
+13:55:05.439 [main] INFO  com.kibo.pgar.lib.Tests - Test Ended - KnownProblems
+]]></system-out>
+  </testcase>
+</testsuite>

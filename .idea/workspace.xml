@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e8fb4d3b-2b63-41f8-8f3a-4d56179c81f1" name="Changes" comment="added the whegiht to the error messages in InputData.java" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/src/main/scala">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/src">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/src/main">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/src/main/java">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="kibo-pgar-lib" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="kibo-pgar-lib" type="f1a62948:ProjectNode" />
+                <item name="src" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="kibo-pgar-lib" type="f1a62948:ProjectNode" />
+                <item name="src" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="kibo-pgar-lib" type="f1a62948:ProjectNode" />
+                <item name="src" type="2d1252cf:ModuleNode" />
+                <item name="main" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="kibo-pgar-lib" type="f1a62948:ProjectNode" />
+                <item name="src" type="2d1252cf:ModuleNode" />
+                <item name="main" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="scala" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="AnnotationType" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="old" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mtognela&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:mtognela/KiboPgArLib.git&quot;,
+    &quot;accountId&quot;: &quot;1011c41c-ece2-4cc0-a608-617116d05d3d&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;mtognela&quot;,
+    &quot;repository&quot;: &quot;KiboPgArLib&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/InputData.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2u8fSZpnsqjHojsO0t5MeyaMqIE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Gradle.KiboPgArLib [testJar].executor": "Run",
+    "Gradle.Tests.executor": "Run",
+    "Gradle.build.executor": "Run",
+    "Gradle.shadowjar.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-Content root duplicates": "Duplicate content roots detected",
+    "Notification.DoNotAsk-Content root duplicates": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindow.Terminal.ShowToolbar": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "external.system.has.shared.sources": "true",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/home/mattia/Source/repos/school/java/KiboPgArLib/src/main/scala",
+    "last_opened_file_path": "/home/mattia/Source/repos/school/java/PuntiRetteGradle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.1640625",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.kibo.pgar.lib" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/scala/com/kibo/pgar/lib" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.kibo.pgar.lib" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="shadowjar" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.shadowjar">
+    <configuration name="Tests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.kibo.pgar.lib.Tests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="shadowjar" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--stacktrace" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="shadowJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="KiboPgArLib" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="KiboPgArLib" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.build" />
+      <item itemvalue="Gradle.shadowjar" />
+      <item itemvalue="Gradle.Tests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Tests" />
+        <item itemvalue="Gradle.Tests" />
+        <item itemvalue="Gradle.Tests" />
+        <item itemvalue="Gradle.Tests" />
+        <item itemvalue="Gradle.Tests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ScalaProjectSettings">
+    <option name="migrateConfigurationsNotificationShown" value="true" />
+    <option name="scala3DisclaimerShown" value="true" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e8fb4d3b-2b63-41f8-8f3a-4d56179c81f1" name="Changes" comment="" />
+      <created>1741635122824</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741635122824</updated>
+      <workItem from="1741635124847" duration="583000" />
+      <workItem from="1741636558641" duration="7239000" />
+      <workItem from="1741680713851" duration="2717000" />
+      <workItem from="1741695469234" duration="1792000" />
+      <workItem from="1741699017563" duration="90000" />
+      <workItem from="1741699120153" duration="1168000" />
+      <workItem from="1741701724560" duration="758000" />
+      <workItem from="1741703190671" duration="17000" />
+      <workItem from="1741704354890" duration="38000" />
+      <workItem from="1741704596185" duration="59000" />
+      <workItem from="1741709315948" duration="131000" />
+      <workItem from="1741713925453" duration="2784000" />
+      <workItem from="1741718174350" duration="346000" />
+      <workItem from="1741727742012" duration="22000" />
+      <workItem from="1741787686676" duration="488000" />
+      <workItem from="1741964535076" duration="1757000" />
+      <workItem from="1741967487193" duration="3241000" />
+      <workItem from="1742034956115" duration="17198000" />
+      <workItem from="1742057892614" duration="772000" />
+      <workItem from="1742058693459" duration="9332000" />
+      <workItem from="1742075899324" duration="5042000" />
+      <workItem from="1742120405708" duration="2525000" />
+      <workItem from="1742122933011" duration="1528000" />
+      <workItem from="1742124462741" duration="2651000" />
+      <workItem from="1742132863604" duration="50000" />
+      <workItem from="1742132926004" duration="15000" />
+      <workItem from="1742153724064" duration="91000" />
+      <workItem from="1742153851641" duration="88000" />
+      <workItem from="1742215984370" duration="281000" />
+      <workItem from="1742231435206" duration="1470000" />
+      <workItem from="1742313750489" duration="10128000" />
+      <workItem from="1742369732106" duration="26000" />
+      <workItem from="1742467472513" duration="104000" />
+      <workItem from="1742568939484" duration="2496000" />
+      <workItem from="1742573626373" duration="61000" />
+      <workItem from="1742574643499" duration="820000" />
+      <workItem from="1742582539769" duration="3422000" />
+      <workItem from="1742848786951" duration="6000" />
+      <workItem from="1742998156583" duration="232000" />
+      <workItem from="1743070897858" duration="23000" />
+      <workItem from="1743098806580" duration="235000" />
+      <workItem from="1743099076546" duration="1414000" />
+    </task>
+    <task id="LOCAL-00006" summary="add doc to SimpleInput.java">
+      <option name="closed" value="true" />
+      <created>1741642965367</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741642965367</updated>
+    </task>
+    <task id="LOCAL-00007" summary="little fix to Sim">
+      <option name="closed" value="true" />
+      <created>1741643020284</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741643020284</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update the project dependency">
+      <option name="closed" value="true" />
+      <created>1741643041054</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1741643041054</updated>
+    </task>
+    <task id="LOCAL-00009" summary="quic fix">
+      <option name="closed" value="true" />
+      <created>1741643106074</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741643106074</updated>
+    </task>
+    <task id="LOCAL-00010" summary="SimpleInput.yesOrNo great again">
+      <option name="closed" value="true" />
+      <created>1741643239414</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741643239414</updated>
+    </task>
+    <task id="LOCAL-00011" summary="SimpleInput.yesOrNo great again">
+      <option name="closed" value="true" />
+      <created>1741643578414</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1741643578414</updated>
+    </task>
+    <task id="LOCAL-00012" summary="+d typos fixed">
+      <option name="closed" value="true" />
+      <created>1741643754543</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1741643754543</updated>
+    </task>
+    <task id="LOCAL-00013" summary="method SimpleInput.readDoubleMinMax added">
+      <option name="closed" value="true" />
+      <created>1741681311399</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741681311399</updated>
+    </task>
+    <task id="LOCAL-00014" summary="README.md updated">
+      <option name="closed" value="true" />
+      <created>1741682705137</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741682705137</updated>
+    </task>
+    <task id="LOCAL-00015" summary="README.md is better">
+      <option name="closed" value="true" />
+      <created>1741682945362</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1741682945362</updated>
+    </task>
+    <task id="LOCAL-00016" summary="README.md fix">
+      <option name="closed" value="true" />
+      <created>1741682980142</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1741682980142</updated>
+    </task>
+    <task id="LOCAL-00017" summary="trying to test my SimpleInputTest.java">
+      <option name="closed" value="true" />
+      <created>1741697141772</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1741697141772</updated>
+    </task>
+    <task id="LOCAL-00018" summary="trying to test SimpleInput.java">
+      <option name="closed" value="true" />
+      <created>1741700174066</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1741700174066</updated>
+    </task>
+    <task id="LOCAL-00019" summary="we need a Menu.java class">
+      <option name="closed" value="true" />
+      <created>1741709379948</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1741709379948</updated>
+    </task>
+    <task id="LOCAL-00020" summary="test to SimpleInputTest.java half done">
+      <option name="closed" value="true" />
+      <created>1741787789192</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1741787789193</updated>
+    </task>
+    <task id="LOCAL-00021" summary="renamed SimpleInput.java to InputData.java.java">
+      <option name="closed" value="true" />
+      <created>1741965334035</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1741965334035</updated>
+    </task>
+    <task id="LOCAL-00022" summary="probably if fixed ./gradlew test error">
+      <option name="closed" value="true" />
+      <created>1741967795636</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1741967795636</updated>
+    </task>
+    <task id="LOCAL-00023" summary="trying to config build.gradle.kts">
+      <option name="closed" value="true" />
+      <created>1742051527004</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1742051527004</updated>
+    </task>
+    <task id="LOCAL-00024" summary="ignore target and build">
+      <option name="closed" value="true" />
+      <created>1742051711440</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1742051711440</updated>
+    </task>
+    <task id="LOCAL-00025" summary="ignore target and build .gradle">
+      <option name="closed" value="true" />
+      <created>1742051731209</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1742051731209</updated>
+    </task>
+    <task id="LOCAL-00026" summary="deleted lot of files">
+      <option name="closed" value="true" />
+      <created>1742058779424</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1742058779424</updated>
+    </task>
+    <task id="LOCAL-00027" summary="fix the bug that made me rewrite InputData.java">
+      <option name="closed" value="true" />
+      <created>1742071881856</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1742071881856</updated>
+    </task>
+    <task id="LOCAL-00028" summary="remove *.html in .gitignore">
+      <option name="closed" value="true" />
+      <created>1742073346606</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1742073346606</updated>
+    </task>
+    <task id="LOCAL-00029" summary="fixed InputData.java javadoc">
+      <option name="closed" value="true" />
+      <created>1742073867816</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1742073867816</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fixed InputData.java javadoc">
+      <option name="closed" value="true" />
+      <created>1742074023748</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1742074023748</updated>
+    </task>
+    <task id="LOCAL-00031" summary="added scala as a project dependency">
+      <option name="closed" value="true" />
+      <created>1742079581121</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1742079581121</updated>
+    </task>
+    <task id="LOCAL-00032" summary="mavan plugin for scala added">
+      <option name="closed" value="true" />
+      <created>1742080656391</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1742080656391</updated>
+    </task>
+    <task id="LOCAL-00033" summary="initial scala implementation done">
+      <option name="closed" value="true" />
+      <created>1742122479827</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1742122479827</updated>
+    </task>
+    <task id="LOCAL-00034" summary="commit unversion file for checkout">
+      <option name="closed" value="true" />
+      <created>1742122636846</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1742122636846</updated>
+    </task>
+    <task id="LOCAL-00035" summary="top to bottom rewrite InputData.java combining code from an old relase and new">
+      <option name="closed" value="true" />
+      <created>1742132644891</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1742132644891</updated>
+    </task>
+    <task id="LOCAL-00036" summary="remove scala dependency">
+      <option name="closed" value="true" />
+      <created>1742314182883</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1742314182883</updated>
+    </task>
+    <task id="LOCAL-00037" summary="listed dependency licence">
+      <option name="closed" value="true" />
+      <created>1742314731289</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1742314731289</updated>
+    </task>
+    <task id="LOCAL-00038" summary="before i will be crazy i commit">
+      <option name="closed" value="true" />
+      <created>1742317001567</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1742317001567</updated>
+    </task>
+    <task id="LOCAL-00039" summary="ignore the target directory">
+      <option name="closed" value="true" />
+      <created>1742329124508</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1742329124508</updated>
+    </task>
+    <task id="LOCAL-00040" summary="rewrite of build.gradle.kts">
+      <option name="closed" value="true" />
+      <created>1742329595453</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1742329595453</updated>
+    </task>
+    <task id="LOCAL-00041" summary="rewrite of build.gradle.kts">
+      <option name="closed" value="true" />
+      <created>1742329668000</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1742329668000</updated>
+    </task>
+    <task id="LOCAL-00042" summary="hust a simple script to inspect the jar">
+      <option name="closed" value="true" />
+      <created>1742329708545</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1742329708545</updated>
+    </task>
+    <task id="LOCAL-00043" summary="read the file Menu.java">
+      <option name="closed" value="true" />
+      <created>1742329736618</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1742329736618</updated>
+    </task>
+    <task id="LOCAL-00044" summary="added the file Menu.java form a friend contrib">
+      <option name="closed" value="true" />
+      <created>1742570043261</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1742570043261</updated>
+    </task>
+    <task id="LOCAL-00045" summary="AnsiColors.java removed a line added previous InputData.java fix">
+      <option name="closed" value="true" />
+      <created>1742571095285</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1742571095285</updated>
+    </task>
+    <task id="LOCAL-00046" summary=".gitignore update">
+      <option name="closed" value="true" />
+      <created>1742591931269</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1742591931269</updated>
+    </task>
+    <task id="LOCAL-00047" summary="edit the build.gradle.kts commented some don't need dependency">
+      <option name="closed" value="true" />
+      <created>1742592035129</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1742592035129</updated>
+    </task>
+    <task id="LOCAL-00048" summary="reformat the error string with PrettyString.prettfy in InputData.java">
+      <option name="closed" value="true" />
+      <created>1742592438300</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1742592438300</updated>
+    </task>
+    <task id="LOCAL-00049" summary="InputData.java fix">
+      <option name="closed" value="true" />
+      <created>1742592906629</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1742592906629</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Little stirng fix in Menu.java">
+      <option name="closed" value="true" />
+      <created>1742593210850</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1742593210851</updated>
+    </task>
+    <task id="LOCAL-00051" summary="pom.xml deleted InputData.java work in progress">
+      <option name="closed" value="true" />
+      <created>1742594295973</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1742594295973</updated>
+    </task>
+    <task id="LOCAL-00052" summary="fix the menu">
+      <option name="closed" value="true" />
+      <created>1743100087750</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1743100087750</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added the whegiht to the error messages in InputData.java">
+      <option name="closed" value="true" />
+      <created>1743100841643</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1743100841643</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added the whegiht to the error messages in InputData.java">
+      <option name="closed" value="true" />
+      <created>1743100853777</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1743100853777</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix the bug that made me rewrite InputData.java" />
+    <MESSAGE value="remove *.html in .gitignore" />
+    <MESSAGE value="fixed InputData.java javadoc" />
+    <MESSAGE value="added scala as a project dependency" />
+    <MESSAGE value="mavan plugin for scala added" />
+    <MESSAGE value="initial scala implementation done" />
+    <MESSAGE value="commit unversion file for checkout" />
+    <MESSAGE value="top to bottom rewrite InputData.java combining code from an old relase and new" />
+    <MESSAGE value="remove scala dependency" />
+    <MESSAGE value="listed dependency licence" />
+    <MESSAGE value="before i will be crazy i commit" />
+    <MESSAGE value="ignore the target directory" />
+    <MESSAGE value="rewrite of build.gradle.kts" />
+    <MESSAGE value="hust a simple script to inspect the jar" />
+    <MESSAGE value="read the file Menu.java" />
+    <MESSAGE value="added the file Menu.java form a friend contrib" />
+    <MESSAGE value="AnsiColors.java removed a line added previous InputData.java fix" />
+    <MESSAGE value=".gitignore update" />
+    <MESSAGE value="edit the build.gradle.kts commented some don't need dependency" />
+    <MESSAGE value="reformat the error string with PrettyString.prettfy in InputData.java" />
+    <MESSAGE value="InputData.java fix" />
+    <MESSAGE value="Little stirng fix in Menu.java" />
+    <MESSAGE value="pom.xml deleted InputData.java work in progress" />
+    <MESSAGE value="fix the menu" />
+    <MESSAGE value="added the whegiht to the error messages in InputData.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the whegiht to the error messages in InputData.java" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

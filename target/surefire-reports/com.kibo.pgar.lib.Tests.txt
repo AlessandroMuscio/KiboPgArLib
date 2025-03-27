@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.kibo.pgar.lib.Tests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.242 s -- in com.kibo.pgar.lib.Tests
