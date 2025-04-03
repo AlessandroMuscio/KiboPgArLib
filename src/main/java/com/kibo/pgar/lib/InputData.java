@@ -32,10 +32,6 @@ public class InputData {
     private static final String INVALID_ANSWER = PrettyStrings.prettify(
             "The answer is not valid!", AnsiColors.RED, AnsiWeights.BOLD, null);
 
-    public InputData() throws UnsupportedOperationException {
-        throw new UnsupportedOperationException(InputData.UNSUPPORTED_OP_ERR_MSG);
-    }
-
     private static void flushReader() { reader.nextLine(); }
 
     private static Scanner createScanner() {
@@ -427,9 +423,9 @@ public class InputData {
     public static boolean readYesOrNo(String question) {
         String answer = readStringNotEmpty(question + " [Y/n]", true);
 
-        if (answer.equals("Y") || answer.equals("YES"))
+        if (answer.equals("Y") || answer.equals("YES") || answer.equals("y"))
             return true;
-        else if (answer.equals("N") || answer.equals("NO"))
+        else if (answer.equals("N") || answer.equals("NO")  || answer.equals("n"))
             return false;
         else {
             System.out.println(INVALID_ANSWER);

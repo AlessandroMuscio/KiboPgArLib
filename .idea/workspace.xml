@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8fb4d3b-2b63-41f8-8f3a-4d56179c81f1" name="Changes" comment="added the whegiht to the error messages in InputData.java" />
+    <list default="true" id="e8fb4d3b-2b63-41f8-8f3a-4d56179c81f1" name="Changes" comment="commmit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/CommandLineTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/CommandLineTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/FrameSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/FrameSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/InputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/InputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/KnownProblems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/KnownProblems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/PrettyStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/PrettyStrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/Alignment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/AnsiColors.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/AnsiDecorations.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/AnsiWeights.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/CommandLineTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/FileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/FrameSettings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/InputData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/KnownProblems.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/PrettyStrings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/kibo/pgar/lib/RandomDraws.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/kibo-pgar-lib-0.0.1-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/kibo-pgar-lib-0.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.kibo.pgar.lib.Tests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.kibo.pgar.lib.Tests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kibo/pgar/lib/GCD_LCMTestCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/kibo/pgar/lib/Tests.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +171,7 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/com/kibo/pgar/lib/InputData.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -161,45 +187,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Gradle.KiboPgArLib [testJar].executor": "Run",
-    "Gradle.Tests.executor": "Run",
-    "Gradle.build.executor": "Run",
-    "Gradle.shadowjar.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Notification.DisplayName-DoNotAsk-Content root duplicates": "Duplicate content roots detected",
-    "Notification.DoNotAsk-Content root duplicates": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ToolWindow.Terminal.ShowToolbar": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "external.system.has.shared.sources": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "/home/mattia/Source/repos/school/java/KiboPgArLib/src/main/scala",
-    "last_opened_file_path": "/home/mattia/Source/repos/school/java/PuntiRetteGradle",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.1640625",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Gradle.KiboPgArLib [testJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.build.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.shadowjar.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Content root duplicates&quot;: &quot;Duplicate content roots detected&quot;,
+    &quot;Notification.DoNotAsk-Content root duplicates&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindow.Terminal.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;external.system.has.shared.sources&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/mattia/Source/repos/school/java/KiboPgArLib/src/main/scala&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mattia/Source/repos/school/java/PuntiRetteGradle&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.1640625&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.kibo.pgar.lib" />
@@ -376,46 +402,43 @@
       <workItem from="1743070897858" duration="23000" />
       <workItem from="1743098806580" duration="235000" />
       <workItem from="1743099076546" duration="1414000" />
-    </task>
-    <task id="LOCAL-00006" summary="add doc to SimpleInput.java">
-      <option name="closed" value="true" />
-      <created>1741642965367</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1741642965367</updated>
-    </task>
-    <task id="LOCAL-00007" summary="little fix to Sim">
-      <option name="closed" value="true" />
-      <created>1741643020284</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1741643020284</updated>
-    </task>
-    <task id="LOCAL-00008" summary="update the project dependency">
-      <option name="closed" value="true" />
-      <created>1741643041054</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1741643041054</updated>
-    </task>
-    <task id="LOCAL-00009" summary="quic fix">
-      <option name="closed" value="true" />
-      <created>1741643106074</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1741643106074</updated>
-    </task>
-    <task id="LOCAL-00010" summary="SimpleInput.yesOrNo great again">
-      <option name="closed" value="true" />
-      <created>1741643239414</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1741643239414</updated>
+      <workItem from="1743101158932" duration="110000" />
+      <workItem from="1743104782730" duration="100000" />
+      <workItem from="1743169956998" duration="339000" />
+      <workItem from="1743173409066" duration="142000" />
+      <workItem from="1743440232829" duration="370000" />
+      <workItem from="1743507177040" duration="315000" />
+      <workItem from="1743508228778" duration="67000" />
+      <workItem from="1743510186858" duration="314000" />
+      <workItem from="1743510591193" duration="122000" />
+      <workItem from="1743513017922" duration="572000" />
+      <workItem from="1743513647056" duration="736000" />
+      <workItem from="1743514432711" duration="147000" />
+      <workItem from="1743514642552" duration="118000" />
+      <workItem from="1743514798552" duration="22000" />
+      <workItem from="1743514869749" duration="609000" />
+      <workItem from="1743515501456" duration="372000" />
+      <workItem from="1743515995409" duration="537000" />
+      <workItem from="1743516670133" duration="31000" />
+      <workItem from="1743516719507" duration="41000" />
+      <workItem from="1743516822047" duration="33000" />
+      <workItem from="1743516921323" duration="40000" />
+      <workItem from="1743517093117" duration="403000" />
+      <workItem from="1743517587547" duration="335000" />
+      <workItem from="1743518266515" duration="122000" />
+      <workItem from="1743518425074" duration="131000" />
+      <workItem from="1743518632754" duration="36000" />
+      <workItem from="1743518694331" duration="26000" />
+      <workItem from="1743518744370" duration="11000" />
+      <workItem from="1743519036327" duration="17000" />
+      <workItem from="1743684142508" duration="340000" />
+      <workItem from="1743684678332" duration="21000" />
+      <workItem from="1743684859564" duration="17000" />
+      <workItem from="1743684972041" duration="70000" />
+      <workItem from="1743685088796" duration="253000" />
+      <workItem from="1743685465240" duration="72000" />
+      <workItem from="1743685615534" duration="189000" />
+      <workItem from="1743688149875" duration="209000" />
     </task>
     <task id="LOCAL-00011" summary="SimpleInput.yesOrNo great again">
       <option name="closed" value="true" />
@@ -769,7 +792,47 @@
       <option name="project" value="LOCAL" />
       <updated>1743100853777</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="updated the gitignore">
+      <option name="closed" value="true" />
+      <created>1743101188682</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1743101188682</updated>
+    </task>
+    <task id="LOCAL-00056" summary="commmit uversion files">
+      <option name="closed" value="true" />
+      <created>1743101244966</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1743101244966</updated>
+    </task>
+    <task id="LOCAL-00057" summary="commmit">
+      <option name="closed" value="true" />
+      <created>1743101254609</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1743101254609</updated>
+    </task>
+    <task id="LOCAL-00058" summary="commmit">
+      <option name="closed" value="true" />
+      <created>1743101255581</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1743101255581</updated>
+    </task>
+    <task id="LOCAL-00059" summary="commmit">
+      <option name="closed" value="true" />
+      <created>1743101256368</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1743101256368</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -787,9 +850,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix the bug that made me rewrite InputData.java" />
-    <MESSAGE value="remove *.html in .gitignore" />
-    <MESSAGE value="fixed InputData.java javadoc" />
     <MESSAGE value="added scala as a project dependency" />
     <MESSAGE value="mavan plugin for scala added" />
     <MESSAGE value="initial scala implementation done" />
@@ -812,7 +872,10 @@
     <MESSAGE value="pom.xml deleted InputData.java work in progress" />
     <MESSAGE value="fix the menu" />
     <MESSAGE value="added the whegiht to the error messages in InputData.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the whegiht to the error messages in InputData.java" />
+    <MESSAGE value="updated the gitignore" />
+    <MESSAGE value="commmit uversion files" />
+    <MESSAGE value="commmit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commmit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

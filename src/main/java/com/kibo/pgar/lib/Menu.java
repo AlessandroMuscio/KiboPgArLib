@@ -14,84 +14,86 @@ public class Menu implements Serializable {
     private static final String EXIT_OPTION = "0. Exit";
     private static final String INPUT_PROMPT = "> ";
     private static final String NEGATIVE_MILLIS_ERROR = AnsiColors.RED + "Error: Negative time is not allowed." + AnsiColors.RESET;
+    private static final int MIN_FRAME_WIDTH = 30; // Minimum frame width to ensure uniformity
+    private static final int PADDING = 4; // Padding around menu items
 
     private final String title;
     private final String[] entries;
     private final boolean useExitOption;
     private final boolean centerTitle;
-    private final boolean useVerticalFrame;
     private final int frameWidth;
 
     /**
      * Constructs a <code>Menu</code> with a specified title, entries, and formatting options.
-     *
-     * @param title          The title of the menu.
-     * @param entries        The menu entries.
-     * @param useExitOption  Whether to include an exit option.
-     * @param centerTitle    Whether to center the title.
-     * @param useVerticalFrame Whether to include a vertical frame around the title.
      */
-    public Menu(String title, String[] entries, boolean useExitOption, boolean centerTitle, boolean useVerticalFrame) {
+    public Menu(String title, String[] entries, boolean useExitOption) {
         this.title = title;
         this.entries = entries;
         this.useExitOption = useExitOption;
-        this.centerTitle = centerTitle;
-        this.useVerticalFrame = useVerticalFrame;
+        this.centerTitle = false;
         this.frameWidth = calculateFrameWidth(title, entries);
     }
 
-    /**
-     * Determines the frame width based on the title and the longest menu entry.
-     *
-     * @param title   The menu title.
-     * @param entries The menu entries.
-     * @return The calculated frame width.
-     */
     private int calculateFrameWidth(String title, String[] entries) {
-        int maxWidth = title.length();
+        int frameLength = title.length();
+
         for (int i = 0; i < entries.length; i++) {
-            int entryWidth = entries[i].length() + KnownProblems.countIntegerDigits(i + 1) + 2;
-            maxWidth = Math.max(maxWidth, entryWidth);
+            frameLength = Math.max(frameLength, entries[i].length() + KnownProblems.countIntegerDigits(i + 1) + 2);
         }
-        return maxWidth + 10;
+
+        return Math.max(frameLength + PADDING * 2, MIN_FRAME_WIDTH);
     }
 
     /**
-     * Displays the menu with appropriate formatting.
+     * Generates a horizontal line of specified length and character.
      */
+    private String generateHorizontalLine(int length, char lineChar) {
+        return new String(new char[length]).replace('\0', lineChar);
+    }
+
     private void printMenu() {
         StringBuilder menuBuilder = new StringBuilder();
-        FrameSettings frameSettings = new FrameSettings(frameWidth, centerTitle ? Alignment.CENTER : Alignment.LEFT, useVerticalFrame);
+        menuBuilder.append("\n");
 
-        menuBuilder.append(PrettyStrings.frame(title, frameSettings)).append("\n");
+        // Top border
+        menuBuilder.append(generateHorizontalLine(frameWidth, '=')).append("\n");
 
+        menuBuilder.append(title).append("\n");
+
+        // Title separator
+        menuBuilder.append(generateHorizontalLine(frameWidth, '-')).append("\n\n");
+
+        // Menu items
         for (int i = 0; i < entries.length; i++) {
-            menuBuilder.append(String.format("%d. %s\n", (i + 1), entries[i]));
+            String menuItem = String.format("%d. %s", (i + 1), entries[i]);
+            // Center each menu item if centerTitle is true
+            if (centerTitle) {
+                menuItem = String.format("%" + ((frameWidth + menuItem.length()) / 2) + "s", menuItem);
+            }
+            menuBuilder.append(menuItem).append("\n");
         }
 
         if (useExitOption) {
-            menuBuilder.append(PrettyStrings.isolatedLine(EXIT_OPTION));
+            menuBuilder.append("\n").append(generateHorizontalLine(frameWidth, '-')).append("\n");
+            String exitLine = EXIT_OPTION;
+            if (centerTitle) {
+                exitLine = String.format("%" + ((frameWidth + exitLine.length()) / 2) + "s", exitLine);
+            }
+            menuBuilder.append(exitLine).append("\n");
         }
+
+        // Bottom border
+        menuBuilder.append(generateHorizontalLine(frameWidth, '=')).append("\n");
 
         System.out.println(menuBuilder);
     }
 
-    /**
-     * Displays the menu and allows the user to choose an option.
-     *
-     * @return The user's menu selection.
-     */
     public int choose() {
         printMenu();
         return useExitOption ? InputData.readIntegerBetween(INPUT_PROMPT, 0, entries.length)
                 : InputData.readIntegerBetween(INPUT_PROMPT, 1, entries.length);
     }
 
-    /**
-     * Pauses execution for a given number of milliseconds.
-     *
-     * @param milliseconds The pause duration.
-     */
     public static void wait(int milliseconds) {
         if (milliseconds < 0) {
             System.out.println(NEGATIVE_MILLIS_ERROR);
@@ -102,19 +104,5 @@ public class Menu implements Serializable {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-    }
-
-    /**
-     * Displays a loading message with animated dots.
-     *
-     * @param message The message to display.
-     */
-    public static void loadingMessage(String message) {
-        System.out.print(message);
-        for (int i = 0; i < 3; i++) {
-            wait(1000);
-            System.out.print(".");
-        }
-        System.out.println();
     }
 }

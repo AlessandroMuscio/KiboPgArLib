@@ -70,9 +70,9 @@ val testJar by tasks.registering(Jar::class) {
 }
 
 tasks.shadowJar {
-    archiveClassifier = "shadowjar"
+    archiveClassifier = ""
 
-    from(sourceSets.main.get().allSource)
+    // from(sourceSets.main.get().allSource)
 
     manifest.inheritFrom(testJar.get().manifest)
 
