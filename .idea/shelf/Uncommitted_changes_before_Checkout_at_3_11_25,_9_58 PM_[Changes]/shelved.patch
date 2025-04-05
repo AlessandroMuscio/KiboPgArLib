@@ -1,0 +1,119 @@
+Index: src/test/java/com/kibo/pgar/lib/SimpleInputTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.kibo.pgar.lib;\n\nimport java.io.ByteArrayInputStream;\nimport java.io.InputStream;\n\nimport static org.junit.jupiter.api.Assertions.*;\nimport static com.kibo.pgar.lib.SimpleInput.*;\n\nclass SimpleInputTest {\n\n    private String simulateInputString(String input, int cases) {\n\n        InputStream originalSystemIn = System.in;\n        System.setIn(new ByteArrayInputStream(input.getBytes()));\n\n        String result = null;\n        try {\n            switch (cases) {\n                case 1:\n                    result = readSting(\"\");\n                    break;\n                case 2:\n                    result = readStringNotEmpthy(\"\");\n                    break;\n            }\n\n        } finally {\n            System.setIn(originalSystemIn);\n        }\n\n        return result;\n    }\n\n    private char simulateInputChar(String input, String possible, int cases) {\n        InputStream originalSystemIn = System.in;\n        System.setIn(new ByteArrayInputStream(input.getBytes()));\n        char result = '\\0';\n\n        try {\n            switch (cases) {\n                case 1:\n                    result = readChar(\"\");\n                    break;\n                case 2:\n                    result = readCharUpper(\"\", possible);\n                    break;\n            }\n        } finally {\n            System.setIn(originalSystemIn);\n        }\n        return result;\n    }\n\n    private int simulateInputInt(String input, int cases, int min, int max, boolean fromString) {\n        InputStream originalSystemIn = System.in;\n        System.setIn(new ByteArrayInputStream(input.getBytes()));\n        int result = 0;\n\n        try {\n            switch (cases) {\n                case 1:\n                    result = readInt(\"\", fromString);\n                    break;\n                case 2:\n                    result = readIntMin(\"\", min, fromString);\n                    break;\n                case 3:\n                    return readIntMinMax(\"\", min, max, fromString);\n            }\n        } finally {\n            System.setIn(originalSystemIn);\n        }\n        return result;\n    }\n\n\n\n    private void readStringNotEmpthyTest(String message) {\n        String userInput = \"Valid Input\\n\";\n        String result = simulateInputString(userInput, 1);\n\n        assertEquals(\"Valid Input\", result);\n    }\n\n}
+===================================================================
+diff --git a/src/test/java/com/kibo/pgar/lib/SimpleInputTest.java b/src/test/java/com/kibo/pgar/lib/SimpleInputTest.java
+--- a/src/test/java/com/kibo/pgar/lib/SimpleInputTest.java	(revision d887b6e9d4ff74da9131f135fb28559819092c8e)
++++ b/src/test/java/com/kibo/pgar/lib/SimpleInputTest.java	(date 1741725243849)
+@@ -1,13 +1,25 @@
+ package com.kibo.pgar.lib;
+ 
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
+ import java.io.ByteArrayInputStream;
+ import java.io.InputStream;
+ 
+-import static org.junit.jupiter.api.Assertions.*;
+ import static com.kibo.pgar.lib.SimpleInput.*;
+ 
+ class SimpleInputTest {
+ 
++    /*
++     * @author Mattia Tognela
++     *
++     * @param input delivers the input in function
++     * @param cases 1 simulate the function SimpleInput.readString();
++     *        cases 2 simulate the function SimpleInput.readStringNotEmpty();
++     *        default give an error
++     * @return a String
++     */
++
+     private String simulateInputString(String input, int cases) {
+ 
+         InputStream originalSystemIn = System.in;
+@@ -22,8 +34,10 @@
+                 case 2:
+                     result = readStringNotEmpthy("");
+                     break;
++                default:
++                    System.out.println("Unrecognized case");
++                    break;
+             }
+-
+         } finally {
+             System.setIn(originalSystemIn);
+         }
+@@ -31,6 +45,17 @@
+         return result;
+     }
+ 
++    /**
++     * @author Mattia Tognela
++     *
++     * @param input delivers the input in function
++     * @param possible a Sting of possible characters only in use case 2
++     * @param cases 1 simulate the function SimpleInput.readChar();
++     * @param cases 2 simulate the function SimpleInput.readCharUpper();
++     * @param cases default gives an error
++     * @return a char
++     */
++
+     private char simulateInputChar(String input, String possible, int cases) {
+         InputStream originalSystemIn = System.in;
+         System.setIn(new ByteArrayInputStream(input.getBytes()));
+@@ -44,6 +69,8 @@
+                 case 2:
+                     result = readCharUpper("", possible);
+                     break;
++                default:
++                    System.out.println("Unrecognized case");
+             }
+         } finally {
+             System.setIn(originalSystemIn);
+@@ -51,6 +78,19 @@
+         return result;
+     }
+ 
++    /**
++     * @author Mattia Tognela
++     *
++     * @param input delivers the input in function
++     * @param fromString look for this param in InputDati.java doc
++     * @param cases 1 simulate the function SimpleInput.readInt();
++     * @param cases 2 simulate the function SimpleInput.readIntMin();
++     * @param cases 3 simulate the function SimpleInput.readIntMinMax();
++     * @param cases default gives an error
++     * @return an int
++     */
++
++
+     private int simulateInputInt(String input, int cases, int min, int max, boolean fromString) {
+         InputStream originalSystemIn = System.in;
+         System.setIn(new ByteArrayInputStream(input.getBytes()));
+@@ -66,6 +106,8 @@
+                     break;
+                 case 3:
+                     return readIntMinMax("", min, max, fromString);
++                default:
++                    System.out.println("Unrecognized case");
+             }
+         } finally {
+             System.setIn(originalSystemIn);
+@@ -73,13 +115,5 @@
+         return result;
+     }
+ 
+-
+-
+-    private void readStringNotEmpthyTest(String message) {
+-        String userInput = "Valid Input\n";
+-        String result = simulateInputString(userInput, 1);
+-
+-        assertEquals("Valid Input", result);
+-    }
+-
++    @ParameterizedTest
+ }
+\ No newline at end of file
