@@ -1,14 +1,13 @@
 package com.kibo.pgar.lib;
 
 /**
- * <code>Class</code> that let's you prettify the strings to output in the
- * terminal.
+ * <code>Class</code> that let's you prettify the strings to output in the terminal.
  * 
  * @author Alessandro Muscio (Kibo)
  */
 public class PrettyStrings {
-  private static final String UNSUPPORTED_OP_ERR_MSG = String
-      .format("%sThis class isn't instantiable!%s", AnsiColors.RED, AnsiColors.RESET);
+  private static final String UNSUPPORTED_OP_ERR_MSG = String.format("%sThis class isn't instantiable!%s",
+      AnsiColors.RED, AnsiColors.RESET);
   private static final char SPACE = ' ';
   private static final char NEW_LINE = '\n';
 
@@ -32,10 +31,7 @@ public class PrettyStrings {
     if (settings.getAlignment().equals(Alignment.CENTER))
       framed.append(PrettyStrings.center(toFrame, settings.getWidth()));
     else
-      framed.append(PrettyStrings.column(
-          toFrame,
-          settings.getWidth(),
-          settings.getAlignment().equals(Alignment.LEFT)));
+      framed.append(PrettyStrings.column(toFrame, settings.getWidth(), settings.getAlignment().equals(Alignment.LEFT)));
 
     framed.append(settings.isVerticalFrameEnabled() ? settings.getVerticalFrame() : "");
 
@@ -98,8 +94,8 @@ public class PrettyStrings {
    * @param character The <code>char</code> to repeat.
    * @param times     The number of times to repeat the <code>char</code>.
    * 
-   * @return A <code>String</code> representing the given <code>char</code>
-   *         repeated the given number of times.
+   * @return A <code>String</code> representing the given <code>char</code> repeated the given number
+   *         of times.
    */
   public static String repeatChar(char character, int times) {
     return String.valueOf(character).repeat(Math.max(0, times));
@@ -123,16 +119,16 @@ public class PrettyStrings {
   }
 
   /**
-   * Prettifies the given <code>String</code> by adding a <i>color</i>,
-   * <i>weight</i> and <i>decoration</i>, if given.
+   * Prettifies the given <code>String</code> by adding a <i>color</i>, <i>weight</i> and
+   * <i>decoration</i>, if given.
    * 
    * @param toPrettify The <code>String</code> to be prettified.
-   * @param color      The color given to the <code>String</code>,
-   *                   <code>null</code> for default color.
-   * @param weight     The weight given to the <code>String</code>,
-   *                   <code>null</code> for default weight.
-   * @param decoration The decoration given to the <code>String</code>,
-   *                   <code>null</code> for no decoration.
+   * @param color      The color given to the <code>String</code>, <code>null</code> for default
+   *                   color.
+   * @param weight     The weight given to the <code>String</code>, <code>null</code> for default
+   *                   weight.
+   * @param decoration The decoration given to the <code>String</code>, <code>null</code> for no
+   *                   decoration.
    * 
    * @return A <code>String</code> representing the given one prettified.
    */
@@ -161,5 +157,78 @@ public class PrettyStrings {
       builder.append(AnsiColors.RESET);
 
     return builder.toString();
+  }
+}
+
+/**
+ * <code>Class</code> that let's you specify the settings for framing a <code>String</code>.
+ * 
+ * @author Alessandro Muscio (Kibo)
+ */
+class FrameSettings {
+  private static final char HORIZONTAL_FRAME = '-';
+  private static final char VERTICAL_FRAME = '|';
+
+  private int width;
+  private Alignment alignment;
+  private char horizontalFrame;
+  private boolean verticalFrameEnabled;
+  private char verticalFrame;
+
+  /**
+   * Creates a new <i>settings</i> instance specifying the width of the frame, its alignment and if
+   * the vertical frame is enabled or not. The constructor will automatically set the default vertical
+   * and horizontal frame, change it with the appropriate setters.
+   *
+   * @param width                The width of the frame.
+   * @param alignment            The alignment of the frame.
+   * @param verticalFrameEnabled If teh vertical frame is enabled or not.
+   */
+  public FrameSettings(int width, Alignment alignment, boolean verticalFrameEnabled) {
+    this.width = width;
+    this.alignment = alignment;
+    this.horizontalFrame = FrameSettings.HORIZONTAL_FRAME;
+    this.verticalFrameEnabled = verticalFrameEnabled;
+    this.verticalFrame = FrameSettings.VERTICAL_FRAME;
+  }
+
+  public int getWidth() {
+    return width;
+  }
+
+  public void setWidth(int width) {
+    this.width = width;
+  }
+
+  public Alignment getAlignment() {
+    return alignment;
+  }
+
+  public void setAlignment(Alignment alignment) {
+    this.alignment = alignment;
+  }
+
+  public char getHorizontalFrame() {
+    return horizontalFrame;
+  }
+
+  public void setHorizontalFrame(char horizontalFrame) {
+    this.horizontalFrame = horizontalFrame;
+  }
+
+  public boolean isVerticalFrameEnabled() {
+    return verticalFrameEnabled;
+  }
+
+  public void setVerticalFrameEnabled(boolean useVerticalFrame) {
+    this.verticalFrameEnabled = useVerticalFrame;
+  }
+
+  public char getVerticalFrame() {
+    return verticalFrame;
+  }
+
+  public void setVerticalFrame(char verticalFrame) {
+    this.verticalFrame = verticalFrame;
   }
 }
