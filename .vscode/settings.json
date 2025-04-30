@@ -2,10 +2,12 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.compile.nullAnalysis.mode": "automatic",
   "cSpell.words": [
+    "Atkin",
     "Columnize",
     "columnized",
     "Intelli",
     "ivider",
+    "logback",
     "ommon",
     "pgar",
     "reatest",
