@@ -188,7 +188,8 @@ public final class InputData {
 
   /**
    * Prints <code>question</code> in the terminal with the string "? [Y/n] " added. If the user
-   * answers with 'y' or 'Y' the method will return <code>true</code>, <code>false</code> otherwise.
+   * answers with 'y', 'Y' or leaves blank the method will return <code>true</code>,
+   * <code>false</code> otherwise.
    *
    * @param question The question to print.
    * 
