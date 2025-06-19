@@ -1,5 +1,7 @@
 package com.kibo.pgar.lib;
 
+import java.util.StringJoiner;
+
 /**
  * <code>Class</code> that let's you prettify the strings to output in the terminal.
  * 
@@ -11,31 +13,39 @@ public class PrettyStrings {
   private static final char SPACE = ' ';
   private static final char NEW_LINE = '\n';
 
-  public PrettyStrings() throws UnsupportedOperationException {
+  private PrettyStrings() throws UnsupportedOperationException {
     throw new UnsupportedOperationException(PrettyStrings.UNSUPPORTED_OP_ERR_MSG);
   }
 
   public static String frame(String toFrame, FrameSettings settings) {
-    StringBuilder framed = new StringBuilder();
-    String horizontalFrame = PrettyStrings.repeatChar(settings.getHorizontalFrame(), settings.getWidth());
+    String hFrame = PrettyStrings.repeatChar(settings.getHorizontalFrame(), settings.getWidth());
+    StringJoiner framed = new StringJoiner(String.valueOf(PrettyStrings.NEW_LINE));
 
-    framed.append(horizontalFrame);
-    framed.append(PrettyStrings.NEW_LINE);
+    framed.add(hFrame);
 
+    StringBuilder titleLine = new StringBuilder();
     if (settings.isVerticalFrameEnabled()) {
       settings.setWidth(settings.getWidth() - 2);
 
-      framed.append(settings.getVerticalFrame());
+      titleLine.append(settings.getVerticalFrame());
+      titleLine.append(settings.getVerticalFrame());
     }
 
+    int offset = settings.isVerticalFrameEnabled() ? 1 : 0;
     if (settings.getAlignment().equals(Alignment.CENTER))
-      framed.append(PrettyStrings.center(toFrame, settings.getWidth()));
+      titleLine.insert(offset, PrettyStrings.center(toFrame, settings.getWidth()));
     else
-      framed.append(PrettyStrings.column(toFrame, settings.getWidth(), settings.getAlignment().equals(Alignment.LEFT)));
+      // @formatter:off
+      titleLine.insert(offset, PrettyStrings.column(
+        toFrame, 
+        settings.getWidth(), 
+        settings.getAlignment().equals(Alignment.LEFT)
+      ));
+      // @formatter:on
 
-    framed.append(settings.isVerticalFrameEnabled() ? settings.getVerticalFrame() : "");
+    framed.add(titleLine);
 
-    framed.append(PrettyStrings.isolatedLine(horizontalFrame));
+    framed.add(hFrame);
 
     return framed.toString();
   }
@@ -50,11 +60,8 @@ public class PrettyStrings {
    * @return A <code>String</code> representing the given one columnized.
    */
   public static String column(String toColumnize, int width, boolean left) {
-    int toColumnizeLength = toColumnize.length();
-    int charsToPrint = Math.min(width, toColumnizeLength);
-
-    String columned = toColumnizeLength > charsToPrint ? toColumnize.substring(0, charsToPrint) : toColumnize;
-    String spaces = PrettyStrings.repeatChar(PrettyStrings.SPACE, width - toColumnizeLength);
+    String columned = toColumnize.length() > width ? toColumnize.substring(0, width) : toColumnize;
+    String spaces = PrettyStrings.repeatChar(PrettyStrings.SPACE, width - columned.length());
 
     return left ? columned.concat(spaces) : spaces.concat(columned);
   }
@@ -157,78 +164,5 @@ public class PrettyStrings {
       builder.append(AnsiColors.RESET);
 
     return builder.toString();
-  }
-}
-
-/**
- * <code>Class</code> that let's you specify the settings for framing a <code>String</code>.
- * 
- * @author Alessandro Muscio (Kibo)
- */
-class FrameSettings {
-  private static final char HORIZONTAL_FRAME = '-';
-  private static final char VERTICAL_FRAME = '|';
-
-  private int width;
-  private Alignment alignment;
-  private char horizontalFrame;
-  private boolean verticalFrameEnabled;
-  private char verticalFrame;
-
-  /**
-   * Creates a new <i>settings</i> instance specifying the width of the frame, its alignment and if
-   * the vertical frame is enabled or not. The constructor will automatically set the default vertical
-   * and horizontal frame, change it with the appropriate setters.
-   *
-   * @param width                The width of the frame.
-   * @param alignment            The alignment of the frame.
-   * @param verticalFrameEnabled If teh vertical frame is enabled or not.
-   */
-  public FrameSettings(int width, Alignment alignment, boolean verticalFrameEnabled) {
-    this.width = width;
-    this.alignment = alignment;
-    this.horizontalFrame = FrameSettings.HORIZONTAL_FRAME;
-    this.verticalFrameEnabled = verticalFrameEnabled;
-    this.verticalFrame = FrameSettings.VERTICAL_FRAME;
-  }
-
-  public int getWidth() {
-    return width;
-  }
-
-  public void setWidth(int width) {
-    this.width = width;
-  }
-
-  public Alignment getAlignment() {
-    return alignment;
-  }
-
-  public void setAlignment(Alignment alignment) {
-    this.alignment = alignment;
-  }
-
-  public char getHorizontalFrame() {
-    return horizontalFrame;
-  }
-
-  public void setHorizontalFrame(char horizontalFrame) {
-    this.horizontalFrame = horizontalFrame;
-  }
-
-  public boolean isVerticalFrameEnabled() {
-    return verticalFrameEnabled;
-  }
-
-  public void setVerticalFrameEnabled(boolean useVerticalFrame) {
-    this.verticalFrameEnabled = useVerticalFrame;
-  }
-
-  public char getVerticalFrame() {
-    return verticalFrame;
-  }
-
-  public void setVerticalFrame(char verticalFrame) {
-    this.verticalFrame = verticalFrame;
   }
 }
