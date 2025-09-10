@@ -17,7 +17,7 @@ public final class InputData {
   private static final Scanner reader = createScanner();
   // @formatter:off
   private static final Map<String, String> ERRORS = Map.ofEntries(
-      Map.entry("red", PrettyStrings.prettify("Error!", AnsiColors.RED, AnsiWeights.BOLD, null)),
+      Map.entry("red", PrettyStrings.prettify("Error!\n", AnsiColors.RED, AnsiWeights.BOLD, null)),
       Map.entry("constructor", "This class is not instantiable!"),
       Map.entry(
           "alphanumeric_characters",
@@ -103,7 +103,7 @@ public final class InputData {
     String read = "";
 
     do {
-      System.out.println(message);
+      System.out.print(message);
 
       read = reader.next().trim();
 
@@ -219,7 +219,7 @@ public final class InputData {
 
     do {
       try {
-        System.out.println(message);
+        System.out.print(message);
 
         read = reader.nextInt();
 
@@ -349,7 +349,7 @@ public final class InputData {
 
     do {
       try {
-        System.out.println(message);
+        System.out.print(message);
 
         read = reader.nextDouble();
 
