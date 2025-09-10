@@ -321,7 +321,7 @@ public class AsciiArt {
 
   public static String createTitle(String toAscii, boolean useFrame) throws Exception {
     StringBuilder title = new StringBuilder();
-    char[] toAsciiChars = toAscii.trim().toUpperCase().toCharArray();
+    char[] toAsciiChars = toAscii.toUpperCase().toCharArray();
 
     for (int i = 0; i < AsciiArt.LINE_HEIGHT; i++) {
       for (int j = 0; j < toAsciiChars.length; j++) {
@@ -338,13 +338,18 @@ public class AsciiArt {
           throw new Exception(); // TODO: handle error
 
         /*
-         * Let's explain the logic here. Our characters span on multiple rows, what we do with the first
-         * while loop is simply got to the first position of the char array that has the first position of
-         * the line we currently need to print. The second while will loop that line and add every character
+         * Let's explain the logic here. Our characters span on multiple rows, what we
+         * do with the first
+         * while loop is simply got to the first position of the char array that has the
+         * first position of
+         * the line we currently need to print. The second while will loop that line and
+         * add every character
          * form it.
          * 
-         * In the and if the character isn't a space, it isn't the last one and the character after it isn't
-         * a space we ad a space on this line to correctly have some space between characters in order to
+         * In the and if the character isn't a space, it isn't the last one and the
+         * character after it isn't
+         * a space we ad a space on this line to correctly have some space between
+         * characters in order to
          * not have all of them glued together.
          */
         int newLineCounter = 0;
@@ -380,8 +385,10 @@ public class AsciiArt {
 
       for (int i = 0; i < AsciiArt.LINE_HEIGHT; i++) {
         /*
-         * It needs to be at the beginning of the line. So we have at least one `frameLength` for the
-         * `hFrame` and then one for each line we have. After that we need to account for every new line
+         * It needs to be at the beginning of the line. So we have at least one
+         * `frameLength` for the
+         * `hFrame` and then one for each line we have. After that we need to account
+         * for every new line
          * character. And then we add 1, because we want the vFrame to be placed after.
          */
         int startOffset = (frameLength * (i + 1)) + i + 1;
