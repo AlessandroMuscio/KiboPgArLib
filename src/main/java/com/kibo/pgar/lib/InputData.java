@@ -7,7 +7,8 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 /**
- * The class <strong>InputData</strong> can read a specific data type inserted in input by the
+ * The class <strong>InputData</strong> can read a specific data type inserted
+ * in input by the
  * user.It also allows the possibility to make controls on the data inserted.
  *
  * @author Alessandro Muscio
@@ -62,7 +63,7 @@ public final class InputData {
    * @return A <code>Scanner</code> object.
    */
   private static Scanner createScanner() {
-    return new Scanner(System.in).useDelimiter("\n");
+    return new Scanner(System.in).useDelimiter("\\R+");
   }
 
   /**
@@ -70,7 +71,8 @@ public final class InputData {
    *
    * @param message The message to verify.
    * 
-   * @return A <code>boolean</code> representing if the message is alphanumeric or not.
+   * @return A <code>boolean</code> representing if the message is alphanumeric or
+   *         not.
    */
   private static boolean hasAlphanumericCharacters(String message) {
     for (char currentChar : message.toCharArray()) {
@@ -85,12 +87,15 @@ public final class InputData {
    * Flushes the scanner, emptying the input buffer.
    */
   private static void flushReader() {
-    reader.nextLine();
+    if (reader.hasNextLine())
+      reader.nextLine();
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. If it isn't
-   * a <code>String</code> an error message is printed. It's also possible to select if the inserted
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. If it isn't
+   * a <code>String</code> an error message is printed. It's also possible to
+   * select if the inserted
    * text needs to be alphanumeric or not.
    *
    * @param message      The message to print.
@@ -116,8 +121,10 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user, given that
-   * it isn't empty. If it isn't a <code>String</code> an error message is printed. It's also possible
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user, given that
+   * it isn't empty. If it isn't a <code>String</code> an error message is
+   * printed. It's also possible
    * to select if the inserted text needs to be alphanumeric or not.
    *
    * @param message      The message to print.
@@ -141,8 +148,10 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will take
-   * the first <code>char</code> in it and verify if it is in the <code>allowed</code> characters, if
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will take
+   * the first <code>char</code> in it and verify if it is in the
+   * <code>allowed</code> characters, if
    * not, an error message will be printed.
    *
    * @param message The message to print.
@@ -173,8 +182,10 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will take
-   * the first <code>char</code> in it or return empty if the user inserted nothing.
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will take
+   * the first <code>char</code> in it or return empty if the user inserted
+   * nothing.
    *
    * @param message The message to print.
    * 
@@ -187,13 +198,16 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>question</code> in the terminal with the string "? [Y/n] " added. If the user
-   * answers with 'y', 'Y' or leaves blank the method will return <code>true</code>,
+   * Prints <code>question</code> in the terminal with the string "? [Y/n] "
+   * added. If the user
+   * answers with 'y', 'Y' or leaves blank the method will return
+   * <code>true</code>,
    * <code>false</code> otherwise.
    *
    * @param question The question to print.
    * 
-   * @return A <code>boolean</code> representing the affirmative or negative answer of the user.
+   * @return A <code>boolean</code> representing the affirmative or negative
+   *         answer of the user.
    */
   public static boolean readYesOrNo(String question) {
     question = "%s? [%c/%c] ".formatted(question, Character.toUpperCase(InputData.YES_ANSWER), InputData.NO_ANSWER);
@@ -208,7 +222,8 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will
    * print an error message if the text inserted isn't an integer.
    *
    * @return An <code>int</code> representing the integer that was read.
@@ -237,8 +252,10 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will
-   * print an error message if the text inserted isn't an integer or if the integer inserted is less
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will
+   * print an error message if the text inserted isn't an integer or if the
+   * integer inserted is less
    * than <code>min</code>.
    *
    * @param message The message to print.
@@ -267,8 +284,10 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will
-   * print an error message if the text inserted isn't an integer or if the integer inserted is
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will
+   * print an error message if the text inserted isn't an integer or if the
+   * integer inserted is
    * greater than <code>max</code>.
    *
    * @param message The message to print.
@@ -297,8 +316,10 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will
-   * print an error message if the text inserted isn't an integer or if the integer inserted isn't
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will
+   * print an error message if the text inserted isn't an integer or if the
+   * integer inserted isn't
    * between or equal than <code>min</code> and <code>max</code>.
    *
    * @param message The message to print.
@@ -337,7 +358,8 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will
    * print an error message if the text inserted isn't a double.
    *
    * @param message The message to print.
@@ -367,8 +389,10 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will
-   * print an error message if the text inserted isn't a double or if the double inserted isn't
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will
+   * print an error message if the text inserted isn't a double or if the double
+   * inserted isn't
    * greater equal than <code>min</code>.
    *
    * @param message The message to print.
@@ -396,8 +420,10 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will
-   * print an error message if the text inserted isn't a double or if the double inserted isn't less
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will
+   * print an error message if the text inserted isn't a double or if the double
+   * inserted isn't less
    * equal than <code>max</code>.
    *
    * @param message The message to print.
@@ -425,8 +451,10 @@ public final class InputData {
   }
 
   /**
-   * Prints <code>message</code> in the terminal and reads the text inserted by the user. It will
-   * print an error message if the text inserted isn't an double or if the double inserted isn't
+   * Prints <code>message</code> in the terminal and reads the text inserted by
+   * the user. It will
+   * print an error message if the text inserted isn't an double or if the double
+   * inserted isn't
    * between or equal than <code>min</code> and <code>max</code>.
    *
    * @param message The message to print.
